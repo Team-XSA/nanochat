@@ -26,7 +26,6 @@ HF_REPO="${HF_REPO:-haydenfree/nanochat-d12-baseline}"
 WANDB_RUN="${WANDB_RUN:-d12}"
 BACKUP_INTERVAL="${BACKUP_INTERVAL:-300}"
 UPLOAD_FAILURE_CACHE="${UPLOAD_FAILURE_CACHE:-0}"
-
 WORKDIR="/workspace/nanochat"
 LOG_FILE="/workspace/runner.log"
 NANOCHAT_BASE_DIR="$HOME/.cache/nanochat"
@@ -152,13 +151,6 @@ uv pip install --quiet --upgrade 'kernels>=0.13.0' 2>&1 || \
 # HuggingFaceTB/smol-smoltalk via datasets and crashes without this.
 echo "[runner] installing hf_transfer for SFT dataset download"
 uv pip install --quiet hf_transfer 2>&1 || echo "[runner] WARN: hf_transfer install failed"
-
-# FA3 diagnostic probe — surfaces real errors (nanochat silently swallows them).
-# Non-fatal: SDPA fallback is automatic. We want this output in the log
-# regardless of outcome so we can decide what to do about FA3.
-echo "[runner] === FA3 PROBE BEGIN ==="
-python "$WORKDIR/runs/runpod/probe_fa3.py" || echo "[runner] FA3 probe reported issues (non-fatal — continuing with SDPA fallback)"
-echo "[runner] === FA3 PROBE END ==="
 
 (
   while true; do
