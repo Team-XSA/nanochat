@@ -14,6 +14,7 @@ Notable features:
 
 from functools import partial
 from dataclasses import dataclass
+from typing import Optional
 
 import torch
 import torch.nn as nn
@@ -38,6 +39,8 @@ class GPTConfig:
     # Examples: "L"=all full context, "SL"=alternating, "SSL"=two short then one long
     window_pattern: str = "SSSL"
     use_xsa: bool = False
+    xsa_alpha: float = 1.0
+    xsa_layer_indices: Optional[list[int]] = None
 
 
 def norm(x):
@@ -72,7 +75,7 @@ class CausalSelfAttention(nn.Module):
         self.n_embd = config.n_embd
         self.head_dim = self.n_embd // self.n_head
         self.use_xsa = config.use_xsa
-        self.xsa = ExclusiveSelfAttention()
+        self.xsa = ExclusiveSelfAttention(config.xsa_alpha, config.xsa_layer_indices)
         assert self.n_embd % self.n_head == 0
         assert self.n_kv_head <= self.n_head and self.n_head % self.n_kv_head == 0
         self.c_q = Linear(self.n_embd, self.n_head * self.head_dim, bias=False)
@@ -124,7 +127,7 @@ class CausalSelfAttention(nn.Module):
                 kv_cache.advance(T)
 
         if self.use_xsa:
-            y = self.xsa.XSA(y, v)
+            y = self.xsa.XSA(y, v, self.layer_idx)
 
         # Re-assemble the heads and project back to residual stream
         y = y.contiguous().view(B, T, -1)
@@ -133,10 +136,18 @@ class CausalSelfAttention(nn.Module):
 
 
 class ExclusiveSelfAttention(nn.Module):
-    def XSA(self, y, v):
+    def __init__(self, xsa_alpha=1.0, xsa_layer_indices=None):
+        super().__init__()
+        self.xsa_alpha = xsa_alpha
+        self.xsa_layer_indices = xsa_layer_indices
+
+    def XSA(self, y, v, layer_idx):
+        if self.xsa_alpha == 0.0 or (self.xsa_layer_indices is not None and layer_idx not in self.xsa_layer_indices):
+            return y
         Vn = F.normalize(v, dim=-1)
         Z = y - (y * Vn).sum(dim=-1, keepdim=True) * Vn
-        return Z
+        out = y + self.xsa_alpha * (Z - y)
+        return out
 
 
 class MLP(nn.Module):

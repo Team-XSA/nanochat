@@ -29,6 +29,12 @@ def _patch_missing_config_keys(model_config_kwargs):
     if "use_xsa" not in model_config_kwargs:
         model_config_kwargs["use_xsa"] = False
         log0(f"Patching missing use_xsa in model config to False")
+    if "xsa_alpha" not in model_config_kwargs:
+        model_config_kwargs["xsa_alpha"] = 1.0
+        log0(f"Patching missing xsa_alpha in model config to 1.0")
+    if "xsa_layer_indices" not in model_config_kwargs:
+        model_config_kwargs["xsa_layer_indices"] = None
+        log0(f"Patching missing xsa_layer_indices in model config to None")
 
 def _patch_missing_keys(model_data, model_config):
     """Add default values for new parameters that may be missing in old checkpoints."""

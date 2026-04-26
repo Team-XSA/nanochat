@@ -22,8 +22,11 @@ mkdir -p runs/logs
 
 WANDB_RUN="${WANDB_RUN:-dummy}"
 XSA="${XSA:-FALSE}"
+XSA_ALPHA="${XSA_ALPHA:-1.0}"
+XSA_LAYER_INDICES="${XSA_LAYER_INDICES:-}"
 XSA_ARG=""
-[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa"
+[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa --xsa-alpha=$XSA_ALPHA"
+[ "$XSA" = "TRUE" ] && [ -n "$XSA_LAYER_INDICES" ] && XSA_ARG="$XSA_ARG --xsa-layer-indices=$XSA_LAYER_INDICES"
 CHECKPOINT_DIR="$NANOCHAT_BASE_DIR/base_checkpoints/d24"
 DONE_MARKER="$CHECKPOINT_DIR/.training_complete"
 
@@ -31,6 +34,8 @@ echo "=== Stage 2a: Pretraining (chunk 1) ==="
 echo "Base dir: $NANOCHAT_BASE_DIR"
 echo "WANDB_RUN: $WANDB_RUN"
 echo "XSA: $XSA"
+echo "XSA_ALPHA: $XSA_ALPHA"
+echo "XSA_LAYER_INDICES: $XSA_LAYER_INDICES"
 echo "Started: $(date)"
 
 source .venv/bin/activate

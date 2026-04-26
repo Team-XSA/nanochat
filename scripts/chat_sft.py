@@ -416,6 +416,8 @@ while True:
                     "n_embd": model.config.n_embd,
                     "window_pattern": model.config.window_pattern,
                     "use_xsa": model.config.use_xsa,
+                    "xsa_alpha": model.config.xsa_alpha,
+                    "xsa_layer_indices": model.config.xsa_layer_indices,
                 },
                 "user_config": user_config, # inputs to the training script
             },
