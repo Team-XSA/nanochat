@@ -52,6 +52,9 @@ parser.add_argument("--aspect-ratio", type=int, default=64, help="model_dim = de
 parser.add_argument("--head-dim", type=int, default=128, help="target head dimension for attention")
 parser.add_argument("--max-seq-len", type=int, default=2048, help="max context length")
 parser.add_argument("--window-pattern", type=str, default="SSSL", help="sliding window pattern tiled across layers: L=full, S=half context (e.g. 'SSL')")
+parser.add_argument("--xsa", action="store_true", help="enable XSA")
+parser.add_argument("--xsa-alpha", type=float, default=1.0, help="XSA projection strength (0 = disable)")
+parser.add_argument("--xsa-layer-indices", type=str, default=None, help="layer indices selection, comma-separated (None = all layers)")
 # Training horizon (only one used, in order of precedence)
 parser.add_argument("--num-iterations", type=int, default=-1, help="explicit number of optimization steps (-1 = disable)")
 parser.add_argument("--target-flops", type=float, default=-1.0, help="calculate num_iterations to reach target_flops (-1 = disable)")
@@ -78,6 +81,7 @@ parser.add_argument("--save-every", type=int, default=-1, help="save checkpoints
 # Output
 parser.add_argument("--model-tag", type=str, default=None, help="override model tag for checkpoint directory name")
 args = parser.parse_args()
+args.xsa_layer_indices = [int(x) for x in args.xsa_layer_indices.split(",")] if args.xsa_layer_indices else None
 user_config = vars(args).copy()  # for logging
 # -----------------------------------------------------------------------------
 # Compute init and wandb logging
@@ -102,6 +106,9 @@ wandb_run = DummyWandb() if use_dummy_wandb else wandb.init(project="nanochat", 
 # Flash Attention status
 from nanochat.flash_attention import USE_FA3
 using_fa3 = USE_FA3
+if args.xsa:
+    layers = "all layers" if args.xsa_layer_indices is None else args.xsa_layer_indices
+    print0(f"XSA enabled: alpha={args.xsa_alpha}, layers={layers}")
 if using_fa3:
     print0("✓ Using Flash Attention 3 (Hopper GPU detected), efficient, new and awesome.")
 else:
@@ -136,7 +143,8 @@ def build_model_meta(depth):
     config = GPTConfig(
         sequence_len=args.max_seq_len, vocab_size=vocab_size,
         n_layer=depth, n_head=num_heads, n_kv_head=num_heads, n_embd=model_dim,
-        window_pattern=args.window_pattern,
+        window_pattern=args.window_pattern, use_xsa=args.xsa,
+        xsa_alpha=args.xsa_alpha, xsa_layer_indices=args.xsa_layer_indices,
     )
     with torch.device("meta"):
         model_meta = GPT(config)

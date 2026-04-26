@@ -9,6 +9,8 @@
 # screen -L -Logfile runs/speedrun.log -S speedrun bash runs/speedrun.sh
 # 3) Example launch with wandb logging, but see below for setting up wandb first:
 # WANDB_RUN=speedrun screen -L -Logfile runs/speedrun.log -S speedrun bash runs/speedrun.sh
+# 4) Example launch with XSA:
+# XSA=TRUE XSA_ALPHA=0.5 XSA_LAYER_INDICES=0,3,7 bash runs/speedrun.sh
 
 # Default intermediate artifacts directory is in ~/.cache/nanochat
 export OMP_NUM_THREADS=1
@@ -38,6 +40,12 @@ if [ -z "$WANDB_RUN" ]; then
     # by default use "dummy" : it's handled as a special case, skips logging to wandb
     WANDB_RUN=dummy
 fi
+XSA="${XSA:-FALSE}"
+XSA_ALPHA="${XSA_ALPHA:-1.0}"
+XSA_LAYER_INDICES="${XSA_LAYER_INDICES:-}"
+XSA_ARG=""
+[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa --xsa-alpha=$XSA_ALPHA"
+[ "$XSA" = "TRUE" ] && [ -n "$XSA_LAYER_INDICES" ] && XSA_ARG="$XSA_ARG --xsa-layer-indices=$XSA_LAYER_INDICES"
 
 # -----------------------------------------------------------------------------
 # During the course of the run, we will be writing markdown reports to the report/
@@ -70,7 +78,7 @@ echo "Waiting for dataset download to complete..."
 wait $DATASET_DOWNLOAD_PID
 
 # d24 model (slightly undertrained to beat GPT-2 => decrease data:params ratio from compute optimal 10.5 (default) to 8)
-torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- --depth=24 --target-param-data-ratio=8 --device-batch-size=16 --fp8 --run=$WANDB_RUN
+torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- --depth=24 --target-param-data-ratio=8 --device-batch-size=16 --fp8 $XSA_ARG --run=$WANDB_RUN
 # evaluate the model: CORE metric, BPB on train/val, and draw samples
 torchrun --standalone --nproc_per_node=8 -m scripts.base_eval -- --device-batch-size=16
 

@@ -21,11 +21,20 @@ export NANOCHAT_BASE_DIR="$HOME/scratch/nanochat"
 mkdir -p runs/logs
 
 WANDB_RUN="${WANDB_RUN:-dummy}"
+XSA="${XSA:-FALSE}"
+XSA_ALPHA="${XSA_ALPHA:-1.0}"
+XSA_LAYER_INDICES="${XSA_LAYER_INDICES:-}"
+XSA_ARG=""
+[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa --xsa-alpha=$XSA_ALPHA"
+[ "$XSA" = "TRUE" ] && [ -n "$XSA_LAYER_INDICES" ] && XSA_ARG="$XSA_ARG --xsa-layer-indices=$XSA_LAYER_INDICES"
 CHECKPOINT_DIR="$NANOCHAT_BASE_DIR/base_checkpoints/d24"
 DONE_MARKER="$CHECKPOINT_DIR/.training_complete"
 
 echo "=== Stage 2d: Pretraining (chunk 4 / auto-resume) ==="
 echo "Base dir: $NANOCHAT_BASE_DIR"
+echo "XSA: $XSA"
+echo "XSA_ALPHA: $XSA_ALPHA"
+echo "XSA_LAYER_INDICES: $XSA_LAYER_INDICES"
 echo "Started: $(date)"
 
 if [ -f "$DONE_MARKER" ]; then
@@ -51,6 +60,7 @@ if [ "$LAST_STEP" -eq 0 ]; then
         --target-param-data-ratio=8 \
         --device-batch-size=16 \
         --save-every=200 \
+        $XSA_ARG \
         --run=$WANDB_RUN
 else
     echo "Resuming from step $LAST_STEP"
@@ -60,6 +70,7 @@ else
         --device-batch-size=16 \
         --save-every=200 \
         --resume-from-step=$LAST_STEP \
+        $XSA_ARG \
         --run=$WANDB_RUN
 fi
 
