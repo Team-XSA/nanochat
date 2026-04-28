@@ -1,0 +1,26 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-27-2026 23:21:53
+Job ID:    5064231
+User ID:   pzolotarev3
+Account:   coc
+Job name:  nanochat-stage2d
+Partition: ice-gpu
+QOS:       coc-ice
+---------------------------------------
+=== Stage 2d: Pretraining (chunk 4 / auto-resume) ===
+Base dir: /home/hice1/pzolotarev3/scratch/nanochat
+Started: Mon Apr 27 23:21:53 EDT 2026
+Training already complete (marker: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/.training_complete). Nothing to do.
+=== Stage 2d skipped: Mon Apr 27 23:21:53 EDT 2026 ===
+---------------------------------------
+Begin Slurm Epilog: Apr-27-2026 23:21:53
+Job ID:        5064231
+User ID:       pzolotarev3
+Account:       coc
+Job name:      nanochat-stage2d
+Resources:     cpu=8,gres/gpu:h100=2,mem=96G,node=1
+Rsrc Used:     cput=00:00:32,vmem=0,walltime=00:00:04,mem=2812K,energy_used=0
+Partition:     ice-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-03-013-8-0
+---------------------------------------

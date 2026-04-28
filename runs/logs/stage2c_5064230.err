@@ -1,0 +1,17 @@
+2026-04-27 11:36:40,385 - nanochat.common - [32m[1mINFO[0m - Distributed world size: 2
+2026-04-27 11:57:10,256 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005000_rank1.pt
+2026-04-27 11:57:11,601 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved model parameters to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/model_005000.pt
+2026-04-27 11:57:11,602 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved metadata to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/meta_005000.json
+2026-04-27 11:57:14,797 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005000_rank0.pt
+2026-04-27 12:14:19,049 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005200_rank1.pt
+2026-04-27 12:14:20,326 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved model parameters to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/model_005200.pt
+2026-04-27 12:14:20,363 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved metadata to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/meta_005200.json
+2026-04-27 12:14:23,594 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005200_rank0.pt
+2026-04-27 12:32:46,848 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005400_rank1.pt
+2026-04-27 12:32:48,350 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved model parameters to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/model_005400.pt
+2026-04-27 12:32:48,363 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved metadata to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/meta_005400.json
+2026-04-27 12:32:51,499 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005400_rank0.pt
+2026-04-27 12:51:24,820 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005568_rank1.pt
+2026-04-27 12:51:28,147 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved model parameters to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/model_005568.pt
+2026-04-27 12:51:28,149 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved metadata to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/meta_005568.json
+2026-04-27 12:51:31,320 - nanochat.checkpoint_manager - [32m[1mINFO[0m - Saved optimizer state to: /home/hice1/pzolotarev3/scratch/nanochat/base_checkpoints/d24/optim_005568_rank0.pt

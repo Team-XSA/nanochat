@@ -1,0 +1,735 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-28-2026 04:29:08
+Job ID:    5064232
+User ID:   pzolotarev3
+Account:   coc
+Job name:  nanochat-stage3-sft
+Partition: ice-gpu
+QOS:       coc-ice
+---------------------------------------
+=== Stage 3: Eval + SFT ===
+Base dir: /home/hice1/pzolotarev3/scratch/nanochat
+WANDB_RUN: dummy
+Started: Tue Apr 28 04:29:08 EDT 2026
+Autodetected device type: cuda
+Evaluating model: base_model (step 5568)
+Eval modes: bpb, core, sample
+
+================================================================================
+Model Samples
+================================================================================
+
+Conditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>The capital of France is Paris, the largest city in France. It is the seat of government and the
+--------------------------------------------------------------------------------
+<|bos|>The chemical symbol of gold is Au. The atomic number of gold is 79. The atomic mass of gold
+--------------------------------------------------------------------------------
+<|bos|>If yesterday was Friday, then tomorrow will be Monday. If yesterday was Monday, then tomorrow will be Tuesday. If yesterday was
+--------------------------------------------------------------------------------
+<|bos|>The opposite of hot is cold. The opposite of cold is hot. The opposite of hot is cold.
+--------------------------------------------------------------------------------
+<|bos|>The planets of the solar system are: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Ne
+--------------------------------------------------------------------------------
+<|bos|>My favorite color is blue. I love the color blue. I love the color blue. I love
+--------------------------------------------------------------------------------
+<|bos|>If 5*x + 3 = 13, then x is a multiple of 5. If 5*x + 3 = 
+
+Unconditioned samples:
+--------------------------------------------------------------------------------
+<|bos|>If the high dollar Increase late in the year then the GA general discount rate will decline from 3.5 P/E and keep increasing to 4.0 P/E (15% YY) and keep pegged next December at 5 P/E (10%) so the stock will buy and pump the YY like crazy. My bet would be that CBA means the long term in 02 but not if I believe it.
+However, I cannot predict what the stock's read going forward is anyway since I don't have a forward 10/30 or something that deep. Therefore I believe that focusing on the trouble may end
+--------------------------------------------------------------------------------
+<|bos|>Many glasses produced in the United States since WWII, and parts of Europe, are "armored" in some way. Siberian and Asian, Russian or German armor makes it harder and harder to hit our typical targets. Alekayas during the 1979 Uprising? See Also: Wartime Combat During World War 2.
+
+With that knowledge in hand, it's a good idea to apply a Secret Service or Polish embassy for this apply-for-legal-records game because it's game-based. Reginald Kirschauer was a real laborer for the Soviet railways and restored eight of them following a
+--------------------------------------------------------------------------------
+<|bos|>Your description isn't very clear. Perhaps better measurements (quality, sharpness, detail) can be made.
+
+On the other hand that very clearly states that a RxAudio connector is used. It doesn't say anything about whether the microphone is RxPlayer directly or whether the whole thing is the RxPlayer that is competent to take the audio. What about the associated code and the recording data? Ideally all of that would be replaced by an RxAudio connector (I don't see a lot of that at the moment - I need to find a gadget internally to do it...)
+
+"On the other hand that very
+--------------------------------------------------------------------------------
+<|bos|>Model,
+On 15-Sep-06 21:28, Christian Schmidt wrote:
+>There was a nice paper on the usual power law models with FDT in the
+>Reflex, Quartus II, and QTCAD world books on scattering waves.
+>
+>Here is the paper. What I do remember: presumably these models show
+>even a most approximate behavior for almost permanent diffraction, and
+>also give a small plot in the table of scattering functions.
+Doesn't that plot at the top mean a PD operator with ring near points
+in the plane surface that resembles a Dresden plate?
+
+--------------------------------------------------------------------------------
+<|bos|>Dive into the rich and churning treasure trove of instructional materials brought together by our esteemed collaborator, Dynamic Lane Training. This forward-thinking endeavor is at the vanguard of imparting knowledge and expertise through workshops, seminars, and conferences, providing classes and workshops that empower business leaders to tactics and strategies for mastery of the core areas of Professional Development, Business Environment, and Professional Development Plan (PSP). Dive deep with DLT's commitment through our blog as we dive deeply into your experts crafting the new era of educational wisdom.
+
+A3.1 Dynamic Lane Training Services
+
+Dynamic Lane Training is an educational institution dedicated
+--------------------------------------------------------------------------------
+<|bos|>These species are commonly known as sympatric or sympatric species. This means that the species lives and moves around the same places at different times and in different stages of its life cycle. These species may interbreed when they are in the same place, but they grow isolated from each other. This is because if they encounter these species they start to interact and mate with them. Mostly they meet in the drier areas of these forests where the plants are less crowded and far more abundant. And secondly, when there is a constant competition for food following the rainy season (many plant seeds grow during the rains) among these sympatric species,
+--------------------------------------------------------------------------------
+<|bos|>How bonsai trees grow and why they care for the planet
+Our planet Earth is witnessing the minuteness of care, and humans, especially the younger generations, demand more changes in our lifestyle. Among such changes are the gift of love, which has transitioned into the gift of bonsai.
+Bonsai explained
+First of all, let's understand the essence of bonsai. Simply put, it is a flourishing environment that helps you harness the positivity of success and thrive.
+Natural environment
+The scope of our planet Earth is diverse and home's ecology is not same. The ecology is populated by the observation and in-depth study of plants. This
+--------------------------------------------------------------------------------
+<|bos|>point far below the surface, in the downhole fluid below the zero gravity a fluid is a continuous mass of liquid. descrees in a counter clock wise direction, he contrasted the ocean floor with the minerals of an underground mine. how can we re-define what life consists of. 13. stromatolites are long tubes or hollow bricks in a rock mass that retain the precipitated minerals of what kind of rock? What does this image communicates directly to them? a. the majestic form of the mountains b. the soft sweetness of the surface c. the negative energy of the storm d how does it compare with his
+
+================================================================================
+BPB Evaluation
+================================================================================
+train bpb: 0.720584
+val bpb: 0.719343
+
+================================================================================
+CORE Evaluation
+================================================================================
+Evaluating: hellaswag_zeroshot (0-shot, type: multiple_choice)... accuracy: 0.5513 | centered: 0.4017 | time: 88.91s
+Evaluating: jeopardy (10-shot, type: language_modeling)... accuracy: 0.1058 | centered: 0.1058 | time: 19.43s
+Evaluating: bigbench_qa_wikidata (10-shot, type: language_modeling)... accuracy: 0.4461 | centered: 0.4461 | time: 185.27s
+Evaluating: arc_easy (10-shot, type: multiple_choice)... accuracy: 0.6932 | centered: 0.5909 | time: 23.23s
+Evaluating: arc_challenge (10-shot, type: multiple_choice)... accuracy: 0.3993 | centered: 0.1991 | time: 11.30s
+Evaluating: copa (0-shot, type: multiple_choice)... accuracy: 0.6600 | centered: 0.3200 | time: 0.96s
+Evaluating: commonsense_qa (10-shot, type: multiple_choice)... accuracy: 0.2064 | centered: 0.0080 | time: 11.99s
+Evaluating: piqa (10-shot, type: multiple_choice)... accuracy: 0.7378 | centered: 0.4755 | time: 17.51s
+Evaluating: openbook_qa (0-shot, type: multiple_choice)... accuracy: 0.4180 | centered: 0.2240 | time: 4.45s
+Evaluating: lambada_openai (0-shot, type: language_modeling)... accuracy: 0.4376 | centered: 0.4376 | time: 45.46s
+Evaluating: hellaswag (10-shot, type: multiple_choice)... accuracy: 0.5534 | centered: 0.4045 | time: 120.78s
+Evaluating: winograd (0-shot, type: schema)... accuracy: 0.6960 | centered: 0.3919 | time: 2.43s
+Evaluating: winogrande (0-shot, type: schema)... accuracy: 0.5525 | centered: 0.1050 | time: 10.95s
+Evaluating: bigbench_dyck_languages (10-shot, type: language_modeling)... accuracy: 0.0960 | centered: 0.0960 | time: 9.64s
+Evaluating: agi_eval_lsat_ar (3-shot, type: multiple_choice)... accuracy: 0.2739 | centered: 0.0924 | time: 2.72s
+Evaluating: bigbench_cs_algorithms (10-shot, type: language_modeling)... accuracy: 0.4280 | centered: 0.4280 | time: 11.88s
+Evaluating: bigbench_operators (10-shot, type: language_modeling)... accuracy: 0.2048 | centered: 0.2048 | time: 1.93s
+Evaluating: bigbench_repeat_copy_logic (10-shot, type: language_modeling)... accuracy: 0.0312 | centered: 0.0312 | time: 0.30s
+Evaluating: squad (10-shot, type: language_modeling)... accuracy: 0.4384 | centered: 0.4384 | time: 113.41s
+Evaluating: coqa (0-shot, type: language_modeling)... accuracy: 0.3191 | centered: 0.3191 | time: 73.47s
+Evaluating: boolq (10-shot, type: multiple_choice)... accuracy: 0.5450 | centered: -0.1975 | time: 38.19s
+Evaluating: bigbench_language_identification (10-shot, type: multiple_choice)... accuracy: 0.2557 | centered: 0.1812 | time: 200.75s
+
+Results written to: /home/hice1/pzolotarev3/scratch/nanochat/base_eval/base_model_005568.csv
+CORE metric: 0.2593
+Autodetected device type: cuda
+COMPUTE_DTYPE: torch.bfloat16 (auto-detected: CUDA SM 90 (bf16 supported))
+GPU: NVIDIA H200 | Peak FLOPS (BF16): 9.89e+14
+Inherited max_seq_len=2048 from pretrained checkpoint
+Using device_batch_size=16
+Inherited total_batch_size=1048576 from pretrained checkpoint
+Inherited embedding_lr=0.3 from pretrained checkpoint
+Inherited unembedding_lr=0.008 from pretrained checkpoint
+Inherited matrix_lr=0.02 from pretrained checkpoint
+Tokens / micro-batch / rank: 16 x 2048 = 32,768
+Tokens / micro-batch: 65,536
+Total batch size 1,048,576 => gradient accumulation steps: 16
+Scaling the LR for the AdamW parameters ∝1/√(1536/768) = 0.707107
+Loaded optimizer state from pretrained checkpoint (momentum buffers only, LRs reset)
+Downloading https://raw.githubusercontent.com/dwyl/english-words/refs/heads/master/words_alpha.txt...
+Downloaded to /home/hice1/pzolotarev3/scratch/nanochat/words_alpha.txt
+Training mixture: 1,071,759 rows (MMLU x3, GSM8K x4)
+Step 00000 | Validation bpb: 0.4419
+step 00001 (0.20%) | loss: 0.823512 | lrm: 1.00 | dt: 77621.15ms | tok/sec: 13,508 | mfu: 3.26 | epoch: 1 | total time: 0.00m
+step 00002 (0.41%) | loss: 1.072985 | lrm: 1.00 | dt: 4673.84ms | tok/sec: 224,350 | mfu: 54.16 | epoch: 1 | total time: 0.00m
+step 00003 (0.62%) | loss: 1.206485 | lrm: 1.00 | dt: 4711.28ms | tok/sec: 222,567 | mfu: 53.73 | epoch: 1 | total time: 0.00m
+step 00004 (0.81%) | loss: 1.239092 | lrm: 1.00 | dt: 4717.80ms | tok/sec: 222,259 | mfu: 53.66 | epoch: 1 | total time: 0.00m
+step 00005 (1.02%) | loss: 1.262816 | lrm: 1.00 | dt: 4703.64ms | tok/sec: 222,928 | mfu: 53.82 | epoch: 1 | total time: 0.00m
+step 00006 (1.22%) | loss: 1.258868 | lrm: 1.00 | dt: 4692.67ms | tok/sec: 223,449 | mfu: 53.94 | epoch: 1 | total time: 0.00m
+step 00007 (1.42%) | loss: 1.255891 | lrm: 1.00 | dt: 4692.25ms | tok/sec: 223,469 | mfu: 53.95 | epoch: 1 | total time: 0.00m
+step 00008 (1.63%) | loss: 1.268237 | lrm: 1.00 | dt: 4701.60ms | tok/sec: 223,025 | mfu: 53.84 | epoch: 1 | total time: 0.00m
+step 00009 (1.84%) | loss: 1.269203 | lrm: 1.00 | dt: 4703.91ms | tok/sec: 222,916 | mfu: 53.82 | epoch: 1 | total time: 0.00m
+step 00010 (2.05%) | loss: 1.244675 | lrm: 1.00 | dt: 4701.58ms | tok/sec: 223,026 | mfu: 53.84 | epoch: 1 | total time: 0.00m
+step 00011 (2.25%) | loss: 1.247089 | lrm: 1.00 | dt: 4702.75ms | tok/sec: 222,970 | mfu: 53.83 | epoch: 1 | total time: 0.08m
+step 00012 (2.46%) | loss: 1.222890 | lrm: 1.00 | dt: 4703.06ms | tok/sec: 222,956 | mfu: 53.83 | epoch: 1 | total time: 0.16m
+step 00013 (2.66%) | loss: 1.214191 | lrm: 1.00 | dt: 4710.57ms | tok/sec: 222,600 | mfu: 53.74 | epoch: 1 | total time: 0.24m
+step 00014 (2.86%) | loss: 1.227720 | lrm: 1.00 | dt: 4706.22ms | tok/sec: 222,806 | mfu: 53.79 | epoch: 1 | total time: 0.31m
+step 00015 (3.07%) | loss: 1.231644 | lrm: 1.00 | dt: 4713.19ms | tok/sec: 222,477 | mfu: 53.71 | epoch: 1 | total time: 0.39m
+step 00016 (3.28%) | loss: 1.213471 | lrm: 1.00 | dt: 4724.44ms | tok/sec: 221,947 | mfu: 53.58 | epoch: 1 | total time: 0.47m
+step 00017 (3.49%) | loss: 1.215621 | lrm: 1.00 | dt: 4718.50ms | tok/sec: 222,226 | mfu: 53.65 | epoch: 1 | total time: 0.55m
+step 00018 (3.70%) | loss: 1.203985 | lrm: 1.00 | dt: 4733.38ms | tok/sec: 221,528 | mfu: 53.48 | epoch: 1 | total time: 0.63m
+step 00019 (3.91%) | loss: 1.186040 | lrm: 1.00 | dt: 4726.86ms | tok/sec: 221,833 | mfu: 53.55 | epoch: 1 | total time: 0.71m
+step 00020 (4.11%) | loss: 1.157086 | lrm: 1.00 | dt: 4734.18ms | tok/sec: 221,490 | mfu: 53.47 | epoch: 1 | total time: 0.79m
+step 00021 (4.31%) | loss: 1.156877 | lrm: 1.00 | dt: 4730.79ms | tok/sec: 221,649 | mfu: 53.51 | epoch: 1 | total time: 0.87m
+step 00022 (4.51%) | loss: 1.151972 | lrm: 1.00 | dt: 4738.40ms | tok/sec: 221,293 | mfu: 53.42 | epoch: 1 | total time: 0.94m
+step 00023 (4.71%) | loss: 1.145300 | lrm: 1.00 | dt: 4736.36ms | tok/sec: 221,388 | mfu: 53.45 | epoch: 1 | total time: 1.02m
+step 00024 (4.91%) | loss: 1.146346 | lrm: 1.00 | dt: 4733.95ms | tok/sec: 221,501 | mfu: 53.47 | epoch: 1 | total time: 1.10m
+step 00025 (5.11%) | loss: 1.141793 | lrm: 1.00 | dt: 4746.55ms | tok/sec: 220,913 | mfu: 53.33 | epoch: 1 | total time: 1.18m
+step 00026 (5.31%) | loss: 1.149051 | lrm: 1.00 | dt: 4736.94ms | tok/sec: 221,361 | mfu: 53.44 | epoch: 1 | total time: 1.26m
+step 00027 (5.52%) | loss: 1.149820 | lrm: 1.00 | dt: 4744.87ms | tok/sec: 220,991 | mfu: 53.35 | epoch: 1 | total time: 1.34m
+step 00028 (5.73%) | loss: 1.147598 | lrm: 1.00 | dt: 4740.24ms | tok/sec: 221,207 | mfu: 53.40 | epoch: 1 | total time: 1.42m
+step 00029 (5.93%) | loss: 1.141826 | lrm: 1.00 | dt: 4739.38ms | tok/sec: 221,247 | mfu: 53.41 | epoch: 1 | total time: 1.50m
+step 00030 (6.14%) | loss: 1.141045 | lrm: 1.00 | dt: 4740.82ms | tok/sec: 221,180 | mfu: 53.40 | epoch: 1 | total time: 1.58m
+step 00031 (6.35%) | loss: 1.124914 | lrm: 1.00 | dt: 4741.90ms | tok/sec: 221,129 | mfu: 53.38 | epoch: 1 | total time: 1.66m
+step 00032 (6.55%) | loss: 1.116168 | lrm: 1.00 | dt: 4734.96ms | tok/sec: 221,454 | mfu: 53.46 | epoch: 1 | total time: 1.73m
+step 00033 (6.76%) | loss: 1.114676 | lrm: 1.00 | dt: 4740.86ms | tok/sec: 221,178 | mfu: 53.40 | epoch: 1 | total time: 1.81m
+step 00034 (6.96%) | loss: 1.117142 | lrm: 1.00 | dt: 4753.62ms | tok/sec: 220,584 | mfu: 53.25 | epoch: 1 | total time: 1.89m
+step 00035 (7.17%) | loss: 1.109279 | lrm: 1.00 | dt: 4742.60ms | tok/sec: 221,097 | mfu: 53.38 | epoch: 1 | total time: 1.97m
+step 00036 (7.37%) | loss: 1.099914 | lrm: 1.00 | dt: 4751.46ms | tok/sec: 220,685 | mfu: 53.28 | epoch: 1 | total time: 2.05m
+step 00037 (7.58%) | loss: 1.101768 | lrm: 1.00 | dt: 4741.34ms | tok/sec: 221,155 | mfu: 53.39 | epoch: 1 | total time: 2.13m
+step 00038 (7.78%) | loss: 1.092167 | lrm: 1.00 | dt: 4749.47ms | tok/sec: 220,777 | mfu: 53.30 | epoch: 1 | total time: 2.21m
+step 00039 (7.98%) | loss: 1.088118 | lrm: 1.00 | dt: 4729.70ms | tok/sec: 221,700 | mfu: 53.52 | epoch: 1 | total time: 2.29m
+step 00040 (8.19%) | loss: 1.091372 | lrm: 1.00 | dt: 4750.36ms | tok/sec: 220,736 | mfu: 53.29 | epoch: 1 | total time: 2.37m
+step 00041 (8.40%) | loss: 1.080068 | lrm: 1.00 | dt: 4741.23ms | tok/sec: 221,161 | mfu: 53.39 | epoch: 1 | total time: 2.45m
+step 00042 (8.62%) | loss: 1.084689 | lrm: 1.00 | dt: 4744.13ms | tok/sec: 221,025 | mfu: 53.36 | epoch: 1 | total time: 2.52m
+step 00043 (8.82%) | loss: 1.085319 | lrm: 1.00 | dt: 4736.20ms | tok/sec: 221,396 | mfu: 53.45 | epoch: 1 | total time: 2.60m
+step 00044 (9.04%) | loss: 1.083117 | lrm: 1.00 | dt: 4742.98ms | tok/sec: 221,079 | mfu: 53.37 | epoch: 1 | total time: 2.68m
+step 00045 (9.24%) | loss: 1.080223 | lrm: 1.00 | dt: 4741.22ms | tok/sec: 221,161 | mfu: 53.39 | epoch: 1 | total time: 2.76m
+step 00046 (9.45%) | loss: 1.074178 | lrm: 1.00 | dt: 4748.31ms | tok/sec: 220,831 | mfu: 53.31 | epoch: 1 | total time: 2.84m
+step 00047 (9.66%) | loss: 1.076882 | lrm: 1.00 | dt: 4742.53ms | tok/sec: 221,100 | mfu: 53.38 | epoch: 1 | total time: 2.92m
+step 00048 (9.86%) | loss: 1.070767 | lrm: 1.00 | dt: 4742.72ms | tok/sec: 221,091 | mfu: 53.38 | epoch: 1 | total time: 3.00m
+step 00049 (10.08%) | loss: 1.063466 | lrm: 1.00 | dt: 4751.41ms | tok/sec: 220,687 | mfu: 53.28 | epoch: 1 | total time: 3.08m
+step 00050 (10.27%) | loss: 1.058617 | lrm: 1.00 | dt: 4742.33ms | tok/sec: 221,109 | mfu: 53.38 | epoch: 1 | total time: 3.16m
+step 00051 (10.47%) | loss: 1.058032 | lrm: 1.00 | dt: 4752.68ms | tok/sec: 220,628 | mfu: 53.26 | epoch: 1 | total time: 3.24m
+step 00052 (10.68%) | loss: 1.056856 | lrm: 1.00 | dt: 4738.84ms | tok/sec: 221,272 | mfu: 53.42 | epoch: 1 | total time: 3.32m
+step 00053 (10.88%) | loss: 1.065052 | lrm: 1.00 | dt: 4752.02ms | tok/sec: 220,659 | mfu: 53.27 | epoch: 1 | total time: 3.39m
+step 00054 (11.08%) | loss: 1.065786 | lrm: 1.00 | dt: 4748.26ms | tok/sec: 220,833 | mfu: 53.31 | epoch: 1 | total time: 3.47m
+step 00055 (11.28%) | loss: 1.065519 | lrm: 1.00 | dt: 4745.42ms | tok/sec: 220,965 | mfu: 53.34 | epoch: 1 | total time: 3.55m
+step 00056 (11.48%) | loss: 1.058748 | lrm: 1.00 | dt: 4750.32ms | tok/sec: 220,737 | mfu: 53.29 | epoch: 1 | total time: 3.63m
+step 00057 (11.68%) | loss: 1.061977 | lrm: 1.00 | dt: 4748.45ms | tok/sec: 220,824 | mfu: 53.31 | epoch: 1 | total time: 3.71m
+step 00058 (11.90%) | loss: 1.066138 | lrm: 1.00 | dt: 4753.23ms | tok/sec: 220,602 | mfu: 53.26 | epoch: 1 | total time: 3.79m
+step 00059 (12.10%) | loss: 1.062004 | lrm: 1.00 | dt: 4744.73ms | tok/sec: 220,998 | mfu: 53.35 | epoch: 1 | total time: 3.87m
+step 00060 (12.30%) | loss: 1.055460 | lrm: 1.00 | dt: 4751.86ms | tok/sec: 220,666 | mfu: 53.27 | epoch: 1 | total time: 3.95m
+step 00061 (12.51%) | loss: 1.042659 | lrm: 1.00 | dt: 4746.89ms | tok/sec: 220,897 | mfu: 53.33 | epoch: 1 | total time: 4.03m
+step 00062 (12.71%) | loss: 1.035586 | lrm: 1.00 | dt: 4751.09ms | tok/sec: 220,702 | mfu: 53.28 | epoch: 1 | total time: 4.11m
+step 00063 (12.92%) | loss: 1.043548 | lrm: 1.00 | dt: 4740.74ms | tok/sec: 221,184 | mfu: 53.40 | epoch: 1 | total time: 4.19m
+step 00064 (13.13%) | loss: 1.054415 | lrm: 1.00 | dt: 4761.63ms | tok/sec: 220,213 | mfu: 53.16 | epoch: 1 | total time: 4.27m
+step 00065 (13.33%) | loss: 1.049088 | lrm: 1.00 | dt: 4746.88ms | tok/sec: 220,898 | mfu: 53.33 | epoch: 1 | total time: 4.34m
+step 00066 (13.54%) | loss: 1.042794 | lrm: 1.00 | dt: 4749.87ms | tok/sec: 220,759 | mfu: 53.29 | epoch: 1 | total time: 4.42m
+step 00067 (13.74%) | loss: 1.033572 | lrm: 1.00 | dt: 4742.69ms | tok/sec: 221,092 | mfu: 53.38 | epoch: 1 | total time: 4.50m
+step 00068 (13.94%) | loss: 1.023840 | lrm: 1.00 | dt: 4750.02ms | tok/sec: 220,752 | mfu: 53.29 | epoch: 1 | total time: 4.58m
+step 00069 (14.15%) | loss: 1.036112 | lrm: 1.00 | dt: 4741.94ms | tok/sec: 221,128 | mfu: 53.38 | epoch: 1 | total time: 4.66m
+step 00070 (14.37%) | loss: 1.028124 | lrm: 1.00 | dt: 4748.57ms | tok/sec: 220,819 | mfu: 53.31 | epoch: 1 | total time: 4.74m
+step 00071 (14.57%) | loss: 1.016841 | lrm: 1.00 | dt: 4750.96ms | tok/sec: 220,708 | mfu: 53.28 | epoch: 1 | total time: 4.82m
+step 00072 (14.78%) | loss: 1.008910 | lrm: 1.00 | dt: 4750.33ms | tok/sec: 220,737 | mfu: 53.29 | epoch: 1 | total time: 4.90m
+step 00073 (14.99%) | loss: 1.006802 | lrm: 1.00 | dt: 4751.84ms | tok/sec: 220,667 | mfu: 53.27 | epoch: 1 | total time: 4.98m
+step 00074 (15.20%) | loss: 1.013413 | lrm: 1.00 | dt: 4748.82ms | tok/sec: 220,807 | mfu: 53.31 | epoch: 1 | total time: 5.06m
+step 00075 (15.40%) | loss: 1.010044 | lrm: 1.00 | dt: 4750.60ms | tok/sec: 220,725 | mfu: 53.29 | epoch: 1 | total time: 5.14m
+step 00076 (15.61%) | loss: 1.005235 | lrm: 1.00 | dt: 4747.34ms | tok/sec: 220,876 | mfu: 53.32 | epoch: 1 | total time: 5.21m
+step 00077 (15.81%) | loss: 0.995244 | lrm: 1.00 | dt: 4745.31ms | tok/sec: 220,970 | mfu: 53.35 | epoch: 1 | total time: 5.29m
+step 00078 (16.02%) | loss: 0.997095 | lrm: 1.00 | dt: 4740.73ms | tok/sec: 221,184 | mfu: 53.40 | epoch: 1 | total time: 5.37m
+step 00079 (16.23%) | loss: 0.997461 | lrm: 1.00 | dt: 4747.88ms | tok/sec: 220,851 | mfu: 53.32 | epoch: 1 | total time: 5.45m
+step 00080 (16.45%) | loss: 0.991254 | lrm: 1.00 | dt: 4753.38ms | tok/sec: 220,596 | mfu: 53.26 | epoch: 1 | total time: 5.53m
+step 00081 (16.65%) | loss: 0.999568 | lrm: 1.00 | dt: 4746.31ms | tok/sec: 220,924 | mfu: 53.33 | epoch: 1 | total time: 5.61m
+step 00082 (16.85%) | loss: 0.998863 | lrm: 1.00 | dt: 4745.86ms | tok/sec: 220,945 | mfu: 53.34 | epoch: 1 | total time: 5.69m
+step 00083 (17.05%) | loss: 0.990554 | lrm: 1.00 | dt: 4740.86ms | tok/sec: 221,178 | mfu: 53.40 | epoch: 1 | total time: 5.77m
+step 00084 (17.27%) | loss: 0.992411 | lrm: 1.00 | dt: 4740.89ms | tok/sec: 221,176 | mfu: 53.40 | epoch: 1 | total time: 5.85m
+step 00085 (17.48%) | loss: 0.980981 | lrm: 1.00 | dt: 4749.51ms | tok/sec: 220,775 | mfu: 53.30 | epoch: 1 | total time: 5.93m
+step 00086 (17.68%) | loss: 0.983411 | lrm: 1.00 | dt: 4758.13ms | tok/sec: 220,375 | mfu: 53.20 | epoch: 1 | total time: 6.01m
+step 00087 (17.88%) | loss: 0.971590 | lrm: 1.00 | dt: 4746.59ms | tok/sec: 220,911 | mfu: 53.33 | epoch: 1 | total time: 6.09m
+step 00088 (18.08%) | loss: 0.979385 | lrm: 1.00 | dt: 4752.80ms | tok/sec: 220,622 | mfu: 53.26 | epoch: 1 | total time: 6.16m
+step 00089 (18.30%) | loss: 0.975315 | lrm: 1.00 | dt: 4743.76ms | tok/sec: 221,043 | mfu: 53.36 | epoch: 1 | total time: 6.24m
+step 00090 (18.50%) | loss: 0.972739 | lrm: 1.00 | dt: 4750.07ms | tok/sec: 220,749 | mfu: 53.29 | epoch: 1 | total time: 6.32m
+step 00091 (18.71%) | loss: 0.984982 | lrm: 1.00 | dt: 4744.64ms | tok/sec: 221,002 | mfu: 53.35 | epoch: 1 | total time: 6.40m
+step 00092 (18.91%) | loss: 0.986398 | lrm: 1.00 | dt: 4741.31ms | tok/sec: 221,157 | mfu: 53.39 | epoch: 1 | total time: 6.48m
+step 00093 (19.11%) | loss: 0.976646 | lrm: 1.00 | dt: 4746.73ms | tok/sec: 220,904 | mfu: 53.33 | epoch: 1 | total time: 6.56m
+step 00094 (19.32%) | loss: 0.978220 | lrm: 1.00 | dt: 4751.38ms | tok/sec: 220,688 | mfu: 53.28 | epoch: 1 | total time: 6.64m
+step 00095 (19.53%) | loss: 0.988220 | lrm: 1.00 | dt: 4758.85ms | tok/sec: 220,342 | mfu: 53.19 | epoch: 1 | total time: 6.72m
+step 00096 (19.74%) | loss: 0.985237 | lrm: 1.00 | dt: 4748.34ms | tok/sec: 220,830 | mfu: 53.31 | epoch: 1 | total time: 6.80m
+step 00097 (19.94%) | loss: 0.983358 | lrm: 1.00 | dt: 4750.14ms | tok/sec: 220,746 | mfu: 53.29 | epoch: 1 | total time: 6.88m
+step 00098 (20.14%) | loss: 0.993261 | lrm: 1.00 | dt: 4753.07ms | tok/sec: 220,610 | mfu: 53.26 | epoch: 1 | total time: 6.96m
+step 00099 (20.35%) | loss: 1.001024 | lrm: 1.00 | dt: 4744.25ms | tok/sec: 221,020 | mfu: 53.36 | epoch: 1 | total time: 7.03m
+step 00100 (20.57%) | loss: 1.004895 | lrm: 1.00 | dt: 4774.76ms | tok/sec: 219,608 | mfu: 53.02 | epoch: 1 | total time: 7.11m
+step 00101 (20.77%) | loss: 0.985510 | lrm: 1.00 | dt: 4737.46ms | tok/sec: 221,336 | mfu: 53.43 | epoch: 1 | total time: 7.19m
+step 00102 (20.97%) | loss: 0.980094 | lrm: 1.00 | dt: 4748.16ms | tok/sec: 220,838 | mfu: 53.31 | epoch: 1 | total time: 7.27m
+step 00103 (21.18%) | loss: 0.988585 | lrm: 1.00 | dt: 4743.89ms | tok/sec: 221,037 | mfu: 53.36 | epoch: 1 | total time: 7.35m
+step 00104 (21.38%) | loss: 0.992665 | lrm: 1.00 | dt: 4773.09ms | tok/sec: 219,684 | mfu: 53.04 | epoch: 1 | total time: 7.43m
+step 00105 (21.59%) | loss: 0.984538 | lrm: 1.00 | dt: 4820.94ms | tok/sec: 217,504 | mfu: 52.51 | epoch: 1 | total time: 7.51m
+step 00106 (21.79%) | loss: 0.981822 | lrm: 1.00 | dt: 4743.72ms | tok/sec: 221,045 | mfu: 53.36 | epoch: 1 | total time: 7.59m
+step 00107 (21.99%) | loss: 0.965658 | lrm: 1.00 | dt: 4742.12ms | tok/sec: 221,119 | mfu: 53.38 | epoch: 1 | total time: 7.67m
+step 00108 (22.19%) | loss: 0.967936 | lrm: 1.00 | dt: 4752.56ms | tok/sec: 220,634 | mfu: 53.26 | epoch: 1 | total time: 7.75m
+step 00109 (22.40%) | loss: 0.960782 | lrm: 1.00 | dt: 4751.44ms | tok/sec: 220,685 | mfu: 53.28 | epoch: 1 | total time: 7.83m
+step 00110 (22.60%) | loss: 0.971498 | lrm: 1.00 | dt: 4755.57ms | tok/sec: 220,494 | mfu: 53.23 | epoch: 1 | total time: 7.91m
+step 00111 (22.80%) | loss: 0.982468 | lrm: 1.00 | dt: 4753.33ms | tok/sec: 220,598 | mfu: 53.26 | epoch: 1 | total time: 7.99m
+step 00112 (23.01%) | loss: 0.986821 | lrm: 1.00 | dt: 4742.89ms | tok/sec: 221,083 | mfu: 53.37 | epoch: 1 | total time: 8.07m
+step 00113 (23.22%) | loss: 0.969684 | lrm: 1.00 | dt: 4761.15ms | tok/sec: 220,235 | mfu: 53.17 | epoch: 1 | total time: 8.14m
+step 00114 (23.42%) | loss: 0.958863 | lrm: 1.00 | dt: 4752.92ms | tok/sec: 220,617 | mfu: 53.26 | epoch: 1 | total time: 8.22m
+step 00115 (23.61%) | loss: 0.964432 | lrm: 1.00 | dt: 4747.24ms | tok/sec: 220,881 | mfu: 53.32 | epoch: 1 | total time: 8.30m
+step 00116 (23.82%) | loss: 0.961495 | lrm: 1.00 | dt: 6136.63ms | tok/sec: 170,871 | mfu: 41.25 | epoch: 1 | total time: 8.41m
+step 00117 (24.03%) | loss: 0.951090 | lrm: 1.00 | dt: 4722.32ms | tok/sec: 222,046 | mfu: 53.61 | epoch: 1 | total time: 8.48m
+step 00118 (24.23%) | loss: 0.945017 | lrm: 1.00 | dt: 6238.87ms | tok/sec: 168,071 | mfu: 40.58 | epoch: 1 | total time: 8.59m
+step 00119 (24.43%) | loss: 0.945108 | lrm: 1.00 | dt: 4715.89ms | tok/sec: 222,349 | mfu: 53.68 | epoch: 1 | total time: 8.67m
+step 00120 (24.63%) | loss: 0.948768 | lrm: 1.00 | dt: 4749.78ms | tok/sec: 220,762 | mfu: 53.30 | epoch: 1 | total time: 8.75m
+step 00121 (24.82%) | loss: 0.937837 | lrm: 1.00 | dt: 4748.86ms | tok/sec: 220,805 | mfu: 53.31 | epoch: 1 | total time: 8.83m
+step 00122 (25.03%) | loss: 0.936311 | lrm: 1.00 | dt: 4739.24ms | tok/sec: 221,254 | mfu: 53.41 | epoch: 1 | total time: 8.90m
+step 00123 (25.24%) | loss: 0.937496 | lrm: 1.00 | dt: 4739.63ms | tok/sec: 221,235 | mfu: 53.41 | epoch: 1 | total time: 8.98m
+step 00124 (25.44%) | loss: 0.946952 | lrm: 1.00 | dt: 4744.70ms | tok/sec: 220,999 | mfu: 53.35 | epoch: 1 | total time: 9.06m
+step 00125 (25.64%) | loss: 0.946332 | lrm: 1.00 | dt: 4751.54ms | tok/sec: 220,681 | mfu: 53.28 | epoch: 1 | total time: 9.14m
+step 00126 (25.86%) | loss: 0.958418 | lrm: 1.00 | dt: 4741.94ms | tok/sec: 221,128 | mfu: 53.38 | epoch: 1 | total time: 9.22m
+step 00127 (26.07%) | loss: 0.949301 | lrm: 1.00 | dt: 4742.94ms | tok/sec: 221,081 | mfu: 53.37 | epoch: 1 | total time: 9.30m
+step 00128 (26.27%) | loss: 0.945591 | lrm: 1.00 | dt: 4759.27ms | tok/sec: 220,323 | mfu: 53.19 | epoch: 1 | total time: 9.38m
+step 00129 (26.47%) | loss: 0.942125 | lrm: 1.00 | dt: 4748.62ms | tok/sec: 220,817 | mfu: 53.31 | epoch: 1 | total time: 9.46m
+step 00130 (26.68%) | loss: 0.938798 | lrm: 1.00 | dt: 4747.81ms | tok/sec: 220,854 | mfu: 53.32 | epoch: 1 | total time: 9.54m
+step 00131 (26.88%) | loss: 0.938226 | lrm: 1.00 | dt: 4742.72ms | tok/sec: 221,091 | mfu: 53.38 | epoch: 1 | total time: 9.62m
+step 00132 (27.08%) | loss: 0.949499 | lrm: 1.00 | dt: 4752.95ms | tok/sec: 220,615 | mfu: 53.26 | epoch: 1 | total time: 9.70m
+step 00133 (27.28%) | loss: 0.966414 | lrm: 1.00 | dt: 4751.61ms | tok/sec: 220,677 | mfu: 53.28 | epoch: 1 | total time: 9.77m
+step 00134 (27.49%) | loss: 0.967011 | lrm: 1.00 | dt: 4743.64ms | tok/sec: 221,048 | mfu: 53.36 | epoch: 1 | total time: 9.85m
+step 00135 (27.70%) | loss: 0.963711 | lrm: 1.00 | dt: 4754.71ms | tok/sec: 220,534 | mfu: 53.24 | epoch: 1 | total time: 9.93m
+step 00136 (27.91%) | loss: 0.965103 | lrm: 1.00 | dt: 4757.34ms | tok/sec: 220,412 | mfu: 53.21 | epoch: 1 | total time: 10.01m
+step 00137 (28.12%) | loss: 0.967053 | lrm: 1.00 | dt: 4753.76ms | tok/sec: 220,578 | mfu: 53.25 | epoch: 1 | total time: 10.09m
+step 00138 (28.33%) | loss: 0.965972 | lrm: 1.00 | dt: 4752.87ms | tok/sec: 220,619 | mfu: 53.26 | epoch: 1 | total time: 10.17m
+step 00139 (28.55%) | loss: 0.983196 | lrm: 1.00 | dt: 4753.22ms | tok/sec: 220,603 | mfu: 53.26 | epoch: 1 | total time: 10.25m
+step 00140 (28.75%) | loss: 0.977721 | lrm: 1.00 | dt: 4751.48ms | tok/sec: 220,684 | mfu: 53.28 | epoch: 1 | total time: 10.33m
+step 00141 (28.95%) | loss: 0.980435 | lrm: 1.00 | dt: 4749.84ms | tok/sec: 220,760 | mfu: 53.30 | epoch: 1 | total time: 10.41m
+step 00142 (29.15%) | loss: 0.991852 | lrm: 1.00 | dt: 4741.75ms | tok/sec: 221,136 | mfu: 53.39 | epoch: 1 | total time: 10.49m
+step 00143 (29.36%) | loss: 0.990448 | lrm: 1.00 | dt: 4745.46ms | tok/sec: 220,964 | mfu: 53.34 | epoch: 1 | total time: 10.57m
+step 00144 (29.57%) | loss: 0.974340 | lrm: 1.00 | dt: 4745.55ms | tok/sec: 220,960 | mfu: 53.34 | epoch: 1 | total time: 10.65m
+step 00145 (29.79%) | loss: 0.971239 | lrm: 1.00 | dt: 4746.59ms | tok/sec: 220,911 | mfu: 53.33 | epoch: 1 | total time: 10.72m
+step 00146 (29.99%) | loss: 0.977853 | lrm: 1.00 | dt: 4750.24ms | tok/sec: 220,741 | mfu: 53.29 | epoch: 1 | total time: 10.80m
+step 00147 (30.20%) | loss: 0.974573 | lrm: 1.00 | dt: 4742.93ms | tok/sec: 221,081 | mfu: 53.37 | epoch: 1 | total time: 10.88m
+step 00148 (30.41%) | loss: 0.972667 | lrm: 1.00 | dt: 4750.00ms | tok/sec: 220,753 | mfu: 53.29 | epoch: 1 | total time: 10.96m
+step 00149 (30.62%) | loss: 0.969941 | lrm: 1.00 | dt: 4752.92ms | tok/sec: 220,617 | mfu: 53.26 | epoch: 1 | total time: 11.04m
+step 00150 (30.84%) | loss: 0.960435 | lrm: 1.00 | dt: 4749.33ms | tok/sec: 220,784 | mfu: 53.30 | epoch: 1 | total time: 11.12m
+step 00151 (31.03%) | loss: 0.957443 | lrm: 1.00 | dt: 4758.24ms | tok/sec: 220,370 | mfu: 53.20 | epoch: 1 | total time: 11.20m
+step 00152 (31.24%) | loss: 0.951921 | lrm: 1.00 | dt: 4751.78ms | tok/sec: 220,669 | mfu: 53.27 | epoch: 1 | total time: 11.28m
+step 00153 (31.45%) | loss: 0.947189 | lrm: 1.00 | dt: 4747.44ms | tok/sec: 220,871 | mfu: 53.32 | epoch: 1 | total time: 11.36m
+step 00154 (31.65%) | loss: 0.938116 | lrm: 1.00 | dt: 4749.74ms | tok/sec: 220,765 | mfu: 53.30 | epoch: 1 | total time: 11.44m
+step 00155 (31.87%) | loss: 0.949361 | lrm: 1.00 | dt: 4746.01ms | tok/sec: 220,938 | mfu: 53.34 | epoch: 1 | total time: 11.52m
+step 00156 (32.08%) | loss: 0.953575 | lrm: 1.00 | dt: 4757.36ms | tok/sec: 220,411 | mfu: 53.21 | epoch: 1 | total time: 11.60m
+step 00157 (32.30%) | loss: 0.948620 | lrm: 1.00 | dt: 4747.60ms | tok/sec: 220,864 | mfu: 53.32 | epoch: 1 | total time: 11.67m
+step 00158 (32.50%) | loss: 0.952426 | lrm: 1.00 | dt: 4754.89ms | tok/sec: 220,525 | mfu: 53.24 | epoch: 1 | total time: 11.75m
+step 00159 (32.71%) | loss: 0.961347 | lrm: 1.00 | dt: 4753.21ms | tok/sec: 220,603 | mfu: 53.26 | epoch: 1 | total time: 11.83m
+step 00160 (32.92%) | loss: 0.961728 | lrm: 1.00 | dt: 4754.57ms | tok/sec: 220,540 | mfu: 53.24 | epoch: 1 | total time: 11.91m
+step 00161 (33.12%) | loss: 0.958795 | lrm: 1.00 | dt: 4744.19ms | tok/sec: 221,023 | mfu: 53.36 | epoch: 1 | total time: 11.99m
+step 00162 (33.33%) | loss: 0.972440 | lrm: 1.00 | dt: 4751.08ms | tok/sec: 220,702 | mfu: 53.28 | epoch: 1 | total time: 12.07m
+step 00163 (33.53%) | loss: 0.969551 | lrm: 1.00 | dt: 4750.42ms | tok/sec: 220,733 | mfu: 53.29 | epoch: 1 | total time: 12.15m
+step 00164 (33.74%) | loss: 0.961209 | lrm: 1.00 | dt: 4754.59ms | tok/sec: 220,539 | mfu: 53.24 | epoch: 1 | total time: 12.23m
+step 00165 (33.94%) | loss: 0.959331 | lrm: 1.00 | dt: 4755.21ms | tok/sec: 220,510 | mfu: 53.24 | epoch: 1 | total time: 12.31m
+step 00166 (34.15%) | loss: 0.956468 | lrm: 1.00 | dt: 4754.11ms | tok/sec: 220,562 | mfu: 53.25 | epoch: 1 | total time: 12.39m
+step 00167 (34.35%) | loss: 0.938377 | lrm: 1.00 | dt: 4754.89ms | tok/sec: 220,525 | mfu: 53.24 | epoch: 1 | total time: 12.47m
+step 00168 (34.56%) | loss: 0.939516 | lrm: 1.00 | dt: 4750.32ms | tok/sec: 220,737 | mfu: 53.29 | epoch: 1 | total time: 12.55m
+step 00169 (34.75%) | loss: 0.922285 | lrm: 1.00 | dt: 4756.79ms | tok/sec: 220,437 | mfu: 53.22 | epoch: 1 | total time: 12.63m
+step 00170 (34.95%) | loss: 0.922622 | lrm: 1.00 | dt: 4755.56ms | tok/sec: 220,494 | mfu: 53.23 | epoch: 1 | total time: 12.70m
+step 00171 (35.16%) | loss: 0.908075 | lrm: 1.00 | dt: 4745.39ms | tok/sec: 220,967 | mfu: 53.35 | epoch: 1 | total time: 12.78m
+step 00172 (35.37%) | loss: 0.915519 | lrm: 1.00 | dt: 4745.04ms | tok/sec: 220,983 | mfu: 53.35 | epoch: 1 | total time: 12.86m
+step 00173 (35.58%) | loss: 0.911593 | lrm: 1.00 | dt: 4750.65ms | tok/sec: 220,722 | mfu: 53.29 | epoch: 1 | total time: 12.94m
+step 00174 (35.78%) | loss: 0.911889 | lrm: 1.00 | dt: 4750.96ms | tok/sec: 220,708 | mfu: 53.28 | epoch: 1 | total time: 13.02m
+step 00175 (35.99%) | loss: 0.920614 | lrm: 1.00 | dt: 4755.63ms | tok/sec: 220,491 | mfu: 53.23 | epoch: 1 | total time: 13.10m
+step 00176 (36.20%) | loss: 0.928130 | lrm: 1.00 | dt: 4739.20ms | tok/sec: 221,255 | mfu: 53.41 | epoch: 1 | total time: 13.18m
+step 00177 (36.40%) | loss: 0.926624 | lrm: 1.00 | dt: 4743.64ms | tok/sec: 221,048 | mfu: 53.36 | epoch: 1 | total time: 13.26m
+step 00178 (36.61%) | loss: 0.934448 | lrm: 1.00 | dt: 4755.64ms | tok/sec: 220,491 | mfu: 53.23 | epoch: 1 | total time: 13.34m
+step 00179 (36.82%) | loss: 0.940408 | lrm: 1.00 | dt: 4745.35ms | tok/sec: 220,969 | mfu: 53.35 | epoch: 1 | total time: 13.42m
+step 00180 (37.03%) | loss: 0.933987 | lrm: 1.00 | dt: 4744.35ms | tok/sec: 221,015 | mfu: 53.36 | epoch: 1 | total time: 13.50m
+step 00181 (37.23%) | loss: 0.937622 | lrm: 1.00 | dt: 4754.08ms | tok/sec: 220,563 | mfu: 53.25 | epoch: 1 | total time: 13.57m
+step 00182 (37.44%) | loss: 0.941749 | lrm: 1.00 | dt: 4751.04ms | tok/sec: 220,704 | mfu: 53.28 | epoch: 1 | total time: 13.65m
+step 00183 (37.64%) | loss: 0.943358 | lrm: 1.00 | dt: 4743.51ms | tok/sec: 221,055 | mfu: 53.37 | epoch: 1 | total time: 13.73m
+step 00184 (37.85%) | loss: 0.942130 | lrm: 1.00 | dt: 4748.07ms | tok/sec: 220,842 | mfu: 53.32 | epoch: 1 | total time: 13.81m
+step 00185 (38.05%) | loss: 0.934330 | lrm: 1.00 | dt: 4747.55ms | tok/sec: 220,866 | mfu: 53.32 | epoch: 1 | total time: 13.89m
+step 00186 (38.26%) | loss: 0.935988 | lrm: 1.00 | dt: 4751.00ms | tok/sec: 220,706 | mfu: 53.28 | epoch: 1 | total time: 13.97m
+step 00187 (38.48%) | loss: 0.940532 | lrm: 1.00 | dt: 4745.60ms | tok/sec: 220,957 | mfu: 53.34 | epoch: 1 | total time: 14.05m
+step 00188 (38.68%) | loss: 0.932166 | lrm: 1.00 | dt: 4750.27ms | tok/sec: 220,740 | mfu: 53.29 | epoch: 1 | total time: 14.13m
+step 00189 (38.89%) | loss: 0.926530 | lrm: 1.00 | dt: 4753.72ms | tok/sec: 220,580 | mfu: 53.25 | epoch: 1 | total time: 14.21m
+step 00190 (39.10%) | loss: 0.909006 | lrm: 1.00 | dt: 4785.91ms | tok/sec: 219,096 | mfu: 52.89 | epoch: 1 | total time: 14.29m
+step 00191 (39.31%) | loss: 0.909580 | lrm: 1.00 | dt: 4748.36ms | tok/sec: 220,828 | mfu: 53.31 | epoch: 1 | total time: 14.37m
+step 00192 (39.52%) | loss: 0.908442 | lrm: 1.00 | dt: 4750.82ms | tok/sec: 220,714 | mfu: 53.28 | epoch: 1 | total time: 14.45m
+step 00193 (39.73%) | loss: 0.917518 | lrm: 1.00 | dt: 4752.16ms | tok/sec: 220,652 | mfu: 53.27 | epoch: 1 | total time: 14.53m
+step 00194 (39.93%) | loss: 0.918698 | lrm: 1.00 | dt: 4755.21ms | tok/sec: 220,510 | mfu: 53.24 | epoch: 1 | total time: 14.60m
+step 00195 (40.14%) | loss: 0.920652 | lrm: 1.00 | dt: 4749.26ms | tok/sec: 220,787 | mfu: 53.30 | epoch: 1 | total time: 14.68m
+step 00196 (40.35%) | loss: 0.923542 | lrm: 1.00 | dt: 4753.99ms | tok/sec: 220,567 | mfu: 53.25 | epoch: 1 | total time: 14.76m
+step 00197 (40.55%) | loss: 0.917512 | lrm: 1.00 | dt: 4743.72ms | tok/sec: 221,044 | mfu: 53.36 | epoch: 1 | total time: 14.84m
+step 00198 (40.74%) | loss: 0.920676 | lrm: 1.00 | dt: 4758.74ms | tok/sec: 220,347 | mfu: 53.20 | epoch: 1 | total time: 14.92m
+step 00199 (40.94%) | loss: 0.920705 | lrm: 1.00 | dt: 4756.25ms | tok/sec: 220,462 | mfu: 53.22 | epoch: 1 | total time: 15.00m
+step 00200 (41.15%) | loss: 0.920378 | lrm: 1.00 | dt: 4743.36ms | tok/sec: 221,061 | mfu: 53.37 | epoch: 1 | total time: 15.08m
+Step 00200 | Validation bpb: 0.3054
+Final: 1286/2376 (54.12%)
+  ARC-Easy: 54.12%
+Final: 482/1172 (41.13%)
+  ARC-Challenge: 41.13%
+Final: 5001/14042 (35.61%)
+  MMLU: 35.61%
+[KRank 0 | 0/1 (0.00%)[KRank 0 | 0/2 (0.00%)[KRank 1 | 0/1 (0.00%)[KRank 0 | 0/3 (0.00%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 0/4 (0.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 0/5 (0.00%)[KRank 0 | 0/6 (0.00%)[KRank 0 | 0/7 (0.00%)[KRank 1 | 0/4 (0.00%)[KRank 1 | 0/5 (0.00%)[KRank 0 | 0/8 (0.00%)[KRank 1 | 1/6 (16.67%)[KRank 1 | 1/7 (14.29%)[KRank 1 | 1/8 (12.50%)[KRank 0 | 0/9 (0.00%)[KRank 0 | 0/10 (0.00%)[KRank 1 | 1/9 (11.11%)[KRank 1 | 1/10 (10.00%)[KRank 0 | 0/11 (0.00%)[KRank 1 | 1/11 (9.09%)[KRank 1 | 1/12 (8.33%)
+[KRank 0 | 0/12 (0.00%)
+==================================================
+Final: 1/24 (4.17%)
+  GSM8K: 4.17%
+[KRank 1 | 0/1 (0.00%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 0/1 (0.00%)[KRank 0 | 0/2 (0.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 0/3 (0.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 0/4 (0.00%)[KRank 1 | 0/5 (0.00%)[KRank 0 | 0/5 (0.00%)[KRank 1 | 0/6 (0.00%)[KRank 0 | 0/6 (0.00%)[KRank 1 | 0/7 (0.00%)[KRank 0 | 0/7 (0.00%)[KRank 1 | 0/8 (0.00%)[KRank 0 | 0/8 (0.00%)[KRank 1 | 0/9 (0.00%)[KRank 1 | 0/10 (0.00%)[KRank 0 | 0/9 (0.00%)[KRank 1 | 0/11 (0.00%)[KRank 0 | 0/10 (0.00%)[KRank 0 | 0/11 (0.00%)[KRank 1 | 0/12 (0.00%)
+[KRank 0 | 0/12 (0.00%)
+==================================================
+Final: 0/24 (0.00%)
+  HumanEval: 0.00%
+[KRank 1 | 1/1 (100.00%)[KRank 0 | 1/1 (100.00%)[KRank 0 | 2/2 (100.00%)[KRank 1 | 2/2 (100.00%)[KRank 0 | 3/3 (100.00%)[KRank 1 | 3/3 (100.00%)[KRank 0 | 4/4 (100.00%)[KRank 1 | 4/4 (100.00%)[KRank 0 | 5/5 (100.00%)[KRank 1 | 5/5 (100.00%)[KRank 0 | 6/6 (100.00%)[KRank 1 | 6/6 (100.00%)[KRank 0 | 7/7 (100.00%)[KRank 1 | 7/7 (100.00%)[KRank 0 | 8/8 (100.00%)[KRank 1 | 8/8 (100.00%)[KRank 0 | 9/9 (100.00%)[KRank 0 | 10/10 (100.00%)[KRank 1 | 9/9 (100.00%)[KRank 0 | 11/11 (100.00%)[KRank 1 | 10/10 (100.00%)[KRank 0 | 12/12 (100.00%)
+[KRank 1 | 11/11 (100.00%)[KRank 1 | 12/12 (100.00%)
+==================================================
+Final: 24/24 (100.00%)
+  SpellingBee: 100.00%
+Step 00200 | ChatCORE: 0.2978 | ChatCORE_cat: 0.2483
+step 00201 (41.36%) | loss: 0.918380 | lrm: 1.00 | dt: 4698.74ms | tok/sec: 223,161 | mfu: 53.87 | epoch: 1 | total time: 15.16m
+step 00202 (41.57%) | loss: 0.920817 | lrm: 1.00 | dt: 4708.85ms | tok/sec: 222,681 | mfu: 53.76 | epoch: 1 | total time: 15.24m
+step 00203 (41.78%) | loss: 0.910607 | lrm: 1.00 | dt: 4715.64ms | tok/sec: 222,361 | mfu: 53.68 | epoch: 1 | total time: 15.32m
+step 00204 (41.99%) | loss: 0.906496 | lrm: 1.00 | dt: 4736.35ms | tok/sec: 221,389 | mfu: 53.45 | epoch: 1 | total time: 15.39m
+step 00205 (42.21%) | loss: 0.888859 | lrm: 1.00 | dt: 4732.51ms | tok/sec: 221,568 | mfu: 53.49 | epoch: 1 | total time: 15.47m
+step 00206 (42.42%) | loss: 0.895455 | lrm: 1.00 | dt: 4735.28ms | tok/sec: 221,439 | mfu: 53.46 | epoch: 1 | total time: 15.55m
+step 00207 (42.61%) | loss: 0.895366 | lrm: 1.00 | dt: 4735.56ms | tok/sec: 221,425 | mfu: 53.46 | epoch: 1 | total time: 15.63m
+step 00208 (42.81%) | loss: 0.889120 | lrm: 1.00 | dt: 4707.64ms | tok/sec: 222,739 | mfu: 53.77 | epoch: 1 | total time: 15.71m
+step 00209 (43.02%) | loss: 0.892593 | lrm: 1.00 | dt: 4702.11ms | tok/sec: 223,001 | mfu: 53.84 | epoch: 1 | total time: 15.79m
+step 00210 (43.24%) | loss: 0.896252 | lrm: 1.00 | dt: 4722.72ms | tok/sec: 222,027 | mfu: 53.60 | epoch: 1 | total time: 15.87m
+step 00211 (43.44%) | loss: 0.893414 | lrm: 1.00 | dt: 4715.83ms | tok/sec: 222,352 | mfu: 53.68 | epoch: 1 | total time: 15.94m
+step 00212 (43.64%) | loss: 0.901670 | lrm: 1.00 | dt: 4708.07ms | tok/sec: 222,718 | mfu: 53.77 | epoch: 1 | total time: 16.02m
+step 00213 (43.86%) | loss: 0.899036 | lrm: 1.00 | dt: 4724.94ms | tok/sec: 221,923 | mfu: 53.58 | epoch: 1 | total time: 16.10m
+step 00214 (44.06%) | loss: 0.909507 | lrm: 1.00 | dt: 4721.90ms | tok/sec: 222,066 | mfu: 53.61 | epoch: 1 | total time: 16.18m
+step 00215 (44.27%) | loss: 0.908763 | lrm: 1.00 | dt: 4709.03ms | tok/sec: 222,673 | mfu: 53.76 | epoch: 1 | total time: 16.26m
+step 00216 (44.48%) | loss: 0.911154 | lrm: 1.00 | dt: 4718.26ms | tok/sec: 222,237 | mfu: 53.65 | epoch: 1 | total time: 16.34m
+step 00217 (44.69%) | loss: 0.911134 | lrm: 1.00 | dt: 4726.32ms | tok/sec: 221,859 | mfu: 53.56 | epoch: 1 | total time: 16.42m
+step 00218 (44.89%) | loss: 0.905260 | lrm: 1.00 | dt: 4721.17ms | tok/sec: 222,100 | mfu: 53.62 | epoch: 1 | total time: 16.50m
+step 00219 (45.08%) | loss: 0.911723 | lrm: 1.00 | dt: 4726.43ms | tok/sec: 221,853 | mfu: 53.56 | epoch: 1 | total time: 16.57m
+step 00220 (45.28%) | loss: 0.916160 | lrm: 1.00 | dt: 4726.37ms | tok/sec: 221,856 | mfu: 53.56 | epoch: 1 | total time: 16.65m
+step 00221 (45.49%) | loss: 0.916282 | lrm: 1.00 | dt: 4726.00ms | tok/sec: 221,873 | mfu: 53.56 | epoch: 1 | total time: 16.73m
+step 00222 (45.69%) | loss: 0.918249 | lrm: 1.00 | dt: 4722.21ms | tok/sec: 222,052 | mfu: 53.61 | epoch: 1 | total time: 16.81m
+step 00223 (45.90%) | loss: 0.912529 | lrm: 1.00 | dt: 4733.36ms | tok/sec: 221,529 | mfu: 53.48 | epoch: 1 | total time: 16.89m
+step 00224 (46.11%) | loss: 0.917960 | lrm: 1.00 | dt: 4736.25ms | tok/sec: 221,393 | mfu: 53.45 | epoch: 1 | total time: 16.97m
+step 00225 (46.31%) | loss: 0.910152 | lrm: 1.00 | dt: 4726.64ms | tok/sec: 221,843 | mfu: 53.56 | epoch: 1 | total time: 17.05m
+step 00226 (46.53%) | loss: 0.911638 | lrm: 1.00 | dt: 4722.68ms | tok/sec: 222,029 | mfu: 53.60 | epoch: 1 | total time: 17.13m
+step 00227 (46.74%) | loss: 0.920683 | lrm: 1.00 | dt: 4722.50ms | tok/sec: 222,038 | mfu: 53.60 | epoch: 1 | total time: 17.20m
+step 00228 (46.95%) | loss: 0.919016 | lrm: 1.00 | dt: 4729.31ms | tok/sec: 221,718 | mfu: 53.53 | epoch: 1 | total time: 17.28m
+step 00229 (47.14%) | loss: 0.917195 | lrm: 1.00 | dt: 4726.49ms | tok/sec: 221,851 | mfu: 53.56 | epoch: 1 | total time: 17.36m
+step 00230 (47.35%) | loss: 0.919117 | lrm: 1.00 | dt: 4723.93ms | tok/sec: 221,971 | mfu: 53.59 | epoch: 1 | total time: 17.44m
+step 00231 (47.55%) | loss: 0.911770 | lrm: 1.00 | dt: 4721.28ms | tok/sec: 222,095 | mfu: 53.62 | epoch: 1 | total time: 17.52m
+step 00232 (47.76%) | loss: 0.901465 | lrm: 1.00 | dt: 4728.73ms | tok/sec: 221,745 | mfu: 53.53 | epoch: 1 | total time: 17.60m
+step 00233 (47.97%) | loss: 0.902153 | lrm: 1.00 | dt: 4735.51ms | tok/sec: 221,428 | mfu: 53.46 | epoch: 1 | total time: 17.68m
+step 00234 (48.17%) | loss: 0.912438 | lrm: 1.00 | dt: 4738.75ms | tok/sec: 221,277 | mfu: 53.42 | epoch: 1 | total time: 17.76m
+step 00235 (48.38%) | loss: 0.905737 | lrm: 1.00 | dt: 4738.35ms | tok/sec: 221,295 | mfu: 53.42 | epoch: 1 | total time: 17.84m
+step 00236 (48.59%) | loss: 0.903876 | lrm: 1.00 | dt: 4729.93ms | tok/sec: 221,689 | mfu: 53.52 | epoch: 1 | total time: 17.91m
+step 00237 (48.79%) | loss: 0.902842 | lrm: 1.00 | dt: 4730.55ms | tok/sec: 221,660 | mfu: 53.51 | epoch: 1 | total time: 17.99m
+step 00238 (49.00%) | loss: 0.912681 | lrm: 1.00 | dt: 4733.13ms | tok/sec: 221,539 | mfu: 53.48 | epoch: 1 | total time: 18.07m
+step 00239 (49.21%) | loss: 0.916403 | lrm: 1.00 | dt: 4727.61ms | tok/sec: 221,798 | mfu: 53.55 | epoch: 1 | total time: 18.15m
+step 00240 (49.41%) | loss: 0.921650 | lrm: 1.00 | dt: 4737.05ms | tok/sec: 221,356 | mfu: 53.44 | epoch: 1 | total time: 18.23m
+step 00241 (49.63%) | loss: 0.920337 | lrm: 1.00 | dt: 4724.38ms | tok/sec: 221,950 | mfu: 53.58 | epoch: 1 | total time: 18.31m
+step 00242 (49.84%) | loss: 0.919981 | lrm: 1.00 | dt: 4735.23ms | tok/sec: 221,441 | mfu: 53.46 | epoch: 1 | total time: 18.39m
+step 00243 (50.05%) | loss: 0.916958 | lrm: 1.00 | dt: 4738.66ms | tok/sec: 221,281 | mfu: 53.42 | epoch: 1 | total time: 18.47m
+step 00244 (50.26%) | loss: 0.912535 | lrm: 0.99 | dt: 4737.28ms | tok/sec: 221,345 | mfu: 53.44 | epoch: 1 | total time: 18.55m
+step 00245 (50.47%) | loss: 0.911900 | lrm: 0.99 | dt: 4734.85ms | tok/sec: 221,459 | mfu: 53.46 | epoch: 1 | total time: 18.62m
+step 00246 (50.67%) | loss: 0.912744 | lrm: 0.99 | dt: 4729.92ms | tok/sec: 221,690 | mfu: 53.52 | epoch: 1 | total time: 18.70m
+step 00247 (50.88%) | loss: 0.920311 | lrm: 0.98 | dt: 4736.15ms | tok/sec: 221,398 | mfu: 53.45 | epoch: 1 | total time: 18.78m
+step 00248 (51.08%) | loss: 0.918674 | lrm: 0.98 | dt: 4730.18ms | tok/sec: 221,677 | mfu: 53.52 | epoch: 1 | total time: 18.86m
+step 00249 (51.29%) | loss: 0.909457 | lrm: 0.97 | dt: 4734.63ms | tok/sec: 221,469 | mfu: 53.47 | epoch: 1 | total time: 18.94m
+step 00250 (51.49%) | loss: 0.914667 | lrm: 0.97 | dt: 4737.46ms | tok/sec: 221,337 | mfu: 53.43 | epoch: 1 | total time: 19.02m
+step 00251 (51.70%) | loss: 0.907037 | lrm: 0.97 | dt: 4741.11ms | tok/sec: 221,166 | mfu: 53.39 | epoch: 1 | total time: 19.10m
+step 00252 (51.89%) | loss: 0.909935 | lrm: 0.96 | dt: 4733.81ms | tok/sec: 221,507 | mfu: 53.48 | epoch: 1 | total time: 19.18m
+step 00253 (52.10%) | loss: 0.920109 | lrm: 0.96 | dt: 4737.89ms | tok/sec: 221,317 | mfu: 53.43 | epoch: 1 | total time: 19.26m
+step 00254 (52.30%) | loss: 0.911942 | lrm: 0.95 | dt: 4732.36ms | tok/sec: 221,575 | mfu: 53.49 | epoch: 1 | total time: 19.33m
+step 00255 (52.51%) | loss: 0.907948 | lrm: 0.95 | dt: 4722.59ms | tok/sec: 222,034 | mfu: 53.60 | epoch: 1 | total time: 19.41m
+step 00256 (52.71%) | loss: 0.906417 | lrm: 0.95 | dt: 4729.58ms | tok/sec: 221,705 | mfu: 53.52 | epoch: 1 | total time: 19.49m
+step 00257 (52.92%) | loss: 0.917049 | lrm: 0.94 | dt: 4730.83ms | tok/sec: 221,647 | mfu: 53.51 | epoch: 1 | total time: 19.57m
+step 00258 (53.13%) | loss: 0.916449 | lrm: 0.94 | dt: 4731.11ms | tok/sec: 221,634 | mfu: 53.51 | epoch: 1 | total time: 19.65m
+step 00259 (53.34%) | loss: 0.919156 | lrm: 0.93 | dt: 4725.26ms | tok/sec: 221,908 | mfu: 53.57 | epoch: 1 | total time: 19.73m
+step 00260 (53.55%) | loss: 0.900217 | lrm: 0.93 | dt: 4732.45ms | tok/sec: 221,571 | mfu: 53.49 | epoch: 1 | total time: 19.81m
+step 00261 (53.76%) | loss: 0.903812 | lrm: 0.92 | dt: 4733.16ms | tok/sec: 221,538 | mfu: 53.48 | epoch: 1 | total time: 19.89m
+step 00262 (53.96%) | loss: 0.911949 | lrm: 0.92 | dt: 4733.64ms | tok/sec: 221,515 | mfu: 53.48 | epoch: 1 | total time: 19.96m
+step 00263 (54.17%) | loss: 0.923479 | lrm: 0.92 | dt: 4731.22ms | tok/sec: 221,629 | mfu: 53.50 | epoch: 1 | total time: 20.04m
+step 00264 (54.36%) | loss: 0.924009 | lrm: 0.91 | dt: 4735.03ms | tok/sec: 221,450 | mfu: 53.46 | epoch: 1 | total time: 20.12m
+step 00265 (54.57%) | loss: 0.923496 | lrm: 0.91 | dt: 4726.92ms | tok/sec: 221,830 | mfu: 53.55 | epoch: 1 | total time: 20.20m
+step 00266 (54.78%) | loss: 0.916738 | lrm: 0.90 | dt: 4735.67ms | tok/sec: 221,420 | mfu: 53.45 | epoch: 1 | total time: 20.28m
+step 00267 (54.98%) | loss: 0.909639 | lrm: 0.90 | dt: 4735.38ms | tok/sec: 221,434 | mfu: 53.46 | epoch: 1 | total time: 20.36m
+step 00268 (55.19%) | loss: 0.916604 | lrm: 0.90 | dt: 4727.70ms | tok/sec: 221,793 | mfu: 53.54 | epoch: 1 | total time: 20.44m
+step 00269 (55.41%) | loss: 0.914293 | lrm: 0.89 | dt: 4723.37ms | tok/sec: 221,997 | mfu: 53.59 | epoch: 1 | total time: 20.52m
+step 00270 (55.62%) | loss: 0.905903 | lrm: 0.89 | dt: 4731.08ms | tok/sec: 221,635 | mfu: 53.51 | epoch: 1 | total time: 20.60m
+step 00271 (55.84%) | loss: 0.921033 | lrm: 0.88 | dt: 4730.38ms | tok/sec: 221,668 | mfu: 53.51 | epoch: 1 | total time: 20.67m
+step 00272 (56.05%) | loss: 0.907696 | lrm: 0.88 | dt: 4732.53ms | tok/sec: 221,567 | mfu: 53.49 | epoch: 1 | total time: 20.75m
+step 00273 (56.26%) | loss: 0.893002 | lrm: 0.87 | dt: 4744.60ms | tok/sec: 221,004 | mfu: 53.35 | epoch: 1 | total time: 20.83m
+step 00274 (56.46%) | loss: 0.885572 | lrm: 0.87 | dt: 4746.90ms | tok/sec: 220,896 | mfu: 53.33 | epoch: 1 | total time: 20.91m
+step 00275 (56.67%) | loss: 0.877736 | lrm: 0.87 | dt: 4746.17ms | tok/sec: 220,930 | mfu: 53.34 | epoch: 1 | total time: 20.99m
+step 00276 (56.87%) | loss: 0.878786 | lrm: 0.86 | dt: 4744.43ms | tok/sec: 221,011 | mfu: 53.36 | epoch: 1 | total time: 21.07m
+step 00277 (57.08%) | loss: 0.879682 | lrm: 0.86 | dt: 4735.44ms | tok/sec: 221,431 | mfu: 53.46 | epoch: 1 | total time: 21.15m
+step 00278 (57.28%) | loss: 0.870661 | lrm: 0.85 | dt: 4755.01ms | tok/sec: 220,520 | mfu: 53.24 | epoch: 1 | total time: 21.23m
+step 00279 (57.50%) | loss: 0.870697 | lrm: 0.85 | dt: 4748.55ms | tok/sec: 220,820 | mfu: 53.31 | epoch: 1 | total time: 21.31m
+step 00280 (57.70%) | loss: 0.869714 | lrm: 0.85 | dt: 5676.23ms | tok/sec: 184,730 | mfu: 44.60 | epoch: 1 | total time: 21.40m
+step 00281 (57.89%) | loss: 0.876921 | lrm: 0.84 | dt: 4708.64ms | tok/sec: 222,691 | mfu: 53.76 | epoch: 1 | total time: 21.48m
+step 00282 (58.10%) | loss: 0.873154 | lrm: 0.84 | dt: 4748.20ms | tok/sec: 220,836 | mfu: 53.31 | epoch: 1 | total time: 21.56m
+step 00283 (58.30%) | loss: 0.871507 | lrm: 0.83 | dt: 4747.33ms | tok/sec: 220,876 | mfu: 53.32 | epoch: 1 | total time: 21.64m
+step 00284 (58.51%) | loss: 0.868029 | lrm: 0.83 | dt: 4736.60ms | tok/sec: 221,377 | mfu: 53.44 | epoch: 1 | total time: 21.72m
+step 00285 (58.72%) | loss: 0.873086 | lrm: 0.83 | dt: 4741.44ms | tok/sec: 221,151 | mfu: 53.39 | epoch: 1 | total time: 21.80m
+step 00286 (58.93%) | loss: 0.873063 | lrm: 0.82 | dt: 4731.85ms | tok/sec: 221,599 | mfu: 53.50 | epoch: 1 | total time: 21.88m
+step 00287 (59.13%) | loss: 0.866909 | lrm: 0.82 | dt: 4738.54ms | tok/sec: 221,286 | mfu: 53.42 | epoch: 1 | total time: 21.95m
+step 00288 (59.34%) | loss: 0.873856 | lrm: 0.81 | dt: 4743.50ms | tok/sec: 221,055 | mfu: 53.37 | epoch: 1 | total time: 22.03m
+step 00289 (59.55%) | loss: 0.884293 | lrm: 0.81 | dt: 4741.17ms | tok/sec: 221,164 | mfu: 53.39 | epoch: 1 | total time: 22.11m
+step 00290 (59.74%) | loss: 0.895371 | lrm: 0.81 | dt: 4749.50ms | tok/sec: 220,775 | mfu: 53.30 | epoch: 1 | total time: 22.19m
+step 00291 (59.95%) | loss: 0.902487 | lrm: 0.80 | dt: 4749.11ms | tok/sec: 220,794 | mfu: 53.30 | epoch: 1 | total time: 22.27m
+step 00292 (60.16%) | loss: 0.892067 | lrm: 0.80 | dt: 4746.69ms | tok/sec: 220,906 | mfu: 53.33 | epoch: 1 | total time: 22.35m
+step 00293 (60.37%) | loss: 0.878139 | lrm: 0.79 | dt: 4739.80ms | tok/sec: 221,227 | mfu: 53.41 | epoch: 1 | total time: 22.43m
+step 00294 (60.57%) | loss: 0.879843 | lrm: 0.79 | dt: 4751.57ms | tok/sec: 220,679 | mfu: 53.28 | epoch: 1 | total time: 22.51m
+step 00295 (60.78%) | loss: 0.873249 | lrm: 0.78 | dt: 4751.30ms | tok/sec: 220,692 | mfu: 53.28 | epoch: 1 | total time: 22.59m
+step 00296 (60.99%) | loss: 0.877334 | lrm: 0.78 | dt: 4746.75ms | tok/sec: 220,904 | mfu: 53.33 | epoch: 1 | total time: 22.67m
+step 00297 (61.21%) | loss: 0.879912 | lrm: 0.78 | dt: 4750.68ms | tok/sec: 220,721 | mfu: 53.29 | epoch: 1 | total time: 22.75m
+step 00298 (61.41%) | loss: 0.879458 | lrm: 0.77 | dt: 5379.23ms | tok/sec: 194,930 | mfu: 47.06 | epoch: 1 | total time: 22.83m
+step 00299 (61.62%) | loss: 0.881885 | lrm: 0.77 | dt: 7613.48ms | tok/sec: 137,726 | mfu: 33.25 | epoch: 1 | total time: 22.96m
+step 00300 (61.84%) | loss: 0.876579 | lrm: 0.76 | dt: 4704.97ms | tok/sec: 222,865 | mfu: 53.80 | epoch: 1 | total time: 23.04m
+step 00301 (62.04%) | loss: 0.887773 | lrm: 0.76 | dt: 4735.94ms | tok/sec: 221,408 | mfu: 53.45 | epoch: 1 | total time: 23.12m
+step 00302 (62.24%) | loss: 0.892241 | lrm: 0.76 | dt: 4736.89ms | tok/sec: 221,363 | mfu: 53.44 | epoch: 1 | total time: 23.20m
+step 00303 (62.45%) | loss: 0.883420 | lrm: 0.75 | dt: 4744.16ms | tok/sec: 221,024 | mfu: 53.36 | epoch: 1 | total time: 23.28m
+step 00304 (62.65%) | loss: 0.875234 | lrm: 0.75 | dt: 4735.82ms | tok/sec: 221,413 | mfu: 53.45 | epoch: 1 | total time: 23.36m
+step 00305 (62.86%) | loss: 0.892196 | lrm: 0.74 | dt: 4739.84ms | tok/sec: 221,225 | mfu: 53.41 | epoch: 1 | total time: 23.44m
+step 00306 (63.07%) | loss: 0.892840 | lrm: 0.74 | dt: 4735.92ms | tok/sec: 221,408 | mfu: 53.45 | epoch: 1 | total time: 23.51m
+step 00307 (63.27%) | loss: 0.890169 | lrm: 0.73 | dt: 4749.70ms | tok/sec: 220,766 | mfu: 53.30 | epoch: 1 | total time: 23.59m
+step 00308 (63.47%) | loss: 0.885736 | lrm: 0.73 | dt: 4735.60ms | tok/sec: 221,423 | mfu: 53.46 | epoch: 1 | total time: 23.67m
+step 00309 (63.68%) | loss: 0.885517 | lrm: 0.73 | dt: 4735.71ms | tok/sec: 221,418 | mfu: 53.45 | epoch: 1 | total time: 23.75m
+step 00310 (63.88%) | loss: 0.878462 | lrm: 0.72 | dt: 4738.11ms | tok/sec: 221,306 | mfu: 53.43 | epoch: 1 | total time: 23.83m
+step 00311 (64.09%) | loss: 0.898450 | lrm: 0.72 | dt: 4743.61ms | tok/sec: 221,050 | mfu: 53.37 | epoch: 1 | total time: 23.91m
+step 00312 (64.30%) | loss: 0.900140 | lrm: 0.71 | dt: 4749.80ms | tok/sec: 220,762 | mfu: 53.30 | epoch: 1 | total time: 23.99m
+step 00313 (64.51%) | loss: 0.902677 | lrm: 0.71 | dt: 4748.69ms | tok/sec: 220,813 | mfu: 53.31 | epoch: 1 | total time: 24.07m
+step 00314 (64.73%) | loss: 0.895236 | lrm: 0.71 | dt: 4742.09ms | tok/sec: 221,121 | mfu: 53.38 | epoch: 1 | total time: 24.15m
+step 00315 (64.93%) | loss: 0.885934 | lrm: 0.70 | dt: 4750.36ms | tok/sec: 220,736 | mfu: 53.29 | epoch: 1 | total time: 24.23m
+step 00316 (65.14%) | loss: 0.888548 | lrm: 0.70 | dt: 4731.47ms | tok/sec: 221,617 | mfu: 53.50 | epoch: 1 | total time: 24.30m
+step 00317 (65.34%) | loss: 0.885708 | lrm: 0.69 | dt: 4742.12ms | tok/sec: 221,119 | mfu: 53.38 | epoch: 1 | total time: 24.38m
+step 00318 (65.54%) | loss: 0.887776 | lrm: 0.69 | dt: 4741.33ms | tok/sec: 221,156 | mfu: 53.39 | epoch: 1 | total time: 24.46m
+step 00319 (65.74%) | loss: 0.889806 | lrm: 0.69 | dt: 4738.80ms | tok/sec: 221,274 | mfu: 53.42 | epoch: 1 | total time: 24.54m
+step 00320 (65.94%) | loss: 0.878680 | lrm: 0.68 | dt: 4742.95ms | tok/sec: 221,080 | mfu: 53.37 | epoch: 1 | total time: 24.62m
+step 00321 (66.16%) | loss: 0.887325 | lrm: 0.68 | dt: 4739.08ms | tok/sec: 221,261 | mfu: 53.42 | epoch: 1 | total time: 24.70m
+step 00322 (66.37%) | loss: 0.889954 | lrm: 0.67 | dt: 4739.47ms | tok/sec: 221,243 | mfu: 53.41 | epoch: 1 | total time: 24.78m
+step 00323 (66.59%) | loss: 0.884018 | lrm: 0.67 | dt: 4736.17ms | tok/sec: 221,397 | mfu: 53.45 | epoch: 1 | total time: 24.86m
+step 00324 (66.79%) | loss: 0.879526 | lrm: 0.66 | dt: 4741.44ms | tok/sec: 221,151 | mfu: 53.39 | epoch: 1 | total time: 24.94m
+step 00325 (66.99%) | loss: 0.883016 | lrm: 0.66 | dt: 4742.45ms | tok/sec: 221,104 | mfu: 53.38 | epoch: 1 | total time: 25.02m
+step 00326 (67.20%) | loss: 0.864299 | lrm: 0.66 | dt: 4744.06ms | tok/sec: 221,029 | mfu: 53.36 | epoch: 1 | total time: 25.09m
+step 00327 (67.39%) | loss: 0.877116 | lrm: 0.65 | dt: 4741.88ms | tok/sec: 221,130 | mfu: 53.38 | epoch: 1 | total time: 25.17m
+step 00328 (67.61%) | loss: 0.877202 | lrm: 0.65 | dt: 4747.84ms | tok/sec: 220,853 | mfu: 53.32 | epoch: 1 | total time: 25.25m
+step 00329 (67.81%) | loss: 0.872404 | lrm: 0.64 | dt: 4734.68ms | tok/sec: 221,467 | mfu: 53.47 | epoch: 1 | total time: 25.33m
+step 00330 (68.02%) | loss: 0.881136 | lrm: 0.64 | dt: 4741.51ms | tok/sec: 221,148 | mfu: 53.39 | epoch: 1 | total time: 25.41m
+step 00331 (68.23%) | loss: 0.882332 | lrm: 0.64 | dt: 4751.68ms | tok/sec: 220,674 | mfu: 53.27 | epoch: 1 | total time: 25.49m
+step 00332 (68.43%) | loss: 0.882531 | lrm: 0.63 | dt: 4744.76ms | tok/sec: 220,996 | mfu: 53.35 | epoch: 1 | total time: 25.57m
+step 00333 (68.64%) | loss: 0.875604 | lrm: 0.63 | dt: 4744.95ms | tok/sec: 220,987 | mfu: 53.35 | epoch: 1 | total time: 25.65m
+step 00334 (68.85%) | loss: 0.882194 | lrm: 0.62 | dt: 4741.69ms | tok/sec: 221,139 | mfu: 53.39 | epoch: 1 | total time: 25.73m
+step 00335 (69.05%) | loss: 0.878751 | lrm: 0.62 | dt: 4744.41ms | tok/sec: 221,012 | mfu: 53.36 | epoch: 1 | total time: 25.81m
+step 00336 (69.25%) | loss: 0.889956 | lrm: 0.61 | dt: 4740.20ms | tok/sec: 221,209 | mfu: 53.40 | epoch: 1 | total time: 25.89m
+step 00337 (69.47%) | loss: 0.891710 | lrm: 0.61 | dt: 4748.79ms | tok/sec: 220,809 | mfu: 53.31 | epoch: 1 | total time: 25.96m
+step 00338 (69.69%) | loss: 0.881748 | lrm: 0.61 | dt: 4745.10ms | tok/sec: 220,980 | mfu: 53.35 | epoch: 1 | total time: 26.04m
+step 00339 (69.89%) | loss: 0.869262 | lrm: 0.60 | dt: 4749.61ms | tok/sec: 220,771 | mfu: 53.30 | epoch: 1 | total time: 26.12m
+step 00340 (70.09%) | loss: 0.868310 | lrm: 0.60 | dt: 4746.16ms | tok/sec: 220,931 | mfu: 53.34 | epoch: 1 | total time: 26.20m
+step 00341 (70.29%) | loss: 0.872564 | lrm: 0.59 | dt: 4741.76ms | tok/sec: 221,136 | mfu: 53.39 | epoch: 1 | total time: 26.28m
+step 00342 (70.50%) | loss: 0.882581 | lrm: 0.59 | dt: 4744.23ms | tok/sec: 221,021 | mfu: 53.36 | epoch: 1 | total time: 26.36m
+step 00343 (70.71%) | loss: 0.887055 | lrm: 0.59 | dt: 4749.41ms | tok/sec: 220,780 | mfu: 53.30 | epoch: 1 | total time: 26.44m
+step 00344 (70.92%) | loss: 0.886502 | lrm: 0.58 | dt: 4748.60ms | tok/sec: 220,817 | mfu: 53.31 | epoch: 1 | total time: 26.52m
+step 00345 (71.13%) | loss: 0.891780 | lrm: 0.58 | dt: 4740.05ms | tok/sec: 221,216 | mfu: 53.41 | epoch: 1 | total time: 26.60m
+step 00346 (71.34%) | loss: 0.887194 | lrm: 0.57 | dt: 4738.55ms | tok/sec: 221,286 | mfu: 53.42 | epoch: 1 | total time: 26.68m
+step 00347 (71.55%) | loss: 0.878793 | lrm: 0.57 | dt: 4748.81ms | tok/sec: 220,808 | mfu: 53.31 | epoch: 1 | total time: 26.76m
+step 00348 (71.75%) | loss: 0.868274 | lrm: 0.57 | dt: 4738.29ms | tok/sec: 221,298 | mfu: 53.43 | epoch: 1 | total time: 26.83m
+step 00349 (71.95%) | loss: 0.868648 | lrm: 0.56 | dt: 4745.90ms | tok/sec: 220,943 | mfu: 53.34 | epoch: 1 | total time: 26.91m
+step 00350 (72.16%) | loss: 0.871971 | lrm: 0.56 | dt: 4748.90ms | tok/sec: 220,803 | mfu: 53.31 | epoch: 1 | total time: 26.99m
+step 00351 (72.37%) | loss: 0.875305 | lrm: 0.55 | dt: 4742.70ms | tok/sec: 221,092 | mfu: 53.38 | epoch: 1 | total time: 27.07m
+step 00352 (72.58%) | loss: 0.867514 | lrm: 0.55 | dt: 4737.84ms | tok/sec: 221,319 | mfu: 53.43 | epoch: 1 | total time: 27.15m
+step 00353 (72.78%) | loss: 0.853961 | lrm: 0.54 | dt: 4742.26ms | tok/sec: 221,113 | mfu: 53.38 | epoch: 1 | total time: 27.23m
+step 00354 (72.98%) | loss: 0.868939 | lrm: 0.54 | dt: 4746.24ms | tok/sec: 220,927 | mfu: 53.34 | epoch: 1 | total time: 27.31m
+step 00355 (73.19%) | loss: 0.867707 | lrm: 0.54 | dt: 4737.32ms | tok/sec: 221,343 | mfu: 53.44 | epoch: 1 | total time: 27.39m
+step 00356 (73.42%) | loss: 0.861642 | lrm: 0.53 | dt: 4747.03ms | tok/sec: 220,890 | mfu: 53.33 | epoch: 1 | total time: 27.47m
+step 00357 (73.62%) | loss: 0.871607 | lrm: 0.53 | dt: 4738.55ms | tok/sec: 221,286 | mfu: 53.42 | epoch: 1 | total time: 27.55m
+step 00358 (73.82%) | loss: 0.869152 | lrm: 0.52 | dt: 4739.10ms | tok/sec: 221,260 | mfu: 53.42 | epoch: 1 | total time: 27.62m
+step 00359 (74.03%) | loss: 0.863768 | lrm: 0.52 | dt: 4740.32ms | tok/sec: 221,203 | mfu: 53.40 | epoch: 1 | total time: 27.70m
+step 00360 (74.23%) | loss: 0.874444 | lrm: 0.52 | dt: 4747.26ms | tok/sec: 220,880 | mfu: 53.32 | epoch: 1 | total time: 27.78m
+step 00361 (74.43%) | loss: 0.876224 | lrm: 0.51 | dt: 4738.03ms | tok/sec: 221,310 | mfu: 53.43 | epoch: 1 | total time: 27.86m
+step 00362 (74.63%) | loss: 0.883482 | lrm: 0.51 | dt: 4751.07ms | tok/sec: 220,703 | mfu: 53.28 | epoch: 1 | total time: 27.94m
+step 00363 (74.83%) | loss: 0.874004 | lrm: 0.50 | dt: 4742.90ms | tok/sec: 221,083 | mfu: 53.37 | epoch: 1 | total time: 28.02m
+step 00364 (75.03%) | loss: 0.870801 | lrm: 0.50 | dt: 4739.54ms | tok/sec: 221,240 | mfu: 53.41 | epoch: 1 | total time: 28.10m
+step 00365 (75.23%) | loss: 0.870371 | lrm: 0.50 | dt: 4732.65ms | tok/sec: 221,561 | mfu: 53.49 | epoch: 1 | total time: 28.18m
+step 00366 (75.43%) | loss: 0.867370 | lrm: 0.49 | dt: 4740.81ms | tok/sec: 221,180 | mfu: 53.40 | epoch: 1 | total time: 28.26m
+step 00367 (75.64%) | loss: 0.873106 | lrm: 0.49 | dt: 4744.44ms | tok/sec: 221,011 | mfu: 53.36 | epoch: 1 | total time: 28.34m
+step 00368 (75.84%) | loss: 0.869983 | lrm: 0.48 | dt: 4749.97ms | tok/sec: 220,754 | mfu: 53.29 | epoch: 1 | total time: 28.42m
+step 00369 (76.05%) | loss: 0.858721 | lrm: 0.48 | dt: 4738.01ms | tok/sec: 221,311 | mfu: 53.43 | epoch: 1 | total time: 28.49m
+step 00370 (76.26%) | loss: 0.851898 | lrm: 0.47 | dt: 4744.63ms | tok/sec: 221,002 | mfu: 53.35 | epoch: 1 | total time: 28.57m
+step 00371 (76.44%) | loss: 0.837831 | lrm: 0.47 | dt: 4744.37ms | tok/sec: 221,014 | mfu: 53.36 | epoch: 1 | total time: 28.65m
+step 00372 (76.65%) | loss: 0.831464 | lrm: 0.47 | dt: 4741.59ms | tok/sec: 221,144 | mfu: 53.39 | epoch: 1 | total time: 28.73m
+step 00373 (76.85%) | loss: 0.825888 | lrm: 0.46 | dt: 4748.54ms | tok/sec: 220,820 | mfu: 53.31 | epoch: 1 | total time: 28.81m
+step 00374 (77.06%) | loss: 0.841928 | lrm: 0.46 | dt: 4737.64ms | tok/sec: 221,328 | mfu: 53.43 | epoch: 1 | total time: 28.89m
+step 00375 (77.27%) | loss: 0.843248 | lrm: 0.45 | dt: 4745.78ms | tok/sec: 220,949 | mfu: 53.34 | epoch: 1 | total time: 28.97m
+step 00376 (77.48%) | loss: 0.841615 | lrm: 0.45 | dt: 4734.27ms | tok/sec: 221,486 | mfu: 53.47 | epoch: 1 | total time: 29.05m
+step 00377 (77.69%) | loss: 0.837823 | lrm: 0.45 | dt: 4739.01ms | tok/sec: 221,264 | mfu: 53.42 | epoch: 1 | total time: 29.13m
+step 00378 (77.89%) | loss: 0.831056 | lrm: 0.44 | dt: 4743.21ms | tok/sec: 221,068 | mfu: 53.37 | epoch: 1 | total time: 29.21m
+step 00379 (78.09%) | loss: 0.826262 | lrm: 0.44 | dt: 4745.45ms | tok/sec: 220,964 | mfu: 53.34 | epoch: 1 | total time: 29.28m
+step 00380 (78.30%) | loss: 0.813968 | lrm: 0.43 | dt: 4743.81ms | tok/sec: 221,040 | mfu: 53.36 | epoch: 1 | total time: 29.36m
+step 00381 (78.50%) | loss: 0.815197 | lrm: 0.43 | dt: 4756.51ms | tok/sec: 220,450 | mfu: 53.22 | epoch: 1 | total time: 29.44m
+step 00382 (78.70%) | loss: 0.793266 | lrm: 0.43 | dt: 4742.50ms | tok/sec: 221,101 | mfu: 53.38 | epoch: 1 | total time: 29.52m
+step 00383 (78.92%) | loss: 0.794685 | lrm: 0.42 | dt: 4748.61ms | tok/sec: 220,817 | mfu: 53.31 | epoch: 1 | total time: 29.60m
+step 00384 (79.12%) | loss: 0.798315 | lrm: 0.42 | dt: 4750.48ms | tok/sec: 220,730 | mfu: 53.29 | epoch: 1 | total time: 29.68m
+step 00385 (79.32%) | loss: 0.812398 | lrm: 0.41 | dt: 4737.00ms | tok/sec: 221,358 | mfu: 53.44 | epoch: 1 | total time: 29.76m
+step 00386 (79.53%) | loss: 0.807776 | lrm: 0.41 | dt: 4749.07ms | tok/sec: 220,796 | mfu: 53.30 | epoch: 1 | total time: 29.84m
+step 00387 (79.73%) | loss: 0.808938 | lrm: 0.41 | dt: 4751.60ms | tok/sec: 220,678 | mfu: 53.28 | epoch: 1 | total time: 29.92m
+step 00388 (79.93%) | loss: 0.812290 | lrm: 0.40 | dt: 4746.50ms | tok/sec: 220,915 | mfu: 53.33 | epoch: 1 | total time: 30.00m
+step 00389 (80.13%) | loss: 0.813457 | lrm: 0.40 | dt: 4745.09ms | tok/sec: 220,981 | mfu: 53.35 | epoch: 1 | total time: 30.08m
+step 00390 (80.35%) | loss: 0.813215 | lrm: 0.39 | dt: 4746.97ms | tok/sec: 220,893 | mfu: 53.33 | epoch: 1 | total time: 30.15m
+step 00391 (80.55%) | loss: 0.835719 | lrm: 0.39 | dt: 4746.88ms | tok/sec: 220,898 | mfu: 53.33 | epoch: 1 | total time: 30.23m
+step 00392 (80.75%) | loss: 0.825567 | lrm: 0.39 | dt: 4746.72ms | tok/sec: 220,905 | mfu: 53.33 | epoch: 1 | total time: 30.31m
+step 00393 (80.96%) | loss: 0.826888 | lrm: 0.38 | dt: 4747.36ms | tok/sec: 220,875 | mfu: 53.32 | epoch: 1 | total time: 30.39m
+step 00394 (81.16%) | loss: 0.826859 | lrm: 0.38 | dt: 4739.11ms | tok/sec: 221,259 | mfu: 53.42 | epoch: 1 | total time: 30.47m
+step 00395 (81.36%) | loss: 0.834100 | lrm: 0.37 | dt: 4738.18ms | tok/sec: 221,303 | mfu: 53.43 | epoch: 1 | total time: 30.55m
+step 00396 (81.56%) | loss: 0.831260 | lrm: 0.37 | dt: 4747.07ms | tok/sec: 220,889 | mfu: 53.33 | epoch: 1 | total time: 30.63m
+step 00397 (81.76%) | loss: 0.831428 | lrm: 0.36 | dt: 4744.23ms | tok/sec: 221,021 | mfu: 53.36 | epoch: 1 | total time: 30.71m
+step 00398 (81.97%) | loss: 0.833101 | lrm: 0.36 | dt: 4743.20ms | tok/sec: 221,069 | mfu: 53.37 | epoch: 1 | total time: 30.79m
+step 00399 (82.17%) | loss: 0.834068 | lrm: 0.36 | dt: 4744.47ms | tok/sec: 221,010 | mfu: 53.36 | epoch: 1 | total time: 30.87m
+step 00400 (82.38%) | loss: 0.833026 | lrm: 0.35 | dt: 4739.43ms | tok/sec: 221,245 | mfu: 53.41 | epoch: 1 | total time: 30.95m
+Step 00400 | Validation bpb: 0.2804
+Final: 1440/2376 (60.61%)
+  ARC-Easy: 60.61%
+Final: 583/1172 (49.74%)
+  ARC-Challenge: 49.74%
+Final: 5106/14042 (36.36%)
+  MMLU: 36.36%
+[KRank 0 | 0/1 (0.00%)[KRank 0 | 0/2 (0.00%)[KRank 0 | 0/3 (0.00%)[KRank 0 | 0/4 (0.00%)[KRank 1 | 0/1 (0.00%)[KRank 0 | 0/5 (0.00%)[KRank 1 | 0/2 (0.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 0/6 (0.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 0/7 (0.00%)[KRank 1 | 0/5 (0.00%)[KRank 1 | 0/6 (0.00%)[KRank 0 | 0/8 (0.00%)[KRank 1 | 0/7 (0.00%)[KRank 0 | 0/9 (0.00%)[KRank 1 | 0/8 (0.00%)[KRank 0 | 0/10 (0.00%)[KRank 1 | 0/9 (0.00%)[KRank 0 | 0/11 (0.00%)[KRank 1 | 1/10 (10.00%)[KRank 1 | 1/11 (9.09%)[KRank 1 | 1/12 (8.33%)
+[KRank 0 | 0/12 (0.00%)
+==================================================
+Final: 1/24 (4.17%)
+  GSM8K: 4.17%
+[KRank 0 | 0/1 (0.00%)[KRank 1 | 0/1 (0.00%)[KRank 0 | 1/2 (50.00%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 1/3 (33.33%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 1/4 (25.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 1/5 (20.00%)[KRank 1 | 0/5 (0.00%)[KRank 0 | 1/6 (16.67%)[KRank 1 | 1/6 (16.67%)[KRank 1 | 1/7 (14.29%)[KRank 0 | 1/7 (14.29%)[KRank 1 | 2/8 (25.00%)[KRank 0 | 1/8 (12.50%)[KRank 1 | 2/9 (22.22%)[KRank 1 | 2/10 (20.00%)[KRank 1 | 2/11 (18.18%)[KRank 0 | 1/9 (11.11%)[KRank 0 | 1/10 (10.00%)[KRank 1 | 2/12 (16.67%)
+[KRank 0 | 1/11 (9.09%)[KRank 0 | 2/12 (16.67%)
+==================================================
+Final: 4/24 (16.67%)
+  HumanEval: 16.67%
+[KRank 1 | 1/1 (100.00%)[KRank 0 | 1/1 (100.00%)[KRank 0 | 2/2 (100.00%)[KRank 1 | 2/2 (100.00%)[KRank 0 | 3/3 (100.00%)[KRank 1 | 3/3 (100.00%)[KRank 0 | 4/4 (100.00%)[KRank 1 | 4/4 (100.00%)[KRank 0 | 5/5 (100.00%)[KRank 1 | 5/5 (100.00%)[KRank 0 | 6/6 (100.00%)[KRank 1 | 6/6 (100.00%)[KRank 0 | 7/7 (100.00%)[KRank 1 | 7/7 (100.00%)[KRank 0 | 8/8 (100.00%)[KRank 1 | 8/8 (100.00%)[KRank 0 | 8/9 (88.89%)[KRank 0 | 9/10 (90.00%)[KRank 1 | 9/9 (100.00%)[KRank 0 | 10/11 (90.91%)[KRank 1 | 10/10 (100.00%)[KRank 0 | 11/12 (91.67%)
+[KRank 1 | 11/11 (100.00%)[KRank 1 | 12/12 (100.00%)
+==================================================
+Final: 23/24 (95.83%)
+  SpellingBee: 95.83%
+Step 00400 | ChatCORE: 0.3538 | ChatCORE_cat: 0.3187
+step 00401 (82.58%) | loss: 0.818123 | lrm: 0.35 | dt: 4710.20ms | tok/sec: 222,618 | mfu: 53.74 | epoch: 1 | total time: 31.02m
+step 00402 (82.78%) | loss: 0.821016 | lrm: 0.34 | dt: 4700.58ms | tok/sec: 223,073 | mfu: 53.85 | epoch: 1 | total time: 31.10m
+step 00403 (82.99%) | loss: 0.828954 | lrm: 0.34 | dt: 4714.35ms | tok/sec: 222,422 | mfu: 53.70 | epoch: 1 | total time: 31.18m
+step 00404 (83.20%) | loss: 0.833363 | lrm: 0.34 | dt: 4716.89ms | tok/sec: 222,302 | mfu: 53.67 | epoch: 1 | total time: 31.26m
+step 00405 (83.40%) | loss: 0.835685 | lrm: 0.33 | dt: 4731.34ms | tok/sec: 221,623 | mfu: 53.50 | epoch: 1 | total time: 31.34m
+step 00406 (83.61%) | loss: 0.829992 | lrm: 0.33 | dt: 4721.40ms | tok/sec: 222,089 | mfu: 53.62 | epoch: 1 | total time: 31.42m
+step 00407 (83.81%) | loss: 0.841660 | lrm: 0.32 | dt: 4694.57ms | tok/sec: 223,359 | mfu: 53.92 | epoch: 1 | total time: 31.50m
+step 00408 (84.01%) | loss: 0.842205 | lrm: 0.32 | dt: 4704.14ms | tok/sec: 222,905 | mfu: 53.81 | epoch: 1 | total time: 31.57m
+step 00409 (84.22%) | loss: 0.866028 | lrm: 0.32 | dt: 4703.20ms | tok/sec: 222,949 | mfu: 53.82 | epoch: 1 | total time: 31.65m
+step 00410 (84.44%) | loss: 0.863715 | lrm: 0.31 | dt: 4702.36ms | tok/sec: 222,989 | mfu: 53.83 | epoch: 1 | total time: 31.73m
+step 00411 (84.64%) | loss: 0.855297 | lrm: 0.31 | dt: 4709.74ms | tok/sec: 222,639 | mfu: 53.75 | epoch: 1 | total time: 31.81m
+step 00412 (84.85%) | loss: 0.860570 | lrm: 0.30 | dt: 4711.39ms | tok/sec: 222,561 | mfu: 53.73 | epoch: 1 | total time: 31.89m
+step 00413 (85.06%) | loss: 0.852493 | lrm: 0.30 | dt: 4716.89ms | tok/sec: 222,302 | mfu: 53.67 | epoch: 1 | total time: 31.97m
+step 00414 (85.27%) | loss: 0.864658 | lrm: 0.29 | dt: 4724.47ms | tok/sec: 221,945 | mfu: 53.58 | epoch: 1 | total time: 32.04m
+step 00415 (85.48%) | loss: 0.857364 | lrm: 0.29 | dt: 4726.14ms | tok/sec: 221,867 | mfu: 53.56 | epoch: 1 | total time: 32.12m
+step 00416 (85.69%) | loss: 0.841697 | lrm: 0.29 | dt: 4724.97ms | tok/sec: 221,922 | mfu: 53.58 | epoch: 1 | total time: 32.20m
+step 00417 (85.90%) | loss: 0.848641 | lrm: 0.28 | dt: 4717.63ms | tok/sec: 222,267 | mfu: 53.66 | epoch: 1 | total time: 32.28m
+step 00418 (86.10%) | loss: 0.854730 | lrm: 0.28 | dt: 4729.53ms | tok/sec: 221,708 | mfu: 53.52 | epoch: 1 | total time: 32.36m
+step 00419 (86.30%) | loss: 0.845409 | lrm: 0.27 | dt: 4720.79ms | tok/sec: 222,118 | mfu: 53.62 | epoch: 1 | total time: 32.44m
+step 00420 (86.50%) | loss: 0.848889 | lrm: 0.27 | dt: 4723.87ms | tok/sec: 221,974 | mfu: 53.59 | epoch: 1 | total time: 32.52m
+step 00421 (86.70%) | loss: 0.847433 | lrm: 0.27 | dt: 4732.24ms | tok/sec: 221,581 | mfu: 53.49 | epoch: 1 | total time: 32.60m
+step 00422 (86.91%) | loss: 0.840969 | lrm: 0.26 | dt: 4725.85ms | tok/sec: 221,880 | mfu: 53.57 | epoch: 1 | total time: 32.67m
+step 00423 (87.10%) | loss: 0.838015 | lrm: 0.26 | dt: 4736.08ms | tok/sec: 221,401 | mfu: 53.45 | epoch: 1 | total time: 32.75m
+step 00424 (87.31%) | loss: 0.826775 | lrm: 0.25 | dt: 4729.01ms | tok/sec: 221,732 | mfu: 53.53 | epoch: 1 | total time: 32.83m
+step 00425 (87.52%) | loss: 0.816851 | lrm: 0.25 | dt: 4723.30ms | tok/sec: 222,000 | mfu: 53.59 | epoch: 1 | total time: 32.91m
+step 00426 (87.73%) | loss: 0.802344 | lrm: 0.25 | dt: 4721.70ms | tok/sec: 222,076 | mfu: 53.61 | epoch: 1 | total time: 32.99m
+step 00427 (87.93%) | loss: 0.807567 | lrm: 0.24 | dt: 4724.60ms | tok/sec: 221,939 | mfu: 53.58 | epoch: 1 | total time: 33.07m
+step 00428 (88.14%) | loss: 0.821617 | lrm: 0.24 | dt: 4726.97ms | tok/sec: 221,828 | mfu: 53.55 | epoch: 1 | total time: 33.15m
+step 00429 (88.35%) | loss: 0.811921 | lrm: 0.23 | dt: 4719.55ms | tok/sec: 222,176 | mfu: 53.64 | epoch: 1 | total time: 33.23m
+step 00430 (88.56%) | loss: 0.807313 | lrm: 0.23 | dt: 4738.46ms | tok/sec: 221,290 | mfu: 53.42 | epoch: 1 | total time: 33.31m
+step 00431 (88.76%) | loss: 0.809796 | lrm: 0.22 | dt: 4730.29ms | tok/sec: 221,672 | mfu: 53.52 | epoch: 1 | total time: 33.38m
+step 00432 (88.96%) | loss: 0.806771 | lrm: 0.22 | dt: 4742.08ms | tok/sec: 221,121 | mfu: 53.38 | epoch: 1 | total time: 33.46m
+step 00433 (89.16%) | loss: 0.802590 | lrm: 0.22 | dt: 4727.89ms | tok/sec: 221,785 | mfu: 53.54 | epoch: 1 | total time: 33.54m
+step 00434 (89.36%) | loss: 0.817208 | lrm: 0.21 | dt: 4732.25ms | tok/sec: 221,581 | mfu: 53.49 | epoch: 1 | total time: 33.62m
+step 00435 (89.56%) | loss: 0.829533 | lrm: 0.21 | dt: 4720.40ms | tok/sec: 222,137 | mfu: 53.63 | epoch: 1 | total time: 33.70m
+step 00436 (89.76%) | loss: 0.824736 | lrm: 0.20 | dt: 4743.92ms | tok/sec: 221,035 | mfu: 53.36 | epoch: 1 | total time: 33.78m
+step 00437 (89.97%) | loss: 0.824087 | lrm: 0.20 | dt: 4742.71ms | tok/sec: 221,092 | mfu: 53.38 | epoch: 1 | total time: 33.86m
+step 00438 (90.18%) | loss: 0.823987 | lrm: 0.20 | dt: 4722.25ms | tok/sec: 222,050 | mfu: 53.61 | epoch: 1 | total time: 33.94m
+step 00439 (90.39%) | loss: 0.828695 | lrm: 0.19 | dt: 4727.20ms | tok/sec: 221,817 | mfu: 53.55 | epoch: 1 | total time: 34.01m
+step 00440 (90.60%) | loss: 0.832728 | lrm: 0.19 | dt: 4733.55ms | tok/sec: 221,520 | mfu: 53.48 | epoch: 1 | total time: 34.09m
+step 00441 (90.79%) | loss: 0.826408 | lrm: 0.18 | dt: 4743.80ms | tok/sec: 221,041 | mfu: 53.36 | epoch: 1 | total time: 34.17m
+step 00442 (90.99%) | loss: 0.824368 | lrm: 0.18 | dt: 4750.39ms | tok/sec: 220,734 | mfu: 53.29 | epoch: 1 | total time: 34.25m
+step 00443 (91.20%) | loss: 0.824785 | lrm: 0.18 | dt: 4741.65ms | tok/sec: 221,141 | mfu: 53.39 | epoch: 1 | total time: 34.33m
+step 00444 (91.40%) | loss: 0.844929 | lrm: 0.17 | dt: 4747.16ms | tok/sec: 220,884 | mfu: 53.33 | epoch: 1 | total time: 34.41m
+step 00445 (91.61%) | loss: 0.847650 | lrm: 0.17 | dt: 4744.10ms | tok/sec: 221,027 | mfu: 53.36 | epoch: 1 | total time: 34.49m
+step 00446 (91.81%) | loss: 0.852414 | lrm: 0.16 | dt: 4753.29ms | tok/sec: 220,600 | mfu: 53.26 | epoch: 1 | total time: 34.57m
+step 00447 (92.01%) | loss: 0.848019 | lrm: 0.16 | dt: 4737.74ms | tok/sec: 221,323 | mfu: 53.43 | epoch: 1 | total time: 34.65m
+step 00448 (92.22%) | loss: 0.855731 | lrm: 0.16 | dt: 4742.00ms | tok/sec: 221,125 | mfu: 53.38 | epoch: 1 | total time: 34.73m
+step 00449 (92.43%) | loss: 0.845334 | lrm: 0.15 | dt: 4755.82ms | tok/sec: 220,482 | mfu: 53.23 | epoch: 1 | total time: 34.81m
+step 00450 (92.64%) | loss: 0.838057 | lrm: 0.15 | dt: 4741.63ms | tok/sec: 221,142 | mfu: 53.39 | epoch: 1 | total time: 34.88m
+step 00451 (92.85%) | loss: 0.833139 | lrm: 0.14 | dt: 4737.43ms | tok/sec: 221,338 | mfu: 53.43 | epoch: 1 | total time: 34.96m
+step 00452 (93.05%) | loss: 0.819612 | lrm: 0.14 | dt: 4741.71ms | tok/sec: 221,138 | mfu: 53.39 | epoch: 1 | total time: 35.04m
+step 00453 (93.25%) | loss: 0.835539 | lrm: 0.13 | dt: 4744.76ms | tok/sec: 220,996 | mfu: 53.35 | epoch: 1 | total time: 35.12m
+step 00454 (93.47%) | loss: 0.835666 | lrm: 0.13 | dt: 4746.71ms | tok/sec: 220,905 | mfu: 53.33 | epoch: 1 | total time: 35.20m
+step 00455 (93.68%) | loss: 0.839792 | lrm: 0.13 | dt: 4740.08ms | tok/sec: 221,215 | mfu: 53.41 | epoch: 1 | total time: 35.28m
+step 00456 (93.88%) | loss: 0.826412 | lrm: 0.12 | dt: 4737.17ms | tok/sec: 221,350 | mfu: 53.44 | epoch: 1 | total time: 35.36m
+step 00457 (94.09%) | loss: 0.822326 | lrm: 0.12 | dt: 4744.13ms | tok/sec: 221,026 | mfu: 53.36 | epoch: 1 | total time: 35.44m
+step 00458 (94.29%) | loss: 0.830304 | lrm: 0.11 | dt: 4752.04ms | tok/sec: 220,657 | mfu: 53.27 | epoch: 1 | total time: 35.52m
+step 00459 (94.50%) | loss: 0.829150 | lrm: 0.11 | dt: 4745.60ms | tok/sec: 220,957 | mfu: 53.34 | epoch: 1 | total time: 35.60m
+step 00460 (94.70%) | loss: 0.836091 | lrm: 0.11 | dt: 4749.75ms | tok/sec: 220,764 | mfu: 53.30 | epoch: 1 | total time: 35.68m
+step 00461 (94.92%) | loss: 0.818169 | lrm: 0.10 | dt: 4747.37ms | tok/sec: 220,875 | mfu: 53.32 | epoch: 1 | total time: 35.75m
+step 00462 (95.13%) | loss: 0.821136 | lrm: 0.10 | dt: 4738.61ms | tok/sec: 221,283 | mfu: 53.42 | epoch: 1 | total time: 35.83m
+step 00463 (95.33%) | loss: 0.826231 | lrm: 0.09 | dt: 4746.21ms | tok/sec: 220,929 | mfu: 53.34 | epoch: 1 | total time: 35.91m
+step 00464 (95.55%) | loss: 0.826368 | lrm: 0.09 | dt: 4749.73ms | tok/sec: 220,765 | mfu: 53.30 | epoch: 1 | total time: 35.99m
+step 00465 (95.74%) | loss: 0.818022 | lrm: 0.09 | dt: 4743.18ms | tok/sec: 221,070 | mfu: 53.37 | epoch: 1 | total time: 36.07m
+step 00466 (95.95%) | loss: 0.812300 | lrm: 0.08 | dt: 4754.14ms | tok/sec: 220,560 | mfu: 53.25 | epoch: 1 | total time: 36.15m
+step 00467 (96.16%) | loss: 0.804733 | lrm: 0.08 | dt: 4738.99ms | tok/sec: 221,265 | mfu: 53.42 | epoch: 1 | total time: 36.23m
+step 00468 (96.36%) | loss: 0.814928 | lrm: 0.07 | dt: 4747.26ms | tok/sec: 220,880 | mfu: 53.32 | epoch: 1 | total time: 36.31m
+step 00469 (96.58%) | loss: 0.818502 | lrm: 0.07 | dt: 4750.32ms | tok/sec: 220,737 | mfu: 53.29 | epoch: 1 | total time: 36.39m
+step 00470 (96.79%) | loss: 0.820513 | lrm: 0.06 | dt: 4749.24ms | tok/sec: 220,788 | mfu: 53.30 | epoch: 1 | total time: 36.47m
+step 00471 (96.99%) | loss: 0.823471 | lrm: 0.06 | dt: 4746.72ms | tok/sec: 220,905 | mfu: 53.33 | epoch: 1 | total time: 36.55m
+step 00472 (97.20%) | loss: 0.810923 | lrm: 0.06 | dt: 4743.44ms | tok/sec: 221,058 | mfu: 53.37 | epoch: 1 | total time: 36.62m
+step 00473 (97.42%) | loss: 0.811539 | lrm: 0.05 | dt: 4755.74ms | tok/sec: 220,486 | mfu: 53.23 | epoch: 1 | total time: 36.70m
+step 00474 (97.62%) | loss: 0.813768 | lrm: 0.05 | dt: 4748.26ms | tok/sec: 220,833 | mfu: 53.31 | epoch: 1 | total time: 36.78m
+step 00475 (97.83%) | loss: 0.820594 | lrm: 0.04 | dt: 4746.29ms | tok/sec: 220,925 | mfu: 53.34 | epoch: 1 | total time: 36.86m
+step 00476 (98.04%) | loss: 0.821877 | lrm: 0.04 | dt: 4744.74ms | tok/sec: 220,997 | mfu: 53.35 | epoch: 1 | total time: 36.94m
+step 00477 (98.23%) | loss: 0.825808 | lrm: 0.04 | dt: 4746.65ms | tok/sec: 220,908 | mfu: 53.33 | epoch: 1 | total time: 37.02m
+step 00478 (98.43%) | loss: 0.823379 | lrm: 0.03 | dt: 4743.51ms | tok/sec: 221,054 | mfu: 53.37 | epoch: 1 | total time: 37.10m
+step 00479 (98.62%) | loss: 0.829107 | lrm: 0.03 | dt: 4752.06ms | tok/sec: 220,657 | mfu: 53.27 | epoch: 1 | total time: 37.18m
+step 00480 (98.82%) | loss: 0.831057 | lrm: 0.02 | dt: 4750.86ms | tok/sec: 220,713 | mfu: 53.28 | epoch: 1 | total time: 37.26m
+step 00481 (99.04%) | loss: 0.835802 | lrm: 0.02 | dt: 4751.53ms | tok/sec: 220,681 | mfu: 53.28 | epoch: 1 | total time: 37.34m
+step 00482 (99.24%) | loss: 0.835162 | lrm: 0.02 | dt: 4744.81ms | tok/sec: 220,994 | mfu: 53.35 | epoch: 1 | total time: 37.42m
+step 00483 (99.45%) | loss: 0.827434 | lrm: 0.01 | dt: 4754.89ms | tok/sec: 220,525 | mfu: 53.24 | epoch: 1 | total time: 37.50m
+step 00484 (99.66%) | loss: 0.837490 | lrm: 0.01 | dt: 4749.70ms | tok/sec: 220,766 | mfu: 53.30 | epoch: 1 | total time: 37.57m
+step 00485 (99.86%) | loss: 0.837631 | lrm: 0.00 | dt: 4750.61ms | tok/sec: 220,724 | mfu: 53.29 | epoch: 1 | total time: 37.65m
+Step 00485 | Validation bpb: 0.2733
+Final: 1447/2376 (60.90%)
+  ARC-Easy: 60.90%
+Final: 596/1172 (50.85%)
+  ARC-Challenge: 50.85%
+Final: 5165/14042 (36.78%)
+  MMLU: 36.78%
+[KRank 1 | 0/1 (0.00%)[KRank 0 | 0/1 (0.00%)[KRank 0 | 1/2 (50.00%)[KRank 0 | 1/3 (33.33%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 1/4 (25.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 1/5 (20.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 1/6 (16.67%)[KRank 1 | 0/5 (0.00%)[KRank 1 | 1/6 (16.67%)[KRank 0 | 1/7 (14.29%)[KRank 1 | 1/7 (14.29%)[KRank 0 | 1/8 (12.50%)[KRank 1 | 1/8 (12.50%)[KRank 1 | 1/9 (11.11%)[KRank 1 | 2/10 (20.00%)[KRank 0 | 1/9 (11.11%)[KRank 0 | 1/10 (10.00%)[KRank 1 | 2/11 (18.18%)[KRank 0 | 2/11 (18.18%)[KRank 1 | 2/12 (16.67%)
+[KRank 0 | 2/12 (16.67%)
+==================================================
+Final: 4/24 (16.67%)
+  GSM8K: 16.67%
+[KRank 0 | 0/1 (0.00%)[KRank 0 | 1/2 (50.00%)[KRank 1 | 0/1 (0.00%)[KRank 0 | 1/3 (33.33%)[KRank 0 | 1/4 (25.00%)[KRank 1 | 0/2 (0.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 1/5 (20.00%)[KRank 1 | 0/4 (0.00%)[KRank 1 | 0/5 (0.00%)[KRank 0 | 1/6 (16.67%)[KRank 1 | 0/6 (0.00%)[KRank 0 | 1/7 (14.29%)[KRank 1 | 0/7 (0.00%)[KRank 0 | 1/8 (12.50%)[KRank 1 | 1/8 (12.50%)[KRank 0 | 1/9 (11.11%)[KRank 1 | 1/9 (11.11%)[KRank 0 | 1/10 (10.00%)[KRank 1 | 1/10 (10.00%)[KRank 0 | 1/11 (9.09%)[KRank 1 | 1/11 (9.09%)[KRank 0 | 1/12 (8.33%)
+[KRank 1 | 1/12 (8.33%)
+==================================================
+Final: 2/24 (8.33%)
+  HumanEval: 8.33%
+[KRank 1 | 1/1 (100.00%)[KRank 0 | 1/1 (100.00%)[KRank 0 | 2/2 (100.00%)[KRank 1 | 2/2 (100.00%)[KRank 0 | 3/3 (100.00%)[KRank 1 | 3/3 (100.00%)[KRank 0 | 4/4 (100.00%)[KRank 1 | 4/4 (100.00%)[KRank 0 | 5/5 (100.00%)[KRank 1 | 5/5 (100.00%)[KRank 0 | 6/6 (100.00%)[KRank 1 | 6/6 (100.00%)[KRank 0 | 7/7 (100.00%)[KRank 1 | 7/7 (100.00%)[KRank 0 | 8/8 (100.00%)[KRank 1 | 8/8 (100.00%)[KRank 0 | 8/9 (88.89%)[KRank 0 | 9/10 (90.00%)[KRank 1 | 9/9 (100.00%)[KRank 0 | 10/11 (90.91%)[KRank 1 | 10/10 (100.00%)[KRank 0 | 11/12 (91.67%)
+[KRank 1 | 11/11 (100.00%)[KRank 1 | 12/12 (100.00%)
+==================================================
+Final: 23/24 (95.83%)
+  SpellingBee: 95.83%
+Step 00485 | ChatCORE: 0.3648 | ChatCORE_cat: 0.3268
+Peak memory usage: 64821.66MiB
+Total training time: 37.65m
+Minimum validation bpb: 0.2733
+Autodetected device type: cuda
+Final: 1441/2376 (60.65%)
+ARC-Easy accuracy: 60.65%
+Final: 596/1172 (50.85%)
+ARC-Challenge accuracy: 50.85%
+Final: 5170/14042 (36.82%)
+MMLU accuracy: 36.82%
+[KRank 1 | 0/1 (0.00%)[KRank 0 | 0/1 (0.00%)[KRank 0 | 1/2 (50.00%)[KRank 0 | 1/3 (33.33%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 1/4 (25.00%)[KRank 1 | 0/3 (0.00%)[KRank 0 | 1/5 (20.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 1/6 (16.67%)[KRank 0 | 1/7 (14.29%)[KRank 0 | 1/8 (12.50%)[KRank 1 | 0/5 (0.00%)[KRank 1 | 1/6 (16.67%)[KRank 0 | 1/9 (11.11%)[KRank 0 | 1/10 (10.00%)[KRank 1 | 1/7 (14.29%)[KRank 0 | 2/11 (18.18%)[KRank 1 | 1/8 (12.50%)[KRank 1 | 1/9 (11.11%)[KRank 0 | 2/12 (16.67%)[KRank 1 | 2/10 (20.00%)[KRank 0 | 2/13 (15.38%)[KRank 1 | 2/11 (18.18%)[KRank 0 | 2/14 (14.29%)[KRank 1 | 2/12 (16.67%)[KRank 0 | 2/15 (13.33%)[KRank 1 | 2/13 (15.38%)[KRank 0 | 2/16 (12.50%)[KRank 1 | 2/14 (14.29%)[KRank 0 | 2/17 (11.76%)[KRank 1 | 2/15 (13.33%)[KRank 0 | 2/18 (11.11%)[KRank 0 | 2/19 (10.53%)[KRank 1 | 2/16 (12.50%)[KRank 1 | 2/17 (11.76%)[KRank 0 | 2/20 (10.00%)[KRank 1 | 2/18 (11.11%)[KRank 0 | 2/21 (9.52%)[KRank 0 | 2/22 (9.09%)[KRank 0 | 2/23 (8.70%)[KRank 0 | 2/24 (8.33%)[KRank 1 | 2/19 (10.53%)[KRank 0 | 2/25 (8.00%)[KRank 1 | 2/20 (10.00%)[KRank 0 | 2/26 (7.69%)[KRank 0 | 2/27 (7.41%)[KRank 1 | 2/21 (9.52%)[KRank 0 | 2/28 (7.14%)[KRank 1 | 2/22 (9.09%)[KRank 0 | 2/29 (6.90%)[KRank 0 | 2/30 (6.67%)[KRank 1 | 3/23 (13.04%)[KRank 1 | 3/24 (12.50%)[KRank 0 | 2/31 (6.45%)[KRank 0 | 2/32 (6.25%)[KRank 1 | 3/25 (12.00%)[KRank 0 | 2/33 (6.06%)[KRank 0 | 2/34 (5.88%)[KRank 1 | 3/26 (11.54%)[KRank 1 | 3/27 (11.11%)[KRank 0 | 2/35 (5.71%)[KRank 1 | 3/28 (10.71%)[KRank 0 | 2/36 (5.56%)[KRank 1 | 3/29 (10.34%)[KRank 0 | 2/37 (5.41%)[KRank 1 | 3/30 (10.00%)[KRank 0 | 2/38 (5.26%)[KRank 0 | 2/39 (5.13%)[KRank 1 | 3/31 (9.68%)[KRank 0 | 2/40 (5.00%)[KRank 1 | 3/32 (9.38%)[KRank 0 | 2/41 (4.88%)[KRank 1 | 3/33 (9.09%)[KRank 0 | 2/42 (4.76%)[KRank 0 | 2/43 (4.65%)[KRank 1 | 3/34 (8.82%)[KRank 1 | 3/35 (8.57%)[KRank 0 | 2/44 (4.55%)[KRank 0 | 2/45 (4.44%)[KRank 1 | 3/36 (8.33%)[KRank 0 | 2/46 (4.35%)[KRank 1 | 4/37 (10.81%)[KRank 0 | 3/47 (6.38%)[KRank 1 | 4/38 (10.53%)[KRank 0 | 3/48 (6.25%)[KRank 1 | 5/39 (12.82%)[KRank 1 | 5/40 (12.50%)[KRank 0 | 3/49 (6.12%)[KRank 0 | 4/50 (8.00%)[KRank 1 | 5/41 (12.20%)[KRank 0 | 4/51 (7.84%)[KRank 1 | 5/42 (11.90%)[KRank 0 | 4/52 (7.69%)[KRank 1 | 6/43 (13.95%)[KRank 0 | 5/53 (9.43%)[KRank 0 | 5/54 (9.26%)[KRank 1 | 6/44 (13.64%)[KRank 1 | 6/45 (13.33%)[KRank 0 | 5/55 (9.09%)[KRank 1 | 6/46 (13.04%)[KRank 0 | 5/56 (8.93%)[KRank 1 | 6/47 (12.77%)[KRank 0 | 5/57 (8.77%)[KRank 0 | 5/58 (8.62%)[KRank 0 | 5/59 (8.47%)[KRank 0 | 5/60 (8.33%)[KRank 1 | 6/48 (12.50%)[KRank 0 | 5/61 (8.20%)[KRank 1 | 6/49 (12.24%)[KRank 0 | 5/62 (8.06%)[KRank 1 | 6/50 (12.00%)[KRank 0 | 5/63 (7.94%)[KRank 0 | 5/64 (7.81%)[KRank 1 | 6/51 (11.76%)[KRank 0 | 5/65 (7.69%)[KRank 1 | 6/52 (11.54%)[KRank 0 | 5/66 (7.58%)[KRank 0 | 5/67 (7.46%)[KRank 1 | 6/53 (11.32%)[KRank 0 | 5/68 (7.35%)[KRank 1 | 6/54 (11.11%)[KRank 0 | 5/69 (7.25%)[KRank 1 | 6/55 (10.91%)[KRank 0 | 5/70 (7.14%)[KRank 0 | 6/71 (8.45%)[KRank 1 | 6/56 (10.71%)[KRank 0 | 7/72 (9.72%)[KRank 1 | 6/57 (10.53%)[KRank 0 | 7/73 (9.59%)[KRank 1 | 7/58 (12.07%)[KRank 0 | 7/74 (9.46%)[KRank 1 | 7/59 (11.86%)[KRank 0 | 7/75 (9.33%)[KRank 1 | 7/60 (11.67%)[KRank 0 | 7/76 (9.21%)[KRank 0 | 7/77 (9.09%)[KRank 1 | 7/61 (11.48%)[KRank 0 | 8/78 (10.26%)[KRank 1 | 7/62 (11.29%)[KRank 1 | 8/63 (12.70%)[KRank 0 | 8/79 (10.13%)[KRank 1 | 8/64 (12.50%)[KRank 0 | 8/80 (10.00%)[KRank 0 | 8/81 (9.88%)[KRank 1 | 8/65 (12.31%)[KRank 0 | 8/82 (9.76%)[KRank 0 | 8/83 (9.64%)[KRank 1 | 8/66 (12.12%)[KRank 1 | 8/67 (11.94%)[KRank 0 | 8/84 (9.52%)[KRank 1 | 8/68 (11.76%)[KRank 1 | 8/69 (11.59%)[KRank 0 | 8/85 (9.41%)[KRank 1 | 9/70 (12.86%)[KRank 0 | 8/86 (9.30%)[KRank 1 | 9/71 (12.68%)[KRank 0 | 8/87 (9.20%)[KRank 1 | 9/72 (12.50%)[KRank 0 | 8/88 (9.09%)[KRank 1 | 9/73 (12.33%)[KRank 0 | 8/89 (8.99%)[KRank 1 | 9/74 (12.16%)[KRank 1 | 9/75 (12.00%)[KRank 0 | 8/90 (8.89%)[KRank 0 | 8/91 (8.79%)[KRank 1 | 9/76 (11.84%)[KRank 0 | 8/92 (8.70%)[KRank 0 | 8/93 (8.60%)[KRank 0 | 8/94 (8.51%)[KRank 1 | 9/77 (11.69%)[KRank 0 | 9/95 (9.47%)[KRank 0 | 9/96 (9.38%)[KRank 0 | 9/97 (9.28%)[KRank 1 | 9/78 (11.54%)[KRank 1 | 9/79 (11.39%)[KRank 0 | 9/98 (9.18%)[KRank 0 | 9/99 (9.09%)[KRank 0 | 9/100 (9.00%)[KRank 1 | 9/80 (11.25%)[KRank 0 | 9/101 (8.91%)[KRank 1 | 10/81 (12.35%)[KRank 0 | 9/102 (8.82%)[KRank 1 | 10/82 (12.20%)[KRank 0 | 9/103 (8.74%)[KRank 0 | 9/104 (8.65%)[KRank 1 | 10/83 (12.05%)[KRank 0 | 9/105 (8.57%)[KRank 1 | 11/84 (13.10%)[KRank 0 | 9/106 (8.49%)[KRank 1 | 12/85 (14.12%)[KRank 0 | 9/107 (8.41%)[KRank 1 | 12/86 (13.95%)[KRank 0 | 9/108 (8.33%)[KRank 1 | 12/87 (13.79%)[KRank 0 | 9/109 (8.26%)[KRank 1 | 12/88 (13.64%)[KRank 1 | 12/89 (13.48%)[KRank 0 | 9/110 (8.18%)[KRank 0 | 10/111 (9.01%)[KRank 1 | 12/90 (13.33%)[KRank 0 | 10/112 (8.93%)[KRank 1 | 12/91 (13.19%)[KRank 0 | 10/113 (8.85%)[KRank 0 | 10/114 (8.77%)[KRank 1 | 12/92 (13.04%)[KRank 0 | 10/115 (8.70%)[KRank 0 | 10/116 (8.62%)[KRank 1 | 12/93 (12.90%)[KRank 0 | 10/117 (8.55%)[KRank 1 | 12/94 (12.77%)[KRank 1 | 12/95 (12.63%)[KRank 0 | 10/118 (8.47%)[KRank 1 | 13/96 (13.54%)[KRank 0 | 10/119 (8.40%)[KRank 1 | 13/97 (13.40%)[KRank 0 | 10/120 (8.33%)[KRank 1 | 13/98 (13.27%)[KRank 1 | 13/99 (13.13%)[KRank 0 | 10/121 (8.26%)[KRank 0 | 10/122 (8.20%)[KRank 1 | 13/100 (13.00%)[KRank 1 | 13/101 (12.87%)[KRank 0 | 10/123 (8.13%)[KRank 0 | 11/124 (8.87%)[KRank 1 | 13/102 (12.75%)[KRank 0 | 11/125 (8.80%)[KRank 0 | 11/126 (8.73%)[KRank 1 | 13/103 (12.62%)[KRank 1 | 14/104 (13.46%)[KRank 0 | 11/127 (8.66%)[KRank 0 | 11/128 (8.59%)[KRank 1 | 14/105 (13.33%)[KRank 0 | 12/129 (9.30%)[KRank 1 | 14/106 (13.21%)[KRank 0 | 12/130 (9.23%)[KRank 1 | 15/107 (14.02%)[KRank 0 | 12/131 (9.16%)[KRank 1 | 15/108 (13.89%)[KRank 0 | 12/132 (9.09%)[KRank 1 | 16/109 (14.68%)[KRank 0 | 12/133 (9.02%)[KRank 1 | 16/110 (14.55%)[KRank 0 | 12/134 (8.96%)[KRank 0 | 13/135 (9.63%)[KRank 1 | 16/111 (14.41%)[KRank 0 | 14/136 (10.29%)[KRank 1 | 16/112 (14.29%)[KRank 0 | 14/137 (10.22%)[KRank 1 | 16/113 (14.16%)[KRank 1 | 17/114 (14.91%)[KRank 0 | 14/138 (10.14%)[KRank 1 | 18/115 (15.65%)[KRank 0 | 14/139 (10.07%)[KRank 1 | 18/116 (15.52%)[KRank 0 | 15/140 (10.71%)[KRank 1 | 18/117 (15.38%)[KRank 0 | 15/141 (10.64%)[KRank 1 | 18/118 (15.25%)[KRank 0 | 15/142 (10.56%)[KRank 1 | 19/119 (15.97%)[KRank 0 | 15/143 (10.49%)[KRank 0 | 15/144 (10.42%)[KRank 1 | 19/120 (15.83%)[KRank 0 | 15/145 (10.34%)[KRank 0 | 16/146 (10.96%)[KRank 1 | 19/121 (15.70%)[KRank 0 | 16/147 (10.88%)[KRank 1 | 19/122 (15.57%)[KRank 1 | 19/123 (15.45%)[KRank 0 | 16/148 (10.81%)[KRank 1 | 20/124 (16.13%)[KRank 0 | 16/149 (10.74%)[KRank 1 | 20/125 (16.00%)[KRank 0 | 16/150 (10.67%)[KRank 1 | 20/126 (15.87%)[KRank 1 | 20/127 (15.75%)[KRank 1 | 20/128 (15.62%)[KRank 1 | 20/129 (15.50%)[KRank 0 | 16/151 (10.60%)[KRank 0 | 16/152 (10.53%)[KRank 1 | 20/130 (15.38%)[KRank 0 | 16/153 (10.46%)[KRank 1 | 20/131 (15.27%)[KRank 1 | 20/132 (15.15%)[KRank 0 | 16/154 (10.39%)[KRank 1 | 20/133 (15.04%)[KRank 0 | 16/155 (10.32%)[KRank 1 | 20/134 (14.93%)[KRank 1 | 20/135 (14.81%)[KRank 0 | 16/156 (10.26%)[KRank 0 | 16/157 (10.19%)[KRank 1 | 20/136 (14.71%)[KRank 0 | 16/158 (10.13%)[KRank 1 | 20/137 (14.60%)[KRank 0 | 16/159 (10.06%)[KRank 0 | 16/160 (10.00%)[KRank 1 | 20/138 (14.49%)[KRank 0 | 16/161 (9.94%)[KRank 1 | 20/139 (14.39%)[KRank 0 | 16/162 (9.88%)[KRank 1 | 21/140 (15.00%)[KRank 1 | 21/141 (14.89%)[KRank 0 | 16/163 (9.82%)[KRank 1 | 21/142 (14.79%)[KRank 1 | 21/143 (14.69%)[KRank 0 | 16/164 (9.76%)[KRank 1 | 21/144 (14.58%)[KRank 0 | 16/165 (9.70%)[KRank 0 | 16/166 (9.64%)[KRank 1 | 21/145 (14.48%)[KRank 0 | 16/167 (9.58%)[KRank 0 | 16/168 (9.52%)[KRank 1 | 21/146 (14.38%)[KRank 0 | 16/169 (9.47%)[KRank 1 | 21/147 (14.29%)[KRank 0 | 16/170 (9.41%)[KRank 0 | 16/171 (9.36%)[KRank 0 | 16/172 (9.30%)[KRank 1 | 21/148 (14.19%)[KRank 1 | 21/149 (14.09%)[KRank 0 | 16/173 (9.25%)[KRank 1 | 22/150 (14.67%)[KRank 0 | 16/174 (9.20%)[KRank 0 | 16/175 (9.14%)[KRank 1 | 22/151 (14.57%)[KRank 0 | 16/176 (9.09%)[KRank 1 | 22/152 (14.47%)[KRank 0 | 16/177 (9.04%)[KRank 1 | 22/153 (14.38%)[KRank 0 | 16/178 (8.99%)[KRank 1 | 22/154 (14.29%)[KRank 0 | 16/179 (8.94%)[KRank 0 | 16/180 (8.89%)[KRank 1 | 22/155 (14.19%)[KRank 0 | 16/181 (8.84%)[KRank 1 | 22/156 (14.10%)[KRank 0 | 16/182 (8.79%)[KRank 1 | 22/157 (14.01%)[KRank 0 | 16/183 (8.74%)[KRank 1 | 22/158 (13.92%)[KRank 0 | 16/184 (8.70%)[KRank 1 | 22/159 (13.84%)[KRank 0 | 16/185 (8.65%)[KRank 0 | 16/186 (8.60%)[KRank 1 | 22/160 (13.75%)[KRank 1 | 22/161 (13.66%)[KRank 0 | 16/187 (8.56%)[KRank 1 | 22/162 (13.58%)[KRank 0 | 16/188 (8.51%)[KRank 1 | 22/163 (13.50%)[KRank 1 | 23/164 (14.02%)[KRank 0 | 16/189 (8.47%)[KRank 0 | 16/190 (8.42%)[KRank 1 | 23/165 (13.94%)[KRank 1 | 23/166 (13.86%)[KRank 0 | 16/191 (8.38%)[KRank 0 | 16/192 (8.33%)[KRank 1 | 23/167 (13.77%)[KRank 0 | 16/193 (8.29%)[KRank 0 | 16/194 (8.25%)[KRank 0 | 16/195 (8.21%)[KRank 1 | 23/168 (13.69%)[KRank 1 | 23/169 (13.61%)[KRank 1 | 23/170 (13.53%)[KRank 1 | 23/171 (13.45%)[KRank 0 | 16/196 (8.16%)[KRank 1 | 24/172 (13.95%)[KRank 1 | 24/173 (13.87%)[KRank 0 | 16/197 (8.12%)[KRank 0 | 16/198 (8.08%)[KRank 1 | 24/174 (13.79%)[KRank 0 | 16/199 (8.04%)[KRank 0 | 16/200 (8.00%)[KRank 0 | 16/201 (7.96%)[KRank 1 | 24/175 (13.71%)[KRank 0 | 16/202 (7.92%)[KRank 1 | 24/176 (13.64%)[KRank 0 | 16/203 (7.88%)[KRank 1 | 24/177 (13.56%)[KRank 0 | 16/204 (7.84%)[KRank 1 | 24/178 (13.48%)[KRank 1 | 24/179 (13.41%)[KRank 1 | 24/180 (13.33%)[KRank 1 | 24/181 (13.26%)[KRank 0 | 16/205 (7.80%)[KRank 1 | 24/182 (13.19%)[KRank 0 | 16/206 (7.77%)[KRank 1 | 24/183 (13.11%)[KRank 1 | 24/184 (13.04%)[KRank 0 | 16/207 (7.73%)[KRank 1 | 24/185 (12.97%)[KRank 0 | 16/208 (7.69%)[KRank 1 | 24/186 (12.90%)[KRank 0 | 16/209 (7.66%)[KRank 1 | 24/187 (12.83%)[KRank 0 | 16/210 (7.62%)[KRank 1 | 24/188 (12.77%)[KRank 0 | 16/211 (7.58%)[KRank 1 | 24/189 (12.70%)[KRank 0 | 16/212 (7.55%)[KRank 1 | 24/190 (12.63%)[KRank 0 | 16/213 (7.51%)[KRank 1 | 24/191 (12.57%)[KRank 0 | 16/214 (7.48%)[KRank 1 | 24/192 (12.50%)[KRank 0 | 16/215 (7.44%)[KRank 0 | 16/216 (7.41%)[KRank 1 | 24/193 (12.44%)[KRank 1 | 24/194 (12.37%)[KRank 0 | 16/217 (7.37%)[KRank 1 | 24/195 (12.31%)[KRank 0 | 16/218 (7.34%)[KRank 1 | 24/196 (12.24%)[KRank 0 | 16/219 (7.31%)[KRank 1 | 24/197 (12.18%)[KRank 1 | 24/198 (12.12%)[KRank 0 | 16/220 (7.27%)[KRank 1 | 24/199 (12.06%)[KRank 1 | 24/200 (12.00%)[KRank 0 | 16/221 (7.24%)[KRank 1 | 24/201 (11.94%)[KRank 0 | 17/222 (7.66%)[KRank 0 | 17/223 (7.62%)[KRank 1 | 24/202 (11.88%)[KRank 0 | 17/224 (7.59%)[KRank 1 | 24/203 (11.82%)[KRank 1 | 24/204 (11.76%)[KRank 1 | 24/205 (11.71%)[KRank 1 | 24/206 (11.65%)[KRank 0 | 17/225 (7.56%)[KRank 1 | 24/207 (11.59%)[KRank 1 | 24/208 (11.54%)[KRank 1 | 24/209 (11.48%)[KRank 1 | 24/210 (11.43%)[KRank 0 | 17/226 (7.52%)[KRank 1 | 24/211 (11.37%)[KRank 0 | 18/227 (7.93%)[KRank 0 | 18/228 (7.89%)[KRank 1 | 24/212 (11.32%)[KRank 1 | 24/213 (11.27%)[KRank 0 | 18/229 (7.86%)[KRank 0 | 18/230 (7.83%)[KRank 1 | 24/214 (11.21%)[KRank 0 | 18/231 (7.79%)[KRank 0 | 18/232 (7.76%)[KRank 0 | 18/233 (7.73%)[KRank 1 | 24/215 (11.16%)[KRank 0 | 18/234 (7.69%)[KRank 0 | 18/235 (7.66%)[KRank 1 | 24/216 (11.11%)[KRank 1 | 25/217 (11.52%)[KRank 0 | 18/236 (7.63%)[KRank 1 | 25/218 (11.47%)[KRank 0 | 18/237 (7.59%)[KRank 1 | 25/219 (11.42%)[KRank 1 | 25/220 (11.36%)[KRank 0 | 18/238 (7.56%)[KRank 0 | 18/239 (7.53%)[KRank 1 | 25/221 (11.31%)[KRank 1 | 25/222 (11.26%)[KRank 0 | 18/240 (7.50%)[KRank 0 | 18/241 (7.47%)[KRank 1 | 25/223 (11.21%)[KRank 1 | 25/224 (11.16%)[KRank 0 | 18/242 (7.44%)[KRank 1 | 25/225 (11.11%)[KRank 0 | 18/243 (7.41%)[KRank 1 | 25/226 (11.06%)[KRank 0 | 18/244 (7.38%)[KRank 1 | 25/227 (11.01%)[KRank 1 | 25/228 (10.96%)[KRank 0 | 18/245 (7.35%)[KRank 1 | 25/229 (10.92%)[KRank 1 | 25/230 (10.87%)[KRank 1 | 25/231 (10.82%)[KRank 0 | 18/246 (7.32%)[KRank 1 | 26/232 (11.21%)[KRank 0 | 18/247 (7.29%)[KRank 1 | 26/233 (11.16%)[KRank 0 | 18/248 (7.26%)[KRank 1 | 26/234 (11.11%)[KRank 0 | 18/249 (7.23%)[KRank 1 | 26/235 (11.06%)[KRank 0 | 18/250 (7.20%)[KRank 1 | 26/236 (11.02%)[KRank 0 | 18/251 (7.17%)[KRank 0 | 18/252 (7.14%)[KRank 1 | 26/237 (10.97%)[KRank 0 | 18/253 (7.11%)[KRank 1 | 26/238 (10.92%)[KRank 1 | 26/239 (10.88%)[KRank 0 | 18/254 (7.09%)[KRank 1 | 26/240 (10.83%)[KRank 0 | 18/255 (7.06%)[KRank 1 | 26/241 (10.79%)[KRank 1 | 27/242 (11.16%)[KRank 0 | 18/256 (7.03%)[KRank 0 | 18/257 (7.00%)[KRank 0 | 18/258 (6.98%)[KRank 0 | 18/259 (6.95%)[KRank 1 | 27/243 (11.11%)[KRank 0 | 18/260 (6.92%)[KRank 1 | 28/244 (11.48%)[KRank 0 | 19/261 (7.28%)[KRank 0 | 19/262 (7.25%)[KRank 1 | 28/245 (11.43%)[KRank 0 | 19/263 (7.22%)[KRank 1 | 28/246 (11.38%)[KRank 0 | 19/264 (7.20%)[KRank 0 | 19/265 (7.17%)[KRank 0 | 19/266 (7.14%)[KRank 1 | 28/247 (11.34%)[KRank 0 | 20/267 (7.49%)[KRank 1 | 28/248 (11.29%)[KRank 0 | 20/268 (7.46%)[KRank 1 | 28/249 (11.24%)[KRank 0 | 21/269 (7.81%)[KRank 0 | 21/270 (7.78%)[KRank 1 | 28/250 (11.20%)[KRank 1 | 28/251 (11.16%)[KRank 1 | 28/252 (11.11%)[KRank 0 | 21/271 (7.75%)[KRank 0 | 21/272 (7.72%)[KRank 1 | 28/253 (11.07%)[KRank 1 | 28/254 (11.02%)[KRank 0 | 21/273 (7.69%)[KRank 1 | 28/255 (10.98%)[KRank 0 | 21/274 (7.66%)[KRank 1 | 28/256 (10.94%)[KRank 0 | 21/275 (7.64%)[KRank 1 | 28/257 (10.89%)[KRank 1 | 28/258 (10.85%)[KRank 0 | 21/276 (7.61%)[KRank 1 | 28/259 (10.81%)[KRank 0 | 21/277 (7.58%)[KRank 0 | 21/278 (7.55%)[KRank 0 | 21/279 (7.53%)[KRank 0 | 21/280 (7.50%)[KRank 1 | 28/260 (10.77%)[KRank 0 | 21/281 (7.47%)[KRank 0 | 21/282 (7.45%)[KRank 1 | 28/261 (10.73%)[KRank 1 | 28/262 (10.69%)[KRank 0 | 21/283 (7.42%)[KRank 1 | 28/263 (10.65%)[KRank 1 | 28/264 (10.61%)[KRank 0 | 21/284 (7.39%)[KRank 0 | 21/285 (7.37%)[KRank 1 | 28/265 (10.57%)[KRank 1 | 28/266 (10.53%)[KRank 0 | 21/286 (7.34%)[KRank 0 | 21/287 (7.32%)[KRank 0 | 21/288 (7.29%)[KRank 1 | 28/267 (10.49%)[KRank 0 | 21/289 (7.27%)[KRank 1 | 28/268 (10.45%)[KRank 0 | 21/290 (7.24%)[KRank 1 | 28/269 (10.41%)[KRank 0 | 21/291 (7.22%)[KRank 1 | 28/270 (10.37%)[KRank 0 | 21/292 (7.19%)[KRank 1 | 28/271 (10.33%)[KRank 0 | 21/293 (7.17%)[KRank 1 | 28/272 (10.29%)[KRank 0 | 21/294 (7.14%)[KRank 1 | 28/273 (10.26%)[KRank 0 | 21/295 (7.12%)[KRank 1 | 28/274 (10.22%)[KRank 0 | 22/296 (7.43%)[KRank 0 | 22/297 (7.41%)[KRank 1 | 28/275 (10.18%)[KRank 0 | 22/298 (7.38%)[KRank 1 | 28/276 (10.14%)[KRank 1 | 29/277 (10.47%)[KRank 1 | 29/278 (10.43%)[KRank 0 | 22/299 (7.36%)[KRank 0 | 22/300 (7.33%)[KRank 1 | 29/279 (10.39%)[KRank 0 | 22/301 (7.31%)[KRank 1 | 30/280 (10.71%)[KRank 0 | 22/302 (7.28%)[KRank 0 | 22/303 (7.26%)[KRank 1 | 30/281 (10.68%)[KRank 1 | 30/282 (10.64%)[KRank 0 | 22/304 (7.24%)[KRank 1 | 30/283 (10.60%)[KRank 0 | 22/305 (7.21%)[KRank 1 | 30/284 (10.56%)[KRank 1 | 30/285 (10.53%)[KRank 0 | 22/306 (7.19%)[KRank 1 | 30/286 (10.49%)[KRank 0 | 22/307 (7.17%)[KRank 1 | 30/287 (10.45%)[KRank 0 | 22/308 (7.14%)[KRank 1 | 30/288 (10.42%)[KRank 0 | 22/309 (7.12%)[KRank 1 | 30/289 (10.38%)[KRank 0 | 22/310 (7.10%)[KRank 1 | 30/290 (10.34%)[KRank 0 | 22/311 (7.07%)[KRank 0 | 22/312 (7.05%)[KRank 1 | 30/291 (10.31%)[KRank 1 | 30/292 (10.27%)[KRank 0 | 22/313 (7.03%)[KRank 1 | 30/293 (10.24%)[KRank 0 | 22/314 (7.01%)[KRank 1 | 30/294 (10.20%)[KRank 0 | 22/315 (6.98%)[KRank 1 | 30/295 (10.17%)[KRank 0 | 22/316 (6.96%)[KRank 1 | 30/296 (10.14%)[KRank 0 | 22/317 (6.94%)[KRank 1 | 30/297 (10.10%)[KRank 0 | 23/318 (7.23%)[KRank 1 | 30/298 (10.07%)[KRank 0 | 23/319 (7.21%)[KRank 0 | 23/320 (7.19%)[KRank 1 | 30/299 (10.03%)[KRank 0 | 23/321 (7.17%)[KRank 1 | 30/300 (10.00%)[KRank 1 | 30/301 (9.97%)[KRank 0 | 23/322 (7.14%)[KRank 1 | 30/302 (9.93%)[KRank 0 | 23/323 (7.12%)[KRank 1 | 30/303 (9.90%)[KRank 1 | 30/304 (9.87%)[KRank 0 | 23/324 (7.10%)[KRank 1 | 30/305 (9.84%)[KRank 0 | 23/325 (7.08%)[KRank 1 | 30/306 (9.80%)[KRank 0 | 23/326 (7.06%)[KRank 0 | 23/327 (7.03%)[KRank 1 | 30/307 (9.77%)[KRank 1 | 30/308 (9.74%)[KRank 0 | 23/328 (7.01%)[KRank 1 | 30/309 (9.71%)[KRank 0 | 23/329 (6.99%)[KRank 1 | 30/310 (9.68%)[KRank 0 | 23/330 (6.97%)[KRank 1 | 30/311 (9.65%)[KRank 1 | 30/312 (9.62%)[KRank 0 | 23/331 (6.95%)[KRank 0 | 23/332 (6.93%)[KRank 1 | 30/313 (9.58%)[KRank 0 | 23/333 (6.91%)[KRank 1 | 30/314 (9.55%)[KRank 0 | 23/334 (6.89%)[KRank 1 | 30/315 (9.52%)[KRank 1 | 31/316 (9.81%)[KRank 0 | 23/335 (6.87%)[KRank 0 | 24/336 (7.14%)[KRank 1 | 31/317 (9.78%)[KRank 1 | 31/318 (9.75%)[KRank 0 | 24/337 (7.12%)[KRank 1 | 31/319 (9.72%)[KRank 1 | 31/320 (9.69%)[KRank 0 | 24/338 (7.10%)[KRank 0 | 24/339 (7.08%)[KRank 1 | 31/321 (9.66%)[KRank 0 | 24/340 (7.06%)[KRank 1 | 32/322 (9.94%)[KRank 1 | 32/323 (9.91%)[KRank 0 | 24/341 (7.04%)[KRank 0 | 24/342 (7.02%)[KRank 1 | 32/324 (9.88%)[KRank 0 | 25/343 (7.29%)[KRank 0 | 25/344 (7.27%)[KRank 0 | 25/345 (7.25%)[KRank 1 | 32/325 (9.85%)[KRank 0 | 25/346 (7.23%)[KRank 1 | 32/326 (9.82%)[KRank 0 | 25/347 (7.20%)[KRank 1 | 32/327 (9.79%)[KRank 0 | 25/348 (7.18%)[KRank 0 | 25/349 (7.16%)[KRank 1 | 32/328 (9.76%)[KRank 1 | 33/329 (10.03%)[KRank 0 | 25/350 (7.14%)[KRank 1 | 33/330 (10.00%)[KRank 0 | 25/351 (7.12%)[KRank 1 | 33/331 (9.97%)[KRank 0 | 25/352 (7.10%)[KRank 1 | 33/332 (9.94%)[KRank 0 | 25/353 (7.08%)[KRank 1 | 33/333 (9.91%)[KRank 0 | 25/354 (7.06%)[KRank 0 | 25/355 (7.04%)[KRank 1 | 33/334 (9.88%)[KRank 1 | 33/335 (9.85%)[KRank 0 | 25/356 (7.02%)[KRank 0 | 25/357 (7.00%)[KRank 1 | 33/336 (9.82%)[KRank 0 | 25/358 (6.98%)[KRank 0 | 25/359 (6.96%)[KRank 1 | 33/337 (9.79%)[KRank 1 | 34/338 (10.06%)[KRank 0 | 25/360 (6.94%)[KRank 0 | 25/361 (6.93%)[KRank 1 | 34/339 (10.03%)[KRank 0 | 25/362 (6.91%)[KRank 1 | 34/340 (10.00%)[KRank 0 | 25/363 (6.89%)[KRank 1 | 34/341 (9.97%)[KRank 0 | 25/364 (6.87%)[KRank 0 | 25/365 (6.85%)[KRank 1 | 34/342 (9.94%)[KRank 0 | 25/366 (6.83%)[KRank 1 | 34/343 (9.91%)[KRank 0 | 25/367 (6.81%)[KRank 0 | 25/368 (6.79%)[KRank 1 | 34/344 (9.88%)[KRank 0 | 26/369 (7.05%)[KRank 1 | 34/345 (9.86%)[KRank 0 | 26/370 (7.03%)[KRank 1 | 34/346 (9.83%)[KRank 0 | 26/371 (7.01%)[KRank 1 | 34/347 (9.80%)[KRank 0 | 27/372 (7.26%)[KRank 1 | 34/348 (9.77%)[KRank 0 | 27/373 (7.24%)[KRank 0 | 27/374 (7.22%)[KRank 0 | 27/375 (7.20%)[KRank 1 | 34/349 (9.74%)[KRank 0 | 27/376 (7.18%)[KRank 1 | 34/350 (9.71%)[KRank 1 | 34/351 (9.69%)[KRank 0 | 27/377 (7.16%)[KRank 0 | 27/378 (7.14%)[KRank 1 | 34/352 (9.66%)[KRank 0 | 27/379 (7.12%)[KRank 1 | 34/353 (9.63%)[KRank 0 | 27/380 (7.11%)[KRank 0 | 27/381 (7.09%)[KRank 0 | 27/382 (7.07%)[KRank 1 | 34/354 (9.60%)[KRank 0 | 27/383 (7.05%)[KRank 0 | 27/384 (7.03%)[KRank 1 | 34/355 (9.58%)[KRank 0 | 27/385 (7.01%)[KRank 0 | 27/386 (6.99%)[KRank 0 | 27/387 (6.98%)[KRank 1 | 34/356 (9.55%)[KRank 1 | 34/357 (9.52%)[KRank 0 | 27/388 (6.96%)[KRank 0 | 27/389 (6.94%)[KRank 1 | 34/358 (9.50%)[KRank 1 | 34/359 (9.47%)[KRank 0 | 27/390 (6.92%)[KRank 1 | 34/360 (9.44%)[KRank 0 | 27/391 (6.91%)[KRank 1 | 34/361 (9.42%)[KRank 0 | 27/392 (6.89%)[KRank 1 | 34/362 (9.39%)[KRank 1 | 34/363 (9.37%)[KRank 0 | 28/393 (7.12%)[KRank 1 | 34/364 (9.34%)[KRank 0 | 28/394 (7.11%)[KRank 1 | 34/365 (9.32%)[KRank 0 | 28/395 (7.09%)[KRank 1 | 34/366 (9.29%)[KRank 1 | 34/367 (9.26%)[KRank 0 | 28/396 (7.07%)[KRank 1 | 34/368 (9.24%)[KRank 0 | 28/397 (7.05%)[KRank 1 | 34/369 (9.21%)[KRank 0 | 28/398 (7.04%)[KRank 1 | 34/370 (9.19%)[KRank 0 | 28/399 (7.02%)[KRank 0 | 28/400 (7.00%)[KRank 1 | 34/371 (9.16%)[KRank 0 | 28/401 (6.98%)[KRank 1 | 34/372 (9.14%)[KRank 0 | 28/402 (6.97%)[KRank 1 | 34/373 (9.12%)[KRank 0 | 28/403 (6.95%)[KRank 1 | 34/374 (9.09%)[KRank 1 | 34/375 (9.07%)[KRank 0 | 28/404 (6.93%)[KRank 1 | 34/376 (9.04%)[KRank 0 | 28/405 (6.91%)[KRank 0 | 29/406 (7.14%)[KRank 1 | 34/377 (9.02%)[KRank 0 | 29/407 (7.13%)[KRank 0 | 29/408 (7.11%)[KRank 1 | 34/378 (8.99%)[KRank 0 | 29/409 (7.09%)[KRank 0 | 29/410 (7.07%)[KRank 1 | 35/379 (9.23%)[KRank 1 | 36/380 (9.47%)[KRank 0 | 29/411 (7.06%)[KRank 1 | 36/381 (9.45%)[KRank 0 | 29/412 (7.04%)[KRank 1 | 36/382 (9.42%)[KRank 0 | 29/413 (7.02%)[KRank 1 | 36/383 (9.40%)[KRank 1 | 36/384 (9.38%)[KRank 0 | 29/414 (7.00%)[KRank 0 | 29/415 (6.99%)[KRank 1 | 36/385 (9.35%)[KRank 1 | 36/386 (9.33%)[KRank 0 | 29/416 (6.97%)[KRank 1 | 36/387 (9.30%)[KRank 0 | 29/417 (6.95%)[KRank 1 | 36/388 (9.28%)[KRank 1 | 36/389 (9.25%)[KRank 1 | 36/390 (9.23%)[KRank 1 | 37/391 (9.46%)[KRank 0 | 29/418 (6.94%)[KRank 0 | 30/419 (7.16%)[KRank 0 | 30/420 (7.14%)[KRank 1 | 37/392 (9.44%)[KRank 0 | 30/421 (7.13%)[KRank 1 | 37/393 (9.41%)[KRank 0 | 30/422 (7.11%)[KRank 0 | 30/423 (7.09%)[KRank 1 | 37/394 (9.39%)[KRank 1 | 38/395 (9.62%)[KRank 0 | 30/424 (7.08%)[KRank 1 | 38/396 (9.60%)[KRank 0 | 30/425 (7.06%)[KRank 1 | 38/397 (9.57%)[KRank 0 | 30/426 (7.04%)[KRank 1 | 38/398 (9.55%)[KRank 0 | 30/427 (7.03%)[KRank 1 | 38/399 (9.52%)[KRank 1 | 38/400 (9.50%)[KRank 1 | 38/401 (9.48%)[KRank 0 | 30/428 (7.01%)[KRank 1 | 38/402 (9.45%)[KRank 0 | 30/429 (6.99%)[KRank 1 | 38/403 (9.43%)[KRank 0 | 30/430 (6.98%)[KRank 1 | 38/404 (9.41%)[KRank 0 | 30/431 (6.96%)[KRank 1 | 38/405 (9.38%)[KRank 1 | 38/406 (9.36%)[KRank 0 | 30/432 (6.94%)[KRank 1 | 38/407 (9.34%)[KRank 0 | 30/433 (6.93%)[KRank 1 | 38/408 (9.31%)[KRank 1 | 38/409 (9.29%)[KRank 1 | 39/410 (9.51%)[KRank 0 | 30/434 (6.91%)[KRank 1 | 39/411 (9.49%)[KRank 0 | 30/435 (6.90%)[KRank 1 | 39/412 (9.47%)[KRank 0 | 30/436 (6.88%)[KRank 1 | 39/413 (9.44%)[KRank 0 | 30/437 (6.86%)[KRank 0 | 30/438 (6.85%)[KRank 1 | 39/414 (9.42%)[KRank 0 | 30/439 (6.83%)[KRank 0 | 30/440 (6.82%)[KRank 1 | 39/415 (9.40%)[KRank 0 | 30/441 (6.80%)[KRank 1 | 39/416 (9.38%)[KRank 0 | 31/442 (7.01%)[KRank 1 | 39/417 (9.35%)[KRank 0 | 31/443 (7.00%)[KRank 0 | 31/444 (6.98%)[KRank 1 | 39/418 (9.33%)[KRank 0 | 31/445 (6.97%)[KRank 1 | 39/419 (9.31%)[KRank 0 | 31/446 (6.95%)[KRank 0 | 31/447 (6.94%)[KRank 1 | 39/420 (9.29%)[KRank 0 | 31/448 (6.92%)[KRank 0 | 31/449 (6.90%)[KRank 1 | 39/421 (9.26%)[KRank 0 | 31/450 (6.89%)[KRank 1 | 39/422 (9.24%)[KRank 1 | 39/423 (9.22%)[KRank 1 | 40/424 (9.43%)[KRank 0 | 31/451 (6.87%)[KRank 0 | 31/452 (6.86%)[KRank 1 | 40/425 (9.41%)[KRank 0 | 31/453 (6.84%)[KRank 1 | 40/426 (9.39%)[KRank 1 | 41/427 (9.60%)[KRank 0 | 31/454 (6.83%)[KRank 1 | 41/428 (9.58%)[KRank 1 | 41/429 (9.56%)[KRank 0 | 31/455 (6.81%)[KRank 1 | 42/430 (9.77%)[KRank 1 | 43/431 (9.98%)[KRank 0 | 31/456 (6.80%)[KRank 1 | 44/432 (10.19%)[KRank 1 | 44/433 (10.16%)[KRank 1 | 44/434 (10.14%)[KRank 0 | 31/457 (6.78%)[KRank 0 | 31/458 (6.77%)[KRank 1 | 44/435 (10.11%)[KRank 1 | 44/436 (10.09%)[KRank 0 | 31/459 (6.75%)[KRank 0 | 31/460 (6.74%)[KRank 1 | 44/437 (10.07%)[KRank 0 | 32/461 (6.94%)[KRank 0 | 32/462 (6.93%)[KRank 1 | 44/438 (10.05%)[KRank 0 | 32/463 (6.91%)[KRank 0 | 32/464 (6.90%)[KRank 0 | 33/465 (7.10%)[KRank 1 | 44/439 (10.02%)[KRank 0 | 33/466 (7.08%)[KRank 1 | 44/440 (10.00%)[KRank 1 | 45/441 (10.20%)[KRank 0 | 33/467 (7.07%)[KRank 1 | 45/442 (10.18%)[KRank 0 | 33/468 (7.05%)[KRank 1 | 45/443 (10.16%)[KRank 0 | 34/469 (7.25%)[KRank 1 | 45/444 (10.14%)[KRank 1 | 46/445 (10.34%)[KRank 0 | 34/470 (7.23%)[KRank 1 | 46/446 (10.31%)[KRank 0 | 34/471 (7.22%)[KRank 1 | 46/447 (10.29%)[KRank 1 | 46/448 (10.27%)[KRank 0 | 34/472 (7.20%)[KRank 0 | 35/473 (7.40%)[KRank 1 | 46/449 (10.24%)[KRank 0 | 35/474 (7.38%)[KRank 1 | 46/450 (10.22%)[KRank 1 | 46/451 (10.20%)[KRank 0 | 35/475 (7.37%)[KRank 0 | 35/476 (7.35%)[KRank 1 | 46/452 (10.18%)[KRank 1 | 46/453 (10.15%)[KRank 1 | 46/454 (10.13%)[KRank 1 | 46/455 (10.11%)[KRank 1 | 46/456 (10.09%)[KRank 0 | 35/477 (7.34%)[KRank 1 | 46/457 (10.07%)[KRank 0 | 35/478 (7.32%)[KRank 1 | 46/458 (10.04%)[KRank 0 | 35/479 (7.31%)[KRank 1 | 46/459 (10.02%)[KRank 0 | 35/480 (7.29%)[KRank 1 | 46/460 (10.00%)[KRank 1 | 46/461 (9.98%)[KRank 0 | 35/481 (7.28%)[KRank 1 | 46/462 (9.96%)[KRank 0 | 35/482 (7.26%)[KRank 1 | 46/463 (9.94%)[KRank 1 | 46/464 (9.91%)[KRank 0 | 35/483 (7.25%)[KRank 1 | 46/465 (9.89%)[KRank 0 | 35/484 (7.23%)[KRank 1 | 46/466 (9.87%)[KRank 1 | 46/467 (9.85%)[KRank 0 | 35/485 (7.22%)[KRank 1 | 46/468 (9.83%)[KRank 0 | 36/486 (7.41%)[KRank 1 | 46/469 (9.81%)[KRank 1 | 46/470 (9.79%)[KRank 0 | 36/487 (7.39%)[KRank 1 | 46/471 (9.77%)[KRank 0 | 36/488 (7.38%)[KRank 1 | 46/472 (9.75%)[KRank 0 | 36/489 (7.36%)[KRank 1 | 47/473 (9.94%)[KRank 0 | 36/490 (7.35%)[KRank 1 | 47/474 (9.92%)[KRank 0 | 36/491 (7.33%)[KRank 1 | 47/475 (9.89%)[KRank 1 | 48/476 (10.08%)[KRank 0 | 36/492 (7.32%)[KRank 0 | 36/493 (7.30%)[KRank 0 | 37/494 (7.49%)[KRank 0 | 37/495 (7.47%)[KRank 1 | 48/477 (10.06%)[KRank 0 | 38/496 (7.66%)[KRank 1 | 48/478 (10.04%)[KRank 1 | 48/479 (10.02%)[KRank 0 | 38/497 (7.65%)[KRank 0 | 38/498 (7.63%)[KRank 1 | 48/480 (10.00%)[KRank 0 | 39/499 (7.82%)[KRank 0 | 39/500 (7.80%)[KRank 1 | 48/481 (9.98%)[KRank 0 | 40/501 (7.98%)[KRank 0 | 40/502 (7.97%)[KRank 1 | 48/482 (9.96%)[KRank 0 | 40/503 (7.95%)[KRank 1 | 48/483 (9.94%)[KRank 1 | 48/484 (9.92%)[KRank 1 | 48/485 (9.90%)[KRank 1 | 48/486 (9.88%)[KRank 1 | 48/487 (9.86%)[KRank 0 | 40/504 (7.94%)[KRank 0 | 40/505 (7.92%)[KRank 1 | 48/488 (9.84%)[KRank 0 | 40/506 (7.91%)[KRank 1 | 48/489 (9.82%)[KRank 0 | 40/507 (7.89%)[KRank 0 | 40/508 (7.87%)[KRank 1 | 49/490 (10.00%)[KRank 1 | 49/491 (9.98%)[KRank 0 | 40/509 (7.86%)[KRank 1 | 49/492 (9.96%)[KRank 1 | 49/493 (9.94%)[KRank 1 | 50/494 (10.12%)[KRank 1 | 50/495 (10.10%)[KRank 0 | 40/510 (7.84%)[KRank 1 | 50/496 (10.08%)[KRank 0 | 40/511 (7.83%)[KRank 0 | 40/512 (7.81%)[KRank 1 | 50/497 (10.06%)[KRank 0 | 40/513 (7.80%)[KRank 1 | 50/498 (10.04%)[KRank 0 | 40/514 (7.78%)[KRank 1 | 50/499 (10.02%)[KRank 1 | 50/500 (10.00%)[KRank 0 | 40/515 (7.77%)[KRank 1 | 50/501 (9.98%)[KRank 0 | 40/516 (7.75%)[KRank 0 | 40/517 (7.74%)[KRank 1 | 50/502 (9.96%)[KRank 1 | 50/503 (9.94%)[KRank 0 | 40/518 (7.72%)[KRank 1 | 50/504 (9.92%)[KRank 1 | 50/505 (9.90%)[KRank 0 | 40/519 (7.71%)[KRank 0 | 40/520 (7.69%)[KRank 1 | 50/506 (9.88%)[KRank 0 | 40/521 (7.68%)[KRank 1 | 50/507 (9.86%)[KRank 0 | 40/522 (7.66%)[KRank 1 | 50/508 (9.84%)[KRank 0 | 40/523 (7.65%)[KRank 1 | 51/509 (10.02%)[KRank 0 | 40/524 (7.63%)[KRank 1 | 51/510 (10.00%)[KRank 0 | 40/525 (7.62%)[KRank 1 | 51/511 (9.98%)[KRank 1 | 51/512 (9.96%)[KRank 0 | 40/526 (7.60%)[KRank 0 | 40/527 (7.59%)[KRank 1 | 51/513 (9.94%)[KRank 0 | 40/528 (7.58%)[KRank 0 | 40/529 (7.56%)[KRank 1 | 51/514 (9.92%)[KRank 0 | 40/530 (7.55%)[KRank 1 | 51/515 (9.90%)[KRank 1 | 51/516 (9.88%)[KRank 1 | 51/517 (9.86%)[KRank 0 | 40/531 (7.53%)[KRank 1 | 51/518 (9.85%)[KRank 1 | 51/519 (9.83%)[KRank 1 | 51/520 (9.81%)[KRank 0 | 40/532 (7.52%)[KRank 0 | 40/533 (7.50%)[KRank 1 | 51/521 (9.79%)[KRank 0 | 41/534 (7.68%)[KRank 0 | 41/535 (7.66%)[KRank 0 | 41/536 (7.65%)[KRank 1 | 51/522 (9.77%)[KRank 0 | 41/537 (7.64%)[KRank 1 | 51/523 (9.75%)[KRank 0 | 41/538 (7.62%)[KRank 1 | 51/524 (9.73%)[KRank 0 | 41/539 (7.61%)[KRank 0 | 41/540 (7.59%)[KRank 1 | 52/525 (9.90%)[KRank 0 | 41/541 (7.58%)[KRank 1 | 53/526 (10.08%)[KRank 0 | 41/542 (7.56%)[KRank 1 | 53/527 (10.06%)[KRank 0 | 41/543 (7.55%)[KRank 0 | 41/544 (7.54%)[KRank 1 | 53/528 (10.04%)[KRank 0 | 41/545 (7.52%)[KRank 0 | 41/546 (7.51%)[KRank 0 | 41/547 (7.50%)[KRank 1 | 53/529 (10.02%)[KRank 0 | 41/548 (7.48%)[KRank 1 | 53/530 (10.00%)[KRank 1 | 53/531 (9.98%)[KRank 0 | 41/549 (7.47%)[KRank 0 | 41/550 (7.45%)[KRank 1 | 53/532 (9.96%)[KRank 0 | 41/551 (7.44%)[KRank 1 | 53/533 (9.94%)[KRank 0 | 41/552 (7.43%)[KRank 0 | 41/553 (7.41%)[KRank 1 | 53/534 (9.93%)[KRank 1 | 53/535 (9.91%)[KRank 0 | 41/554 (7.40%)[KRank 1 | 53/536 (9.89%)[KRank 0 | 41/555 (7.39%)[KRank 1 | 53/537 (9.87%)[KRank 1 | 53/538 (9.85%)[KRank 1 | 53/539 (9.83%)[KRank 0 | 41/556 (7.37%)[KRank 1 | 53/540 (9.81%)[KRank 0 | 41/557 (7.36%)[KRank 1 | 53/541 (9.80%)[KRank 0 | 41/558 (7.35%)[KRank 1 | 53/542 (9.78%)[KRank 1 | 53/543 (9.76%)[KRank 0 | 41/559 (7.33%)[KRank 1 | 54/544 (9.93%)[KRank 0 | 41/560 (7.32%)[KRank 1 | 54/545 (9.91%)[KRank 0 | 41/561 (7.31%)[KRank 1 | 54/546 (9.89%)[KRank 0 | 41/562 (7.30%)[KRank 1 | 54/547 (9.87%)[KRank 0 | 41/563 (7.28%)[KRank 0 | 42/564 (7.45%)[KRank 0 | 42/565 (7.43%)[KRank 1 | 54/548 (9.85%)[KRank 0 | 42/566 (7.42%)[KRank 1 | 54/549 (9.84%)[KRank 1 | 54/550 (9.82%)[KRank 0 | 42/567 (7.41%)[KRank 0 | 42/568 (7.39%)[KRank 1 | 54/551 (9.80%)[KRank 0 | 42/569 (7.38%)[KRank 1 | 54/552 (9.78%)[KRank 0 | 42/570 (7.37%)[KRank 1 | 54/553 (9.76%)[KRank 0 | 42/571 (7.36%)[KRank 1 | 54/554 (9.75%)[KRank 0 | 42/572 (7.34%)[KRank 1 | 54/555 (9.73%)[KRank 1 | 54/556 (9.71%)[KRank 0 | 42/573 (7.33%)[KRank 1 | 54/557 (9.69%)[KRank 0 | 42/574 (7.32%)[KRank 1 | 54/558 (9.68%)[KRank 0 | 42/575 (7.30%)[KRank 1 | 54/559 (9.66%)[KRank 0 | 42/576 (7.29%)[KRank 0 | 42/577 (7.28%)[KRank 1 | 54/560 (9.64%)[KRank 0 | 42/578 (7.27%)[KRank 0 | 42/579 (7.25%)[KRank 1 | 54/561 (9.63%)[KRank 0 | 42/580 (7.24%)[KRank 1 | 54/562 (9.61%)[KRank 0 | 42/581 (7.23%)[KRank 1 | 54/563 (9.59%)[KRank 1 | 54/564 (9.57%)[KRank 0 | 42/582 (7.22%)[KRank 1 | 54/565 (9.56%)[KRank 1 | 54/566 (9.54%)[KRank 0 | 42/583 (7.20%)[KRank 0 | 42/584 (7.19%)[KRank 1 | 54/567 (9.52%)[KRank 1 | 54/568 (9.51%)[KRank 0 | 42/585 (7.18%)[KRank 1 | 54/569 (9.49%)[KRank 0 | 42/586 (7.17%)[KRank 1 | 54/570 (9.47%)[KRank 0 | 43/587 (7.33%)[KRank 0 | 43/588 (7.31%)[KRank 1 | 54/571 (9.46%)[KRank 0 | 43/589 (7.30%)[KRank 1 | 54/572 (9.44%)[KRank 0 | 43/590 (7.29%)[KRank 0 | 43/591 (7.28%)[KRank 0 | 43/592 (7.26%)[KRank 1 | 54/573 (9.42%)[KRank 0 | 43/593 (7.25%)[KRank 0 | 43/594 (7.24%)[KRank 1 | 54/574 (9.41%)[KRank 0 | 43/595 (7.23%)[KRank 0 | 43/596 (7.21%)[KRank 1 | 54/575 (9.39%)[KRank 0 | 43/597 (7.20%)[KRank 0 | 43/598 (7.19%)[KRank 1 | 54/576 (9.38%)[KRank 0 | 43/599 (7.18%)[KRank 1 | 54/577 (9.36%)[KRank 1 | 54/578 (9.34%)[KRank 0 | 43/600 (7.17%)[KRank 0 | 43/601 (7.15%)[KRank 1 | 54/579 (9.33%)[KRank 0 | 43/602 (7.14%)[KRank 1 | 54/580 (9.31%)[KRank 0 | 43/603 (7.13%)[KRank 1 | 54/581 (9.29%)[KRank 1 | 54/582 (9.28%)[KRank 0 | 43/604 (7.12%)[KRank 1 | 54/583 (9.26%)[KRank 0 | 43/605 (7.11%)[KRank 0 | 43/606 (7.10%)[KRank 1 | 54/584 (9.25%)[KRank 0 | 43/607 (7.08%)[KRank 1 | 54/585 (9.23%)[KRank 0 | 43/608 (7.07%)[KRank 1 | 54/586 (9.22%)[KRank 1 | 54/587 (9.20%)[KRank 0 | 43/609 (7.06%)[KRank 1 | 54/588 (9.18%)[KRank 0 | 43/610 (7.05%)[KRank 1 | 54/589 (9.17%)[KRank 0 | 43/611 (7.04%)[KRank 1 | 55/590 (9.32%)[KRank 1 | 55/591 (9.31%)[KRank 0 | 43/612 (7.03%)[KRank 1 | 55/592 (9.29%)[KRank 0 | 43/613 (7.01%)[KRank 1 | 55/593 (9.27%)[KRank 0 | 43/614 (7.00%)[KRank 1 | 55/594 (9.26%)[KRank 0 | 43/615 (6.99%)[KRank 0 | 43/616 (6.98%)[KRank 0 | 44/617 (7.13%)[KRank 1 | 55/595 (9.24%)[KRank 0 | 44/618 (7.12%)[KRank 1 | 56/596 (9.40%)[KRank 1 | 57/597 (9.55%)[KRank 0 | 44/619 (7.11%)[KRank 0 | 44/620 (7.10%)[KRank 1 | 57/598 (9.53%)[KRank 0 | 44/621 (7.09%)[KRank 1 | 57/599 (9.52%)[KRank 0 | 44/622 (7.07%)[KRank 1 | 57/600 (9.50%)[KRank 0 | 44/623 (7.06%)[KRank 1 | 57/601 (9.48%)[KRank 0 | 45/624 (7.21%)[KRank 1 | 57/602 (9.47%)[KRank 0 | 45/625 (7.20%)[KRank 1 | 57/603 (9.45%)[KRank 0 | 45/626 (7.19%)[KRank 1 | 57/604 (9.44%)[KRank 0 | 45/627 (7.18%)[KRank 1 | 57/605 (9.42%)[KRank 1 | 57/606 (9.41%)[KRank 0 | 45/628 (7.17%)[KRank 1 | 58/607 (9.56%)[KRank 1 | 58/608 (9.54%)[KRank 1 | 58/609 (9.52%)[KRank 1 | 58/610 (9.51%)[KRank 0 | 45/629 (7.15%)[KRank 0 | 45/630 (7.14%)[KRank 0 | 45/631 (7.13%)[KRank 1 | 58/611 (9.49%)[KRank 0 | 45/632 (7.12%)[KRank 0 | 45/633 (7.11%)[KRank 1 | 58/612 (9.48%)[KRank 0 | 45/634 (7.10%)[KRank 1 | 58/613 (9.46%)[KRank 0 | 45/635 (7.09%)[KRank 1 | 58/614 (9.45%)[KRank 0 | 45/636 (7.08%)[KRank 1 | 58/615 (9.43%)[KRank 1 | 58/616 (9.42%)[KRank 0 | 46/637 (7.22%)[KRank 1 | 58/617 (9.40%)[KRank 0 | 46/638 (7.21%)[KRank 0 | 46/639 (7.20%)[KRank 0 | 46/640 (7.19%)[KRank 1 | 58/618 (9.39%)[KRank 0 | 46/641 (7.18%)[KRank 1 | 58/619 (9.37%)[KRank 0 | 46/642 (7.17%)[KRank 0 | 46/643 (7.15%)[KRank 1 | 58/620 (9.35%)[KRank 1 | 59/621 (9.50%)[KRank 0 | 46/644 (7.14%)[KRank 0 | 46/645 (7.13%)[KRank 1 | 59/622 (9.49%)[KRank 0 | 46/646 (7.12%)[KRank 1 | 59/623 (9.47%)[KRank 0 | 46/647 (7.11%)[KRank 0 | 46/648 (7.10%)[KRank 1 | 59/624 (9.46%)[KRank 0 | 46/649 (7.09%)[KRank 0 | 46/650 (7.08%)[KRank 1 | 59/625 (9.44%)[KRank 0 | 46/651 (7.07%)[KRank 1 | 60/626 (9.58%)[KRank 0 | 46/652 (7.06%)[KRank 0 | 46/653 (7.04%)[KRank 1 | 60/627 (9.57%)[KRank 0 | 46/654 (7.03%)[KRank 1 | 60/628 (9.55%)[KRank 1 | 61/629 (9.70%)[KRank 1 | 61/630 (9.68%)[KRank 0 | 46/655 (7.02%)[KRank 1 | 61/631 (9.67%)[KRank 0 | 46/656 (7.01%)[KRank 1 | 61/632 (9.65%)[KRank 0 | 46/657 (7.00%)[KRank 1 | 62/633 (9.79%)[KRank 1 | 63/634 (9.94%)[KRank 0 | 46/658 (6.99%)[KRank 1 | 63/635 (9.92%)[KRank 0 | 46/659 (6.98%)[KRank 0 | 46/660 (6.97%)
+[KRank 1 | 63/636 (9.91%)[KRank 1 | 63/637 (9.89%)[KRank 1 | 63/638 (9.87%)[KRank 1 | 64/639 (10.02%)[KRank 1 | 64/640 (10.00%)[KRank 1 | 64/641 (9.98%)[KRank 1 | 64/642 (9.97%)[KRank 1 | 64/643 (9.95%)[KRank 1 | 64/644 (9.94%)[KRank 1 | 64/645 (9.92%)[KRank 1 | 64/646 (9.91%)[KRank 1 | 64/647 (9.89%)[KRank 1 | 65/648 (10.03%)[KRank 1 | 65/649 (10.02%)[KRank 1 | 65/650 (10.00%)[KRank 1 | 65/651 (9.98%)[KRank 1 | 66/652 (10.12%)[KRank 1 | 66/653 (10.11%)[KRank 1 | 66/654 (10.09%)[KRank 1 | 66/655 (10.08%)[KRank 1 | 66/656 (10.06%)[KRank 1 | 66/657 (10.05%)[KRank 1 | 66/658 (10.03%)[KRank 1 | 66/659 (10.02%)
+==================================================
+Final: 112/1319 (8.49%)
+GSM8K accuracy: 8.49%
+[KRank 0 | 0/1 (0.00%)[KRank 1 | 0/1 (0.00%)[KRank 0 | 1/2 (50.00%)[KRank 0 | 1/3 (33.33%)[KRank 1 | 0/2 (0.00%)[KRank 0 | 1/4 (25.00%)[KRank 1 | 0/3 (0.00%)[KRank 1 | 0/4 (0.00%)[KRank 0 | 1/5 (20.00%)[KRank 1 | 0/5 (0.00%)[KRank 0 | 1/6 (16.67%)[KRank 1 | 0/6 (0.00%)[KRank 1 | 0/7 (0.00%)[KRank 0 | 1/7 (14.29%)[KRank 1 | 1/8 (12.50%)[KRank 0 | 1/8 (12.50%)[KRank 1 | 1/9 (11.11%)[KRank 0 | 1/9 (11.11%)[KRank 1 | 1/10 (10.00%)[KRank 0 | 1/10 (10.00%)[KRank 1 | 1/11 (9.09%)[KRank 0 | 1/11 (9.09%)[KRank 1 | 1/12 (8.33%)[KRank 0 | 1/12 (8.33%)[KRank 1 | 1/13 (7.69%)[KRank 0 | 1/13 (7.69%)[KRank 1 | 1/14 (7.14%)[KRank 0 | 1/14 (7.14%)[KRank 1 | 1/15 (6.67%)[KRank 0 | 1/15 (6.67%)[KRank 1 | 1/16 (6.25%)[KRank 1 | 1/17 (5.88%)[KRank 0 | 1/16 (6.25%)[KRank 1 | 1/18 (5.56%)[KRank 0 | 1/17 (5.88%)[KRank 1 | 1/19 (5.26%)[KRank 1 | 1/20 (5.00%)[KRank 0 | 1/18 (5.56%)[KRank 0 | 1/19 (5.26%)[KRank 1 | 1/21 (4.76%)[KRank 1 | 1/22 (4.55%)[KRank 0 | 1/20 (5.00%)[KRank 1 | 2/23 (8.70%)[KRank 0 | 1/21 (4.76%)[KRank 1 | 2/24 (8.33%)[KRank 0 | 1/22 (4.55%)[KRank 1 | 3/25 (12.00%)[KRank 0 | 1/23 (4.35%)[KRank 1 | 3/26 (11.54%)[KRank 1 | 3/27 (11.11%)[KRank 0 | 1/24 (4.17%)[KRank 1 | 3/28 (10.71%)[KRank 0 | 1/25 (4.00%)[KRank 0 | 1/26 (3.85%)[KRank 1 | 3/29 (10.34%)[KRank 0 | 1/27 (3.70%)[KRank 1 | 3/30 (10.00%)[KRank 0 | 1/28 (3.57%)[KRank 0 | 1/29 (3.45%)[KRank 1 | 3/31 (9.68%)[KRank 0 | 1/30 (3.33%)[KRank 0 | 1/31 (3.23%)[KRank 1 | 3/32 (9.38%)[KRank 0 | 1/32 (3.12%)[KRank 0 | 2/33 (6.06%)[KRank 1 | 3/33 (9.09%)[KRank 0 | 2/34 (5.88%)[KRank 1 | 3/34 (8.82%)[KRank 1 | 4/35 (11.43%)[KRank 0 | 2/35 (5.71%)[KRank 0 | 2/36 (5.56%)[KRank 1 | 4/36 (11.11%)[KRank 1 | 5/37 (13.51%)[KRank 0 | 2/37 (5.41%)[KRank 0 | 2/38 (5.26%)[KRank 1 | 5/38 (13.16%)[KRank 0 | 2/39 (5.13%)[KRank 1 | 5/39 (12.82%)[KRank 0 | 3/40 (7.50%)[KRank 1 | 5/40 (12.50%)[KRank 0 | 3/41 (7.32%)[KRank 1 | 5/41 (12.20%)[KRank 0 | 3/42 (7.14%)[KRank 1 | 5/42 (11.90%)[KRank 1 | 5/43 (11.63%)[KRank 0 | 3/43 (6.98%)[KRank 0 | 3/44 (6.82%)[KRank 1 | 5/44 (11.36%)[KRank 0 | 3/45 (6.67%)[KRank 0 | 4/46 (8.70%)[KRank 1 | 5/45 (11.11%)[KRank 1 | 5/46 (10.87%)[KRank 0 | 4/47 (8.51%)[KRank 1 | 5/47 (10.64%)[KRank 0 | 4/48 (8.33%)[KRank 1 | 5/48 (10.42%)[KRank 0 | 4/49 (8.16%)[KRank 1 | 5/49 (10.20%)[KRank 0 | 4/50 (8.00%)[KRank 0 | 4/51 (7.84%)[KRank 1 | 5/50 (10.00%)[KRank 0 | 4/52 (7.69%)[KRank 1 | 6/51 (11.76%)[KRank 0 | 4/53 (7.55%)[KRank 0 | 5/54 (9.26%)[KRank 1 | 6/52 (11.54%)[KRank 1 | 6/53 (11.32%)[KRank 0 | 5/55 (9.09%)[KRank 0 | 6/56 (10.71%)[KRank 1 | 6/54 (11.11%)[KRank 1 | 6/55 (10.91%)[KRank 0 | 6/57 (10.53%)[KRank 1 | 6/56 (10.71%)[KRank 0 | 6/58 (10.34%)[KRank 1 | 6/57 (10.53%)[KRank 0 | 6/59 (10.17%)[KRank 1 | 6/58 (10.34%)[KRank 0 | 6/60 (10.00%)[KRank 0 | 6/61 (9.84%)[KRank 1 | 6/59 (10.17%)[KRank 0 | 6/62 (9.68%)[KRank 1 | 6/60 (10.00%)[KRank 0 | 6/63 (9.52%)[KRank 1 | 6/61 (9.84%)[KRank 0 | 6/64 (9.38%)[KRank 1 | 6/62 (9.68%)[KRank 0 | 6/65 (9.23%)[KRank 1 | 6/63 (9.52%)[KRank 0 | 6/66 (9.09%)[KRank 0 | 7/67 (10.45%)[KRank 1 | 6/64 (9.38%)[KRank 0 | 8/68 (11.76%)[KRank 1 | 6/65 (9.23%)[KRank 0 | 8/69 (11.59%)[KRank 0 | 8/70 (11.43%)[KRank 1 | 6/66 (9.09%)[KRank 1 | 6/67 (8.96%)[KRank 0 | 8/71 (11.27%)[KRank 1 | 7/68 (10.29%)[KRank 0 | 8/72 (11.11%)[KRank 1 | 8/69 (11.59%)[KRank 0 | 9/73 (12.33%)[KRank 1 | 8/70 (11.43%)[KRank 0 | 9/74 (12.16%)[KRank 0 | 9/75 (12.00%)[KRank 1 | 9/71 (12.68%)[KRank 0 | 9/76 (11.84%)[KRank 1 | 10/72 (13.89%)[KRank 0 | 9/77 (11.69%)[KRank 1 | 10/73 (13.70%)[KRank 0 | 9/78 (11.54%)[KRank 1 | 10/74 (13.51%)[KRank 0 | 10/79 (12.66%)[KRank 1 | 10/75 (13.33%)[KRank 0 | 10/80 (12.50%)[KRank 1 | 10/76 (13.16%)[KRank 1 | 11/77 (14.29%)[KRank 0 | 10/81 (12.35%)[KRank 1 | 11/78 (14.10%)[KRank 0 | 10/82 (12.20%)
+[KRank 1 | 11/79 (13.92%)[KRank 1 | 11/80 (13.75%)[KRank 1 | 11/81 (13.58%)[KRank 1 | 11/82 (13.41%)
+==================================================
+Final: 21/164 (12.80%)
+HumanEval accuracy: 12.80%
+[KRank 1 | 1/1 (100.00%)[KRank 0 | 1/1 (100.00%)[KRank 0 | 2/2 (100.00%)[KRank 1 | 2/2 (100.00%)[KRank 0 | 3/3 (100.00%)[KRank 1 | 3/3 (100.00%)[KRank 0 | 4/4 (100.00%)[KRank 1 | 4/4 (100.00%)[KRank 0 | 5/5 (100.00%)[KRank 1 | 5/5 (100.00%)[KRank 0 | 6/6 (100.00%)[KRank 1 | 6/6 (100.00%)[KRank 0 | 7/7 (100.00%)[KRank 1 | 7/7 (100.00%)[KRank 0 | 8/8 (100.00%)[KRank 1 | 8/8 (100.00%)[KRank 0 | 8/9 (88.89%)[KRank 0 | 9/10 (90.00%)[KRank 1 | 9/9 (100.00%)[KRank 0 | 10/11 (90.91%)[KRank 1 | 10/10 (100.00%)[KRank 0 | 11/12 (91.67%)[KRank 1 | 11/11 (100.00%)[KRank 0 | 12/13 (92.31%)[KRank 1 | 12/12 (100.00%)[KRank 0 | 13/14 (92.86%)[KRank 1 | 13/13 (100.00%)[KRank 0 | 14/15 (93.33%)[KRank 1 | 14/14 (100.00%)[KRank 0 | 15/16 (93.75%)[KRank 1 | 15/15 (100.00%)[KRank 0 | 16/17 (94.12%)[KRank 1 | 16/16 (100.00%)[KRank 1 | 17/17 (100.00%)[KRank 0 | 17/18 (94.44%)[KRank 1 | 18/18 (100.00%)[KRank 0 | 18/19 (94.74%)[KRank 1 | 19/19 (100.00%)[KRank 0 | 19/20 (95.00%)[KRank 1 | 20/20 (100.00%)[KRank 0 | 20/21 (95.24%)[KRank 1 | 21/21 (100.00%)[KRank 0 | 21/22 (95.45%)[KRank 1 | 22/22 (100.00%)[KRank 0 | 22/23 (95.65%)[KRank 1 | 23/23 (100.00%)[KRank 0 | 23/24 (95.83%)[KRank 1 | 24/24 (100.00%)[KRank 0 | 24/25 (96.00%)[KRank 1 | 25/25 (100.00%)[KRank 0 | 25/26 (96.15%)[KRank 1 | 26/26 (100.00%)[KRank 0 | 26/27 (96.30%)[KRank 1 | 27/27 (100.00%)[KRank 1 | 28/28 (100.00%)[KRank 0 | 27/28 (96.43%)[KRank 0 | 28/29 (96.55%)[KRank 1 | 29/29 (100.00%)[KRank 0 | 29/30 (96.67%)[KRank 1 | 30/30 (100.00%)[KRank 0 | 30/31 (96.77%)[KRank 1 | 31/31 (100.00%)[KRank 0 | 31/32 (96.88%)[KRank 1 | 32/32 (100.00%)[KRank 0 | 32/33 (96.97%)[KRank 1 | 33/33 (100.00%)[KRank 0 | 33/34 (97.06%)[KRank 1 | 34/34 (100.00%)[KRank 0 | 34/35 (97.14%)[KRank 1 | 35/35 (100.00%)[KRank 0 | 35/36 (97.22%)[KRank 1 | 36/36 (100.00%)[KRank 0 | 36/37 (97.30%)[KRank 1 | 37/37 (100.00%)[KRank 0 | 36/38 (94.74%)[KRank 1 | 38/38 (100.00%)[KRank 0 | 37/39 (94.87%)[KRank 1 | 39/39 (100.00%)[KRank 0 | 38/40 (95.00%)[KRank 1 | 40/40 (100.00%)[KRank 0 | 39/41 (95.12%)[KRank 1 | 41/41 (100.00%)[KRank 0 | 40/42 (95.24%)[KRank 1 | 42/42 (100.00%)[KRank 0 | 41/43 (95.35%)[KRank 0 | 42/44 (95.45%)[KRank 1 | 43/43 (100.00%)[KRank 0 | 43/45 (95.56%)[KRank 1 | 44/44 (100.00%)[KRank 0 | 44/46 (95.65%)[KRank 1 | 45/45 (100.00%)[KRank 0 | 45/47 (95.74%)[KRank 1 | 46/46 (100.00%)[KRank 0 | 46/48 (95.83%)[KRank 1 | 47/47 (100.00%)[KRank 0 | 47/49 (95.92%)[KRank 1 | 48/48 (100.00%)[KRank 0 | 48/50 (96.00%)[KRank 1 | 49/49 (100.00%)[KRank 0 | 49/51 (96.08%)[KRank 1 | 50/50 (100.00%)[KRank 0 | 50/52 (96.15%)[KRank 1 | 51/51 (100.00%)[KRank 0 | 51/53 (96.23%)[KRank 1 | 52/52 (100.00%)[KRank 1 | 53/53 (100.00%)[KRank 0 | 52/54 (96.30%)[KRank 1 | 54/54 (100.00%)[KRank 0 | 53/55 (96.36%)[KRank 1 | 55/55 (100.00%)[KRank 0 | 54/56 (96.43%)[KRank 1 | 56/56 (100.00%)[KRank 0 | 55/57 (96.49%)[KRank 1 | 57/57 (100.00%)[KRank 0 | 56/58 (96.55%)[KRank 1 | 58/58 (100.00%)[KRank 0 | 57/59 (96.61%)[KRank 1 | 59/59 (100.00%)[KRank 0 | 58/60 (96.67%)[KRank 1 | 60/60 (100.00%)[KRank 0 | 59/61 (96.72%)[KRank 1 | 61/61 (100.00%)[KRank 0 | 60/62 (96.77%)[KRank 0 | 61/63 (96.83%)[KRank 1 | 62/62 (100.00%)[KRank 0 | 62/64 (96.88%)[KRank 1 | 63/63 (100.00%)[KRank 0 | 63/65 (96.92%)[KRank 1 | 64/64 (100.00%)[KRank 0 | 64/66 (96.97%)[KRank 1 | 65/65 (100.00%)[KRank 0 | 65/67 (97.01%)[KRank 1 | 66/66 (100.00%)[KRank 0 | 66/68 (97.06%)[KRank 1 | 67/67 (100.00%)[KRank 0 | 67/69 (97.10%)[KRank 1 | 68/68 (100.00%)[KRank 0 | 68/70 (97.14%)[KRank 1 | 69/69 (100.00%)[KRank 0 | 69/71 (97.18%)[KRank 1 | 70/70 (100.00%)[KRank 0 | 70/72 (97.22%)[KRank 1 | 71/71 (100.00%)[KRank 0 | 71/73 (97.26%)[KRank 1 | 72/72 (100.00%)[KRank 0 | 72/74 (97.30%)[KRank 1 | 73/73 (100.00%)[KRank 0 | 73/75 (97.33%)[KRank 1 | 74/74 (100.00%)[KRank 0 | 74/76 (97.37%)[KRank 1 | 75/75 (100.00%)[KRank 0 | 75/77 (97.40%)[KRank 1 | 76/76 (100.00%)[KRank 0 | 76/78 (97.44%)[KRank 1 | 77/77 (100.00%)[KRank 0 | 77/79 (97.47%)[KRank 1 | 78/78 (100.00%)[KRank 0 | 78/80 (97.50%)[KRank 1 | 79/79 (100.00%)[KRank 0 | 79/81 (97.53%)[KRank 1 | 80/80 (100.00%)[KRank 0 | 80/82 (97.56%)[KRank 1 | 81/81 (100.00%)[KRank 0 | 81/83 (97.59%)[KRank 0 | 82/84 (97.62%)[KRank 1 | 82/82 (100.00%)[KRank 0 | 83/85 (97.65%)[KRank 1 | 83/83 (100.00%)[KRank 0 | 84/86 (97.67%)[KRank 1 | 84/84 (100.00%)[KRank 0 | 85/87 (97.70%)[KRank 1 | 85/85 (100.00%)[KRank 0 | 86/88 (97.73%)[KRank 1 | 86/86 (100.00%)[KRank 0 | 87/89 (97.75%)[KRank 1 | 87/87 (100.00%)[KRank 0 | 88/90 (97.78%)[KRank 1 | 88/88 (100.00%)[KRank 0 | 89/91 (97.80%)[KRank 1 | 89/89 (100.00%)[KRank 1 | 90/90 (100.00%)[KRank 0 | 90/92 (97.83%)[KRank 1 | 91/91 (100.00%)[KRank 0 | 91/93 (97.85%)[KRank 1 | 92/92 (100.00%)[KRank 0 | 92/94 (97.87%)[KRank 1 | 93/93 (100.00%)[KRank 0 | 93/95 (97.89%)[KRank 1 | 94/94 (100.00%)[KRank 0 | 94/96 (97.92%)[KRank 1 | 95/95 (100.00%)[KRank 0 | 95/97 (97.94%)[KRank 1 | 96/96 (100.00%)[KRank 0 | 96/98 (97.96%)[KRank 1 | 97/97 (100.00%)[KRank 0 | 97/99 (97.98%)[KRank 1 | 98/98 (100.00%)[KRank 0 | 98/100 (98.00%)[KRank 1 | 99/99 (100.00%)[KRank 0 | 99/101 (98.02%)[KRank 1 | 100/100 (100.00%)[KRank 0 | 100/102 (98.04%)[KRank 0 | 101/103 (98.06%)[KRank 1 | 101/101 (100.00%)[KRank 1 | 102/102 (100.00%)[KRank 0 | 102/104 (98.08%)[KRank 1 | 103/103 (100.00%)[KRank 0 | 103/105 (98.10%)[KRank 1 | 104/104 (100.00%)[KRank 0 | 104/106 (98.11%)[KRank 1 | 105/105 (100.00%)[KRank 0 | 105/107 (98.13%)[KRank 1 | 106/106 (100.00%)[KRank 0 | 106/108 (98.15%)[KRank 1 | 107/107 (100.00%)[KRank 0 | 107/109 (98.17%)[KRank 1 | 108/108 (100.00%)[KRank 0 | 108/110 (98.18%)[KRank 1 | 109/109 (100.00%)[KRank 0 | 109/111 (98.20%)[KRank 1 | 110/110 (100.00%)[KRank 0 | 110/112 (98.21%)[KRank 1 | 111/111 (100.00%)[KRank 1 | 112/112 (100.00%)[KRank 0 | 111/113 (98.23%)[KRank 0 | 112/114 (98.25%)[KRank 1 | 113/113 (100.00%)[KRank 1 | 114/114 (100.00%)[KRank 0 | 113/115 (98.26%)[KRank 1 | 115/115 (100.00%)[KRank 0 | 114/116 (98.28%)[KRank 1 | 116/116 (100.00%)[KRank 0 | 115/117 (98.29%)[KRank 1 | 117/117 (100.00%)[KRank 0 | 116/118 (98.31%)[KRank 1 | 118/118 (100.00%)[KRank 0 | 117/119 (98.32%)[KRank 0 | 118/120 (98.33%)[KRank 1 | 119/119 (100.00%)[KRank 0 | 119/121 (98.35%)[KRank 1 | 120/120 (100.00%)[KRank 0 | 120/122 (98.36%)[KRank 1 | 121/121 (100.00%)[KRank 0 | 121/123 (98.37%)[KRank 1 | 122/122 (100.00%)[KRank 1 | 123/123 (100.00%)[KRank 0 | 122/124 (98.39%)[KRank 1 | 124/124 (100.00%)[KRank 0 | 123/125 (98.40%)[KRank 0 | 124/126 (98.41%)[KRank 1 | 125/125 (100.00%)[KRank 0 | 125/127 (98.43%)[KRank 1 | 126/126 (100.00%)[KRank 0 | 126/128 (98.44%)
+[KRank 1 | 127/127 (100.00%)[KRank 1 | 128/128 (100.00%)
+==================================================
+Final: 254/256 (99.22%)
+SpellingBee accuracy: 99.22%
+Generating report to /home/hice1/pzolotarev3/scratch/nanochat/report/report.md
+Warning: /home/hice1/pzolotarev3/scratch/nanochat/report/base-model-loss.md does not exist, skipping
+Warning: /home/hice1/pzolotarev3/scratch/nanochat/report/chat-sft.md does not exist, skipping
+Warning: /home/hice1/pzolotarev3/scratch/nanochat/report/chat-rl.md does not exist, skipping
+Warning: /home/hice1/pzolotarev3/scratch/nanochat/report/chat-evaluation-rl.md does not exist, skipping
+Copying report.md to current directory for convenience
+=== Stage 3 complete: Tue Apr 28 06:15:08 EDT 2026 ===
+All done! To chat with the model:
+  source .venv/bin/activate
+  python -m scripts.chat_cli -p 'Why is the sky blue?'
+  python -m scripts.chat_web
+---------------------------------------
+Begin Slurm Epilog: Apr-28-2026 06:15:09
+Job ID:        5064232
+User ID:       pzolotarev3
+Account:       coc
+Job name:      nanochat-stage3-sft
+Resources:     cpu=8,gres/gpu:h200=2,mem=96G,node=1
+Rsrc Used:     cput=14:08:32,vmem=0,walltime=01:46:04,mem=27109520K,energy_used=0
+Partition:     ice-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-03-017-16-0
+---------------------------------------

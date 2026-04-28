@@ -1,0 +1,104 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-23-2026 00:51:23
+Job ID:    5042766
+User ID:   pzolotarev3
+Account:   coc
+Job name:  nanochat-stage1-tokenizer
+Partition: ice-bw-cpu
+QOS:       coc-ice
+---------------------------------------
+=== Stage 1: Tokenizer ===
+Base dir: /home/hice1/pzolotarev3/scratch/nanochat
+Started: Thu Apr 23 00:51:23 EDT 2026
+Reset report and wrote header to /home/hice1/pzolotarev3/scratch/nanochat/report/header.md
+Downloading 9 shards using 4 workers...
+Target directory: /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix
+
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00001.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00005.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00002.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00006.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00000.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00004.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_06542.parquet (already exists)
+Done! Downloaded: 9/9 shards to /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix
+Downloading 171 shards using 4 workers...
+Target directory: /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix
+
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00011.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00012.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00013.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00014.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00015.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00016.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00017.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00018.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00019.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00020.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00021.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00055.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00056.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00057.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00058.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00059.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00060.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00061.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00062.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00063.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00064.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00065.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00110.parquet (already exists)
+Skipping /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix/shard_00111.parquet (already exists)
+Skipping /home/Done! Downloaded: 171/171 shards to /home/hice1/pzolotarev3/scratch/nanochat/base_data_climbmix
+max_chars: 2,000,000,000
+doc_cap: 10,000
+vocab_size: 32,768
+Training time: 143.73s
+Saved tokenizer encoding to /home/hice1/pzolotarev3/scratch/nanochat/tokenizer/tokenizer.pkl
+Saved token_bytes to /home/hice1/pzolotarev3/scratch/nanochat/tokenizer/token_bytes.pt
+
+Vocab sizes:
+GPT-2: 50257
+GPT-4: 100277
+Ours: 32768
+
+Comparison with GPT-2:
+===============================================================================================
+Text Type  Bytes    GPT-2           Ours            Relative     Better    
+                    Tokens  Ratio   Tokens  Ratio   Diff %      
+-----------------------------------------------------------------------------------------------
+news       1819     [92m404    [0m [92m4.50   [0m [91m405    [0m [91m4.49   [0m [91m   -0.2%[0m     GPT-2     
+korean     893      [92m745    [0m [92m1.20   [0m [91m749    [0m [91m1.19   [0m [91m   -0.5%[0m     GPT-2     
+code       1259     [91m576    [0m [91m2.19   [0m [92m397    [0m [92m3.17   [0m [92m  +31.1%[0m     Ours      
+math       1834     [91m936    [0m [91m1.96   [0m [92m911    [0m [92m2.01   [0m [92m   +2.7%[0m     Ours      
+science    1112     [91m260    [0m [91m4.28   [0m [92m247    [0m [92m4.50   [0m [92m   +5.0%[0m     Ours      
+fwe-train  2948778  [91m631304 [0m [91m4.67   [0m [92m622480 [0m [92m4.74   [0m [92m   +1.4%[0m     Ours      
+fwe-val    3024593  [91m653067 [0m [91m4.63   [0m [92m644914 [0m [92m4.69   [0m [92m   +1.2%[0m     Ours      
+
+Comparison with GPT-4:
+===============================================================================================
+Text Type  Bytes    GPT-4           Ours            Relative     Better    
+                    Tokens  Ratio   Tokens  Ratio   Diff %      
+-----------------------------------------------------------------------------------------------
+news       1819     [92m387    [0m [92m4.70   [0m [91m405    [0m [91m4.49   [0m [91m   -4.7%[0m     GPT-4     
+korean     893      [92m364    [0m [92m2.45   [0m [91m749    [0m [91m1.19   [0m [91m -105.8%[0m     GPT-4     
+code       1259     [92m309    [0m [92m4.07   [0m [91m397    [0m [91m3.17   [0m [91m  -28.5%[0m     GPT-4     
+math       1834     [92m832    [0m [92m2.20   [0m [91m911    [0m [91m2.01   [0m [91m   -9.5%[0m     GPT-4     
+science    1112     [91m249    [0m [91m4.47   [0m [92m247    [0m [92m4.50   [0m [92m   +0.8%[0m     Ours      
+fwe-train  2948778  [92m611619 [0m [92m4.82   [0m [91m622480 [0m [91m4.74   [0m [91m   -1.8%[0m     GPT-4     
+fwe-val    3024593  [92m631183 [0m [92m4.79   [0m [91m644914 [0m [91m4.69   [0m [91m   -2.2%[0m     GPT-4     
+Waiting for full dataset download...
+=== Stage 1 complete: Thu Apr 23 00:55:51 EDT 2026 ===
+Dataset and tokenizer ready in /home/hice1/pzolotarev3/scratch/nanochat
+---------------------------------------
+Begin Slurm Epilog: Apr-23-2026 00:55:51
+Job ID:        5042766
+User ID:       pzolotarev3
+Account:       coc
+Job name:      nanochat-stage1-tokenizer
+Resources:     cpu=24,mem=64G,node=1
+Rsrc Used:     cput=01:47:36,vmem=0,walltime=00:04:29,mem=3228716K,energy_used=0
+Partition:     ice-bw-cpu
+QOS:           coc-ice
+Nodes:         atl1-1-02-003-31-0
+---------------------------------------

@@ -5,6 +5,9 @@
 
 # Run as:
 # bash runs/runcpu.sh
+#
+# Run with XSA on middle/later layers of the default depth-6 model:
+# XSA=TRUE bash runs/runcpu.sh
 
 # NOTE: Training LLMs requires GPU compute and $$$. You will not get far on your Macbook.
 # Think of this run as educational/fun demo, not something you should expect to work well.
@@ -20,6 +23,11 @@ source .venv/bin/activate
 if [ -z "$WANDB_RUN" ]; then
     WANDB_RUN=dummy
 fi
+XSA="${XSA:-FALSE}"
+XSA_ALPHA="${XSA_ALPHA:-0.5}"
+XSA_LAYER_INDICES="${XSA_LAYER_INDICES:-3,4,5}"
+XSA_ARG=""
+[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa --xsa-alpha=$XSA_ALPHA --xsa-layer-indices=$XSA_LAYER_INDICES"
 
 # train tokenizer on ~2B characters (~34 seconds on my MacBook Pro M3 Max)
 python -m nanochat.dataset -n 8
@@ -41,6 +49,7 @@ python -m scripts.base_train \
     --core-metric-every=-1 \
     --sample-every=100 \
     --num-iterations=5000 \
+    $XSA_ARG \
     --run=$WANDB_RUN
 python -m scripts.base_eval --device-batch-size=1 --split-tokens=16384 --max-per-task=16
 
