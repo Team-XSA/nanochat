@@ -55,6 +55,7 @@ parser.add_argument("--window-pattern", type=str, default="SSSL", help="sliding 
 parser.add_argument("--xsa", action="store_true", help="enable XSA")
 parser.add_argument("--xsa-alpha", type=float, default=1.0, help="XSA projection strength (0 = disable)")
 parser.add_argument("--xsa-layer-indices", type=str, default=None, help="layer indices selection, comma-separated (None = all layers)")
+parser.add_argument("--no-ve", action="store_true", help="disable Value Embeddings")
 # Training horizon (only one used, in order of precedence)
 parser.add_argument("--num-iterations", type=int, default=-1, help="explicit number of optimization steps (-1 = disable)")
 parser.add_argument("--target-flops", type=float, default=-1.0, help="calculate num_iterations to reach target_flops (-1 = disable)")
@@ -109,6 +110,8 @@ using_fa3 = USE_FA3
 if args.xsa:
     layers = "all layers" if args.xsa_layer_indices is None else args.xsa_layer_indices
     print0(f"XSA enabled: alpha={args.xsa_alpha}, layers={layers}")
+if args.no_ve:
+    print0("Value Embeddings disabled")
 if using_fa3:
     print0("✓ Using Flash Attention 3 (Hopper GPU detected), efficient, new and awesome.")
 else:
@@ -145,6 +148,7 @@ def build_model_meta(depth):
         n_layer=depth, n_head=num_heads, n_kv_head=num_heads, n_embd=model_dim,
         window_pattern=args.window_pattern, use_xsa=args.xsa,
         xsa_alpha=args.xsa_alpha, xsa_layer_indices=args.xsa_layer_indices,
+        use_ve=not args.no_ve,
     )
     with torch.device("meta"):
         model_meta = GPT(config)
