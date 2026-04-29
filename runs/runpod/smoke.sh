@@ -14,8 +14,21 @@ set -euo pipefail
 
 NANOCHAT_REPO="${NANOCHAT_REPO:-Team-XSA/nanochat}"
 NANOCHAT_REF="${NANOCHAT_REF:-dev}"
-HF_REPO="${HF_REPO:-haydenfree/nanochat-d12-baseline}"
 WANDB_RUN="${WANDB_RUN:-smoke}"
+
+# XSA / VE toggles — read first so HF_REPO can auto-route on XSA.
+XSA="${XSA:-FALSE}"
+XSA_ALPHA="${XSA_ALPHA:-1.0}"
+XSA_LAYER_INDICES="${XSA_LAYER_INDICES:-}"
+VE="${VE:-TRUE}"
+
+# Default smoke artifact destination depends on XSA — keeps baseline and XSA
+# smoke artifacts cleanly separated. User may override HF_REPO explicitly.
+if [ "$XSA" = "TRUE" ]; then
+  HF_REPO="${HF_REPO:-haydenfree/nanochat-d12-xsa}"
+else
+  HF_REPO="${HF_REPO:-haydenfree/nanochat-d12-baseline}"
+fi
 
 TS=$(date -u +%Y%m%dT%H%M%SZ)
 HF_PATH_PREFIX="_smoke/${TS}"
@@ -113,6 +126,14 @@ echo "[smoke] === FA3 PROBE END ==="
 python -m nanochat.dataset -n 1
 python -m scripts.tok_train --max-chars=50000000
 
+# XSA / VE -> base_train CLI args (env vars themselves were resolved at top of script).
+XSA_ARG=""
+[ "$XSA" = "TRUE" ] && XSA_ARG="--xsa --xsa-alpha=$XSA_ALPHA"
+[ "$XSA" = "TRUE" ] && [ -n "$XSA_LAYER_INDICES" ] && XSA_ARG="$XSA_ARG --xsa-layer-indices=$XSA_LAYER_INDICES"
+VE_ARG=""
+[ "$VE" = "FALSE" ] && VE_ARG="--no-ve"
+echo "[smoke] XSA=$XSA XSA_ALPHA=$XSA_ALPHA XSA_LAYER_INDICES=$XSA_LAYER_INDICES VE=$VE -> args: $XSA_ARG $VE_ARG"
+
 # Tiny base_train. Params from base_train.py docstring (the CPU smoke), adjusted
 # slightly for GPU. depth=4, 20 iterations. Should finish in ~30s.
 NPROC=$(nvidia-smi -L | wc -l)
@@ -128,6 +149,7 @@ torchrun --standalone --nproc_per_node="$NPROC" -m scripts.base_train -- \
     --core-metric-every=-1 \
     --sample-every=-1 \
     --save-every=-1 \
+    $XSA_ARG $VE_ARG \
     --run="$WANDB_RUN"
 
 echo "[smoke] $(date -Iseconds) base_train complete — smoke passed"

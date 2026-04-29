@@ -15,14 +15,19 @@
 #   bash runs/runpod/kickoff.sh xsa_d12     # uses runs/runpod/xsa_d12.sh
 #
 # Optional env overrides:
-#   GPU_ID         default: "NVIDIA H100 80GB HBM3"
-#   GPU_COUNT      default: 8
-#   CLOUD_TYPE     default: SECURE        (COMMUNITY when capacity available, cheaper)
-#   DISK_GB        default: 200
-#   NANOCHAT_REPO  default: Team-XSA/nanochat
-#   NANOCHAT_REF   default: dev
-#   WANDB_RUN      default: <RUNNER>
-#   POD_NAME       default: <RUNNER>-<timestamp>
+#   GPU_ID            default: "NVIDIA H100 80GB HBM3"
+#   GPU_COUNT         default: 8
+#   CLOUD_TYPE        default: SECURE        (COMMUNITY when capacity available, cheaper)
+#   DISK_GB           default: 200
+#   NANOCHAT_REPO     default: Team-XSA/nanochat
+#   NANOCHAT_REF      default: dev
+#   WANDB_RUN         default: <RUNNER>
+#   POD_NAME          default: <RUNNER>-<timestamp>
+#   HF_REPO           override the runner's default HF repo
+#   XSA               TRUE/FALSE — enable Exclusive Self Attention
+#   XSA_ALPHA         XSA mixing strength (default 1.0 inside runner)
+#   XSA_LAYER_INDICES comma-separated layer indices (empty = all)
+#   VE                TRUE/FALSE — enable Value Embeddings (default TRUE)
 
 set -euo pipefail
 
@@ -57,9 +62,19 @@ if ! curl -sfI "$RUNNER_URL" >/dev/null; then
 fi
 
 export HF_TOKEN WANDB_API_KEY WANDB_RUN RUNNER_URL NANOCHAT_REPO NANOCHAT_REF
+# Conditionally export optional vars so the python heredoc only forwards what
+# the user actually set (otherwise the runner's own defaults kick in).
+[ -n "${HF_REPO:-}" ]           && export HF_REPO
+[ -n "${XSA:-}" ]               && export XSA
+[ -n "${XSA_ALPHA:-}" ]         && export XSA_ALPHA
+[ -n "${XSA_LAYER_INDICES:-}" ] && export XSA_LAYER_INDICES
+[ -n "${VE:-}" ]                && export VE
 ENV_JSON=$(python3 - <<'PY'
 import json, os
-keys = ["HF_TOKEN","WANDB_API_KEY","WANDB_RUN","RUNNER_URL","NANOCHAT_REPO","NANOCHAT_REF"]
+keys = [
+    "HF_TOKEN","WANDB_API_KEY","WANDB_RUN","RUNNER_URL","NANOCHAT_REPO","NANOCHAT_REF",
+    "HF_REPO","XSA","XSA_ALPHA","XSA_LAYER_INDICES","VE",
+]
 print(json.dumps({k: os.environ[k] for k in keys if k in os.environ}))
 PY
 )
@@ -88,5 +103,9 @@ echo "  runpodctl ssh info \$POD_ID"
 echo "  ssh <user>@<host> 'tail -f /workspace/runner.log'"
 echo
 echo "Wandb: project=nanochat / nanochat-sft, run name: $WANDB_RUN"
-echo "HF (success):  https://huggingface.co/haydenfree/nanochat-d12-baseline"
-echo "HF (failure):  https://huggingface.co/haydenfree/nanochat-d12-baseline/tree/main/_failures"
+if [ -n "${HF_REPO:-}" ]; then
+  echo "HF (success):  https://huggingface.co/$HF_REPO"
+  echo "HF (failure):  https://huggingface.co/$HF_REPO/tree/main/_failures"
+else
+  echo "HF: see runner script default (HF_REPO not overridden)"
+fi
