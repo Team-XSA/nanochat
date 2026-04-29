@@ -156,13 +156,17 @@ echo "[smoke] $(date -Iseconds) base_train complete"
 
 # Catches the d12_xsa SFT failure: install hf_transfer, then trigger the exact
 # code path chat_sft.py crashed on (load_dataset under HF_HUB_ENABLE_HF_TRANSFER=1).
+# Use os._exit(0) to bypass Python's C++ teardown, which can SIGABRT on the HF
+# streaming reader's worker threads even after the actual work succeeds.
 echo "[smoke] verifying chat_sft startup path"
 uv pip install --quiet hf_transfer
 HF_HUB_ENABLE_HF_TRANSFER=1 python -c "
+import os
 from datasets import load_dataset
 ds = load_dataset('HuggingFaceTB/smol-smoltalk', split='train', streaming=True)
 next(iter(ds))
 print('[smoke] chat_sft startup OK')
+os._exit(0)
 " || { echo "[smoke] FAIL: chat_sft startup broken"; exit 1; }
 
 echo "[smoke] $(date -Iseconds) smoke passed"

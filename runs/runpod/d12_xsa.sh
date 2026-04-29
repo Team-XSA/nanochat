@@ -162,12 +162,6 @@ echo "[runner] upgrading kernels lib for FA3 reliability"
 uv pip install --quiet --upgrade 'kernels>=0.13.0' 2>&1 || \
   echo "[runner] WARN: kernels upgrade failed (continuing)"
 
-# Install hf_transfer — runpod base image sets HF_HUB_ENABLE_HF_TRANSFER=1, which
-# makes huggingface_hub raise ValueError if the package is missing. chat_sft loads
-# HuggingFaceTB/smol-smoltalk via datasets and crashes without this.
-echo "[runner] installing hf_transfer for SFT dataset download"
-uv pip install --quiet hf_transfer 2>&1 || echo "[runner] WARN: hf_transfer install failed"
-
 (
   while true; do
     sleep "$BACKUP_INTERVAL"
