@@ -61,7 +61,7 @@ cleanup() {
       # Skip the climbmix dataset shards (~2GB of public data, not model artifacts)
       hf upload "$HF_REPO" "$NANOCHAT_BASE_DIR" . \
         --repo-type model --commit-message "final rc=0 $TS" \
-        --exclude "base_data_climbmix/**" --exclude "wandb/**" || \
+        --exclude "wandb/**" --exclude "base_data_climbmix/**" || \
         echo "[runner] WARN: final upload failed"
     fi
     # Also upload the runner log so we have a permanent record of this successful run.
@@ -85,7 +85,7 @@ cleanup() {
       echo "[runner] UPLOAD_FAILURE_CACHE=1 — also dumping partial cache (may be slow)"
       hf upload "$HF_REPO" "$NANOCHAT_BASE_DIR" "_failures/${TS}-rc${rc}/cache" \
         --repo-type model --commit-message "failure rc=$rc cache $TS" \
-        --exclude "base_data_climbmix/**" --exclude "wandb/**" || true
+        --exclude "wandb/**" --exclude "base_data_climbmix/**" || true
     fi
     echo "[runner] failure artifacts: https://huggingface.co/$HF_REPO/tree/main/_failures/${TS}-rc${rc}"
   fi
@@ -123,8 +123,12 @@ sed -i 's/ --target-param-data-ratio=8//' runs/speedrun.sh
 # Inject `set -euo pipefail` so a mid-pipeline failure (e.g. chat_sft) propagates
 # as rc!=0 instead of being silently swallowed by the next command.
 sed -i '1a set -euo pipefail' runs/speedrun.sh
+# Re-install hf_transfer immediately before chat_sft. speedrun.sh's `uv sync --extra gpu`
+# wipes any uv pip install we did in the runner (uv sync drops non-pyproject packages),
+# so the install must happen AFTER sync, right before chat_sft.
+sed -i '/torchrun.*chat_sft/i uv pip install --quiet hf_transfer || true' runs/speedrun.sh
 echo "[runner] speedrun.sh edits applied:"
-grep -n 'depth\|target-param\|set -e' runs/speedrun.sh || true
+grep -n 'depth\|target-param\|set -e\|hf_transfer' runs/speedrun.sh || true
 
 # Explicit venv setup BEFORE speedrun.sh so we can run diagnostic probes
 # inside the venv. speedrun.sh's uv sync is idempotent (no-op the second time).
@@ -159,7 +163,7 @@ uv pip install --quiet hf_transfer 2>&1 || echo "[runner] WARN: hf_transfer inst
       hf upload "$HF_REPO" "$NANOCHAT_BASE_DIR" . \
         --repo-type model \
         --commit-message "checkpoint $(date -Iseconds)" \
-        --exclude "base_data_climbmix/**" --exclude "wandb/**" \
+        --exclude "wandb/**" --exclude "base_data_climbmix/**" \
         >> /workspace/backup.log 2>&1 || true
     fi
   done

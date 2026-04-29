@@ -152,5 +152,18 @@ torchrun --standalone --nproc_per_node="$NPROC" -m scripts.base_train -- \
     $XSA_ARG $VE_ARG \
     --run="$WANDB_RUN"
 
-echo "[smoke] $(date -Iseconds) base_train complete — smoke passed"
+echo "[smoke] $(date -Iseconds) base_train complete"
+
+# Catches the d12_xsa SFT failure: install hf_transfer, then trigger the exact
+# code path chat_sft.py crashed on (load_dataset under HF_HUB_ENABLE_HF_TRANSFER=1).
+echo "[smoke] verifying chat_sft startup path"
+uv pip install --quiet hf_transfer
+HF_HUB_ENABLE_HF_TRANSFER=1 python -c "
+from datasets import load_dataset
+ds = load_dataset('HuggingFaceTB/smol-smoltalk', split='train', streaming=True)
+next(iter(ds))
+print('[smoke] chat_sft startup OK')
+" || { echo "[smoke] FAIL: chat_sft startup broken"; exit 1; }
+
+echo "[smoke] $(date -Iseconds) smoke passed"
 # trap cleanup handles HF upload + self-delete
