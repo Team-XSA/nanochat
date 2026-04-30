@@ -127,8 +127,12 @@ sed -i '1a set -euo pipefail' runs/speedrun.sh
 # wipes any uv pip install we did in the runner (uv sync drops non-pyproject packages),
 # so the install must happen AFTER sync, right before chat_sft.
 sed -i '/torchrun.*chat_sft/i uv pip install --quiet hf_transfer || true' runs/speedrun.sh
+# Synchronous base-checkpoint snapshot to HF right before chat_sft. Guarantees the
+# pretrained model is preserved even if chat_sft crashes the pod. Background backup
+# is best-effort; this is not.
+sed -i '/torchrun.*chat_sft/i echo "[runner] synchronous base snapshot to HF before SFT" && hf upload "$HF_REPO" "$NANOCHAT_BASE_DIR" . --repo-type model --commit-message "post-base snapshot pre-SFT" --exclude "wandb/**" --exclude "base_data_climbmix/**" || echo "[runner] WARN: pre-SFT snapshot upload failed (continuing)"' runs/speedrun.sh
 echo "[runner] speedrun.sh edits applied:"
-grep -n 'depth\|target-param\|set -e\|hf_transfer' runs/speedrun.sh || true
+grep -n 'depth\|target-param\|set -e\|hf_transfer\|snapshot' runs/speedrun.sh || true
 
 # Explicit venv setup BEFORE speedrun.sh so we can run diagnostic probes
 # inside the venv. speedrun.sh's uv sync is idempotent (no-op the second time).
@@ -165,7 +169,7 @@ uv pip install --quiet --upgrade 'kernels>=0.13.0' 2>&1 || \
 BACKUP_PID=$!
 echo "[runner] backup loop pid=$BACKUP_PID interval=${BACKUP_INTERVAL}s"
 
-export WANDB_RUN
+export WANDB_RUN HF_REPO
 WANDB_RUN="$WANDB_RUN" bash runs/speedrun.sh
 
 # Verify expected pipeline outputs — speedrun.sh historically didn't `set -e`;
