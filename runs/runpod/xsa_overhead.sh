@@ -89,6 +89,7 @@ export OMP_NUM_THREADS=1
 export NANOCHAT_BASE_DIR
 export HF_HUB_TOKEN="$HF_TOKEN"
 command -v uv >/dev/null 2>&1 || curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
 [ -d ".venv" ] || uv venv
 uv sync --extra gpu
 source .venv/bin/activate
