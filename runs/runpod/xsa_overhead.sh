@@ -35,39 +35,6 @@ echo "[overhead] $(date -Iseconds) starting pod=${RUNPOD_POD_ID:-unknown}"
 echo "[overhead] repo=$NANOCHAT_REPO ref=$NANOCHAT_REF hf_repo=$HF_REPO"
 echo "[overhead] nproc=$NPROC shards=$DATA_SHARDS iters=$NUM_ITERATIONS profile_iters=$PROFILE_ITERATIONS"
 
-ensure_python_build_deps() {
-  local python_bin include_dir py_dev_pkg
-  python_bin="${1:-python3}"
-  include_dir=$("$python_bin" - <<'PY'
-import sysconfig
-print(sysconfig.get_paths()["include"])
-PY
-)
-  if [ -f "$include_dir/Python.h" ]; then
-    echo "[overhead] Python.h found at $include_dir/Python.h"
-    return
-  fi
-
-  if ! command -v apt-get >/dev/null 2>&1; then
-    echo "[overhead] WARN: Python.h missing at $include_dir/Python.h and apt-get is unavailable"
-    return
-  fi
-
-  py_dev_pkg=$("$python_bin" - <<'PY'
-import sys
-print(f"python{sys.version_info.major}.{sys.version_info.minor}-dev")
-PY
-)
-  echo "[overhead] installing build deps for Triton/PyTorch compile: build-essential $py_dev_pkg"
-  apt-get update
-  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    build-essential gcc g++ "$py_dev_pkg" python3-dev || \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    build-essential gcc g++ python3-dev
-}
-
-ensure_python_build_deps
-
 { pip3 install --break-system-packages --quiet --upgrade huggingface_hub 2>&1 || \
   python3 -m pip install --break-system-packages --quiet --upgrade huggingface_hub 2>&1 || \
   echo "[overhead] WARN: could not pre-install huggingface_hub"; } || true
@@ -121,16 +88,23 @@ echo "[overhead] HEAD=$(git rev-parse HEAD)"
 export OMP_NUM_THREADS=1
 export NANOCHAT_BASE_DIR
 export HF_HUB_TOKEN="$HF_TOKEN"
+if command -v apt-get >/dev/null 2>&1; then
+  apt-get update
+  apt-get install -y --no-install-recommends build-essential python3.10-dev
+fi
 command -v uv >/dev/null 2>&1 || curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 [ -d ".venv" ] || uv venv
 uv sync --extra gpu
 source .venv/bin/activate
-ensure_python_build_deps python
 uv pip install --quiet --upgrade huggingface_hub hf_transfer 'kernels>=0.13.0'
 
 python -c "import torch; print('[overhead] torch', torch.__version__, 'cuda', torch.cuda.is_available(), 'devices', torch.cuda.device_count())"
-python "$WORKDIR/runs/runpod/probe_fa3.py" || echo "[overhead] FA3 probe reported issues; continuing"
+if [ -f "$WORKDIR/runs/runpod/probe_fa3.py" ]; then
+  python "$WORKDIR/runs/runpod/probe_fa3.py" || echo "[overhead] FA3 probe reported issues; continuing"
+else
+  echo "[overhead] FA3 probe not present in checkout; continuing"
+fi
 
 echo "[overhead] downloading tokenizer from $TOKENIZER_HF_REPO"
 hf download "$TOKENIZER_HF_REPO" --repo-type model \
