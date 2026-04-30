@@ -35,6 +35,38 @@ echo "[overhead] $(date -Iseconds) starting pod=${RUNPOD_POD_ID:-unknown}"
 echo "[overhead] repo=$NANOCHAT_REPO ref=$NANOCHAT_REF hf_repo=$HF_REPO"
 echo "[overhead] nproc=$NPROC shards=$DATA_SHARDS iters=$NUM_ITERATIONS profile_iters=$PROFILE_ITERATIONS"
 
+ensure_python_build_deps() {
+  local include_dir py_dev_pkg
+  include_dir=$(python3 - <<'PY'
+import sysconfig
+print(sysconfig.get_paths()["include"])
+PY
+)
+  if [ -f "$include_dir/Python.h" ]; then
+    echo "[overhead] Python.h found at $include_dir/Python.h"
+    return
+  fi
+
+  if ! command -v apt-get >/dev/null 2>&1; then
+    echo "[overhead] WARN: Python.h missing at $include_dir/Python.h and apt-get is unavailable"
+    return
+  fi
+
+  py_dev_pkg=$(python3 - <<'PY'
+import sys
+print(f"python{sys.version_info.major}.{sys.version_info.minor}-dev")
+PY
+)
+  echo "[overhead] installing build deps for Triton/PyTorch compile: build-essential $py_dev_pkg"
+  apt-get update
+  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential gcc g++ "$py_dev_pkg" python3-dev || \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    build-essential gcc g++ python3-dev
+}
+
+ensure_python_build_deps
+
 { pip3 install --break-system-packages --quiet --upgrade huggingface_hub 2>&1 || \
   python3 -m pip install --break-system-packages --quiet --upgrade huggingface_hub 2>&1 || \
   echo "[overhead] WARN: could not pre-install huggingface_hub"; } || true
