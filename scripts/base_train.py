@@ -24,6 +24,7 @@ from contextlib import contextmanager
 import wandb
 import torch
 import torch.distributed as dist
+from torch.profiler import ProfilerActivity, profile, schedule, tensorboard_trace_handler
 
 from nanochat.gpt import GPT, GPTConfig, Linear
 from nanochat.dataloader import tokenizing_distributed_data_loader_bos_bestfit, tokenizing_distributed_data_loader_with_state_bos_bestfit
@@ -79,8 +80,12 @@ parser.add_argument("--core-metric-every", type=int, default=2000, help="evaluat
 parser.add_argument("--core-metric-max-per-task", type=int, default=500, help="examples per task for CORE metric")
 parser.add_argument("--sample-every", type=int, default=2000, help="sample from model every N steps (-1 = disable)")
 parser.add_argument("--save-every", type=int, default=-1, help="save checkpoints every N steps (-1 = only at end)")
+parser.add_argument("--no-save", action="store_true", help="disable all checkpoint saves, including the final checkpoint")
 # Output
 parser.add_argument("--model-tag", type=str, default=None, help="override model tag for checkpoint directory name")
+# Profiling
+parser.add_argument("--profile", action="store_true", help="enable torch.profiler for training steps")
+parser.add_argument("--profile-dir", type=str, default="profiles", help="directory for torch.profiler traces and summary")
 args = parser.parse_args()
 args.xsa_layer_indices = [int(x) for x in args.xsa_layer_indices.split(",")] if args.xsa_layer_indices else None
 user_config = vars(args).copy()  # for logging
@@ -112,6 +117,8 @@ if args.xsa:
     print0(f"XSA enabled: alpha={args.xsa_alpha}, layers={layers}")
 if args.no_ve:
     print0("Value Embeddings disabled")
+if args.no_save:
+    print0("Checkpoint saves disabled")
 if using_fa3:
     print0("✓ Using Flash Attention 3 (Hopper GPU detected), efficient, new and awesome.")
 else:
@@ -424,6 +431,20 @@ print0(f"Tokens / micro-batch / rank: {args.device_batch_size} x {args.max_seq_l
 print0(f"Tokens / micro-batch: {world_tokens_per_fwdbwd:,}")
 print0(f"Total batch size {total_batch_size:,} => gradient accumulation steps: {grad_accum_steps}")
 
+# torch.profiler
+profiler = None
+if args.profile and master_process:
+    os.makedirs(args.profile_dir, exist_ok=True)
+    profiler = profile(
+        activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
+        schedule=schedule(wait=10, warmup=10, active=20, repeat=1),
+        on_trace_ready=tensorboard_trace_handler(args.profile_dir, worker_name="rank0"),
+        record_shapes=True,
+        profile_memory=True,
+    )
+    profiler.start()
+    print0(f"torch.profiler enabled: {args.profile_dir}")
+
 # Go!
 while True:
     last_step = step == num_iterations # loop runs num_iterations+1 times so that we can eval/save at the end
@@ -486,7 +507,7 @@ while True:
         model.train()
 
     # save checkpoint: at the end of the run, or every save_every steps, except at the first step or the resume step
-    if last_step or (step > 0 and step != args.resume_from_step and args.save_every > 0 and step % args.save_every == 0):
+    if not args.no_save and (last_step or (step > 0 and step != args.resume_from_step and args.save_every > 0 and step % args.save_every == 0)):
         save_checkpoint(
             checkpoint_dir,
             step,
@@ -591,6 +612,9 @@ while True:
         }
         wandb_run.log(log_data)
 
+    if profiler is not None:
+        profiler.step()
+
     # state update
     first_step_of_run = (step == 0) or (resuming and step == args.resume_from_step)
     step += 1
@@ -604,6 +628,13 @@ while True:
         gc.disable() # nuclear intervention here: disable GC entirely except:
     elif step % 5000 == 0: # every 5000 steps...
         gc.collect() # manually collect, just to be safe for very, very long runs
+
+if profiler is not None:
+    profiler.stop()
+    path = os.path.join(args.profile_dir, "key_averages.txt")
+    with open(path, "w") as f:
+        f.write(profiler.key_averages().table(sort_by="self_cuda_time_total", row_limit=100))
+    print0(f"torch.profiler summary saved to {path}")
 
 # print a few more stats
 print0(f"Peak memory usage: {get_max_memory() / 1024 / 1024:.2f}MiB")
