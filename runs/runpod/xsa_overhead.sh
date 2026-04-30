@@ -36,8 +36,9 @@ echo "[overhead] repo=$NANOCHAT_REPO ref=$NANOCHAT_REF hf_repo=$HF_REPO"
 echo "[overhead] nproc=$NPROC shards=$DATA_SHARDS iters=$NUM_ITERATIONS profile_iters=$PROFILE_ITERATIONS"
 
 ensure_python_build_deps() {
-  local include_dir py_dev_pkg
-  include_dir=$(python3 - <<'PY'
+  local python_bin include_dir py_dev_pkg
+  python_bin="${1:-python3}"
+  include_dir=$("$python_bin" - <<'PY'
 import sysconfig
 print(sysconfig.get_paths()["include"])
 PY
@@ -52,7 +53,7 @@ PY
     return
   fi
 
-  py_dev_pkg=$(python3 - <<'PY'
+  py_dev_pkg=$("$python_bin" - <<'PY'
 import sys
 print(f"python{sys.version_info.major}.{sys.version_info.minor}-dev")
 PY
@@ -125,6 +126,7 @@ export PATH="$HOME/.local/bin:$PATH"
 [ -d ".venv" ] || uv venv
 uv sync --extra gpu
 source .venv/bin/activate
+ensure_python_build_deps python
 uv pip install --quiet --upgrade huggingface_hub hf_transfer 'kernels>=0.13.0'
 
 python -c "import torch; print('[overhead] torch', torch.__version__, 'cuda', torch.cuda.is_available(), 'devices', torch.cuda.device_count())"
